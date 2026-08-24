@@ -202,6 +202,11 @@
 - [x] Give the Support Desk / 03 marker a clear green background and readable contrasting text/icon.
 - [x] Verify the marker on mobile and desktop, then push the focused patch.
 
+## Support Desk card text contrast correction
+
+- [x] Change the light Support Desk card heading and paragraph to readable dark green tones.
+- [x] Verify the card at mobile and desktop sizes, then push the patch.
+
 
 - [x] Restore a warmer green agricultural visual system and reduce the mobile footer height.
 - [x] Add a visual three-step “From your call to your crop” journey.
