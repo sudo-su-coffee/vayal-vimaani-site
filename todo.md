@@ -187,3 +187,10 @@
 - [ ] Optimize landing-page loading cost and responsive behavior.
 - [x] Fix the mobile-menu issue and re-check touch layout.
 - [x] Expose the refreshed preview publicly and report the preview URL.
+
+## Japanese-inspired visual redesign
+
+- [x] Define a grounded Japanese-agriculture visual system with practical farmer-first palette, typography, and signature motifs.
+- [x] Recompose the landing page so the hero, services, and proof sections feel more distinctive while remaining immediately understandable.
+- [x] Apply the new direction consistently to navigation, booking, app, and footer sections.
+- [x] Verify accessibility, responsive behavior, performance, and the public preview.

@@ -55,3 +55,11 @@ The supplied package identifies these service areas: agricultural drone spraying
 ## Modern unique pass — Aerial Signal
 
 This pass shifts from straightforward agency layout to a signature aerial-control-room composition: a bright cyan flight path cutting through a deep charcoal canvas, oversized type sitting beside a live-looking mission panel, and bold diagonal section transitions. The provided logo remains the visual anchor. Modernity comes from contrast, scale, and spatial tension—not from excessive gradients or effects. The interface should feel like a premium brand system for a company that moves between sky, field, and data.
+
+## Vayal Vimaani — Field Ceremony Direction
+
+This redesign uses Japanese agricultural editorial principles as a structural inspiration, adapted for Tamil Nadu farmers. It is not a literal Japanese theme: there will be no decorative Japanese characters or unfamiliar visual metaphors.
+
+The visual language will use rice-paper cream, tea green, deep indigo, restrained vermilion for primary actions, and harvest gold for small guidance moments. The layout will feel like a well-made field notebook: numbered service rows, fine rule lines, offset proof imagery, calm spacing, and direct actions.
+
+The experience must remain farmer-first. Every screen should make it immediately clear what Vayal Vimaani does, how to contact the team, and how to request a field visit. Typography, contrast, tap targets, Tamil support, and mobile menu behavior take priority over decorative style. Motion will be short, quiet, and optional under reduced-motion settings.
