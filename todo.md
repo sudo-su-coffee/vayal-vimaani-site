@@ -236,6 +236,12 @@
 
 ## Uploaded reference audit
 
+## Seamless website entry
+
+- [x] Disable automatic seasonal popup opening so the hero appears first on every visit.
+- [x] Preserve an intentional seasonal-offer entry point and verify mobile/desktop behavior.
+
+
 - [x] Extract and run the uploaded Vayal Vimaani reference project.
 - [x] Create public reference and current-site previews for comparison.
 - [x] Record useful content, image directions, and honest mobile/desktop ratings.

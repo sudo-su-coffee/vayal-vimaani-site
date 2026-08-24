@@ -32,7 +32,7 @@ const steps = [
 export default function Vayal() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [language, setLanguage] = useState<"en" | "ta">("en");
-  const [offerOpen, setOfferOpen] = useState(true);
+  const [offerOpen, setOfferOpen] = useState(false);
   const [offerIndex, setOfferIndex] = useState(0);
   const offer = seasonalOffers[offerIndex];
 
