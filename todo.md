@@ -210,6 +210,14 @@
 
 ## Full-page UX/UI audit and content refinement
 
+## Final conversion and Lighthouse pass
+
+- [x] Expand the booking contact cards into wider, clearly clickable tap targets with improved spacing.
+- [x] Apply safe performance and accessibility improvements that can raise Lighthouse scores.
+- [x] Verify mobile and desktop layouts, run final checks, and document honest score expectations.
+- [x] Consolidate the finished Vayal project on the main branch and mark the project complete.
+
+
 - [x] Audit the landing page at mobile and desktop widths, including navigation, sections, booking, and footer.
 - [x] Improve the booking intro and contact content so it feels concise and intentional on mobile.
 - [x] Apply any high-impact spacing, typography, contrast, and touch-target fixes found in the audit.
