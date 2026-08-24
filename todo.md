@@ -460,3 +460,10 @@
 - [x] Show the CEO controlling the operation while two or three agricultural drones work over crop rows.
 - [x] Integrate the visual, verify the crop on desktop/mobile, and run the final build.
 
+
+## Phone-focused app visual and blended About image
+
+- [x] Generate a CEO-focused phone booking visual for the app section with a soft field background.
+- [x] Generate a darker, naturally blended About visual with the CEO integrated into the agricultural setting.
+- [x] Change the About image from the tight square crop to a fuller responsive image treatment and verify the build.
+
