@@ -403,3 +403,11 @@
 - [x] Remove the related primary navigation reference while preserving the remaining page anchors.
 - [x] Recheck the content flow and build output after the removal.
 
+
+## Complete requested correction set
+
+- [x] Expand “From the village to the field plan” into a large image-led section with integrated overlay content.
+- [x] Remove the three visible service descriptions while retaining the service titles and numbering.
+- [x] Remove the standalone subsidy guidance/support block and its navigation item.
+- [x] Verify desktop and mobile presentation, then save and push the completed correction set.
+
