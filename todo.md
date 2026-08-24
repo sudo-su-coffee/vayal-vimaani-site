@@ -432,3 +432,10 @@
 - [x] Replace the inline placeholder marks in the Vayal app section with the official logos.
 - [x] Verify the asset treatment, buttons, and build output.
 
+
+## Right-side field-plan copy
+
+- [x] Move the field-plan label, heading, and supporting line to the right side of the services image.
+- [x] Keep the image focal area clean and maintain contrast on desktop and mobile.
+- [x] Verify the repositioned section and build output.
+
