@@ -248,6 +248,13 @@
 
 ## Content-flow reordering
 
+## Join as pilot routing
+
+- [x] Connect “Ask about pilot training” to a dedicated pilot-support destination.
+- [x] Connect “Book through the Vayal support team” to the appropriate pilot/support action without breaking farmer booking.
+- [x] Verify both routes and push the focused update.
+
+
 - [x] Reorder the landing sections into a clear farmer journey from discovery to support action.
 - [x] Align navigation/footer anchors with the reordered sections.
 - [x] Verify top-to-bottom scanning and responsive behavior before pushing.
