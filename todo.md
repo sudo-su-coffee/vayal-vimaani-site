@@ -224,6 +224,13 @@
 
 ## Festival popup and responsive test
 
+## Festival popup image enhancement
+
+- [x] Create a dedicated agricultural festival offer visual for the popup.
+- [x] Integrate the image without reducing offer-copy contrast or mobile usability.
+- [x] Re-test desktop/mobile popup behavior and finalize the visual update.
+
+
 - [x] Implement the missing festival-season offer popup before testing.
 
 - [x] Test the festival-season popup at mobile and desktop widths.
