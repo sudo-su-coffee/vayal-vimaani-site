@@ -173,3 +173,10 @@
 - [x] Fix the mobile menu with a solid visible background and safe overlay behavior.
 - [x] Add restrained image and section motion with reduced-motion support.
 - [x] Verify the standalone site, push the separate repository, and refresh the preview.
+
+## Footer and service visual refinement
+
+- [x] Simplify the footer structure and spacing for a cleaner mobile experience.
+- [x] Add clearer SVG-style visual markers to the three field service points.
+- [x] Add restrained service-card hover and entrance motion with reduced-motion support.
+- [x] Verify desktop/mobile layouts, run checks, and push the separate repository update.
