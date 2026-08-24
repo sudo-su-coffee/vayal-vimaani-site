@@ -194,3 +194,10 @@
 - [x] Recompose the landing page so the hero, services, and proof sections feel more distinctive while remaining immediately understandable.
 - [x] Apply the new direction consistently to navigation, booking, app, and footer sections.
 - [x] Verify accessibility, responsive behavior, performance, and the public preview.
+
+## Screenshot-driven mobile UX correction
+
+- [x] Restore a warmer green agricultural visual system and reduce the mobile footer height.
+- [x] Add a visual three-step “From your call to your crop” journey.
+- [x] Use proper inline SVG Google Play and Apple App Store marks with accessible labels.
+- [x] Complete responsive, keyboard, focus, contrast, and touch-target audit before pushing.
