@@ -479,3 +479,40 @@
 .vayal-about .vayal-photo-frame { min-height:0; height:auto; aspect-ratio:3 / 2; }
 .vayal-about .vayal-photo-frame img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
 @media (max-width:620px) { .vayal-about .vayal-photo-frame { aspect-ratio:3 / 2; } }
+
+/* BOOKING FIELD BACKDROP — use the village landscape as one continuous scene, with the field message and support destination suspended as a matched pair of paper panels. */
+.vayal-booking { position:relative; isolation:isolate; overflow:hidden; background:linear-gradient(90deg,rgba(16,46,40,.68),rgba(16,46,40,.35)),url('/manus-storage/reference-land_55d6cf0c.webp') center/cover; color:var(--v-deep); }
+.vayal-booking::before { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(245,242,232,.1),rgba(16,46,40,.38)); }
+.vayal-booking .vayal-container { position:relative; z-index:1; }
+.vayal-booking-grid { grid-template-columns:minmax(0,1fr) minmax(360px,.86fr); gap:clamp(2.25rem,5vw,5.5rem); align-items:start; }
+.vayal-booking-context { position:relative; padding:clamp(1.5rem,3.2vw,3.35rem); border:1px solid rgba(23,72,59,.22); background:rgba(245,242,232,.94); box-shadow:12px 16px 0 rgba(7,34,26,.22); }
+.vayal-booking-context::before, .vayal-booking-lead::before { content:''; position:absolute; top:-20px; left:2.5rem; width:1px; height:20px; background:#E1C982; box-shadow:0 0 0 4px rgba(225,201,130,.14); }
+.vayal-booking-context::after, .vayal-booking-lead::after { content:''; position:absolute; top:-23px; left:2.22rem; width:9px; height:4px; border:1px solid #E1C982; background:var(--v-deep); }
+.vayal-booking-context>h2, .vayal-booking-context>.vayal-kicker { position:relative; z-index:1; }
+.vayal-booking-context>h2 { color:var(--v-deep); }
+.vayal-booking-context>.vayal-kicker { color:var(--v-soil); }
+.vayal-booking-context>p { color:var(--v-muted); }
+.vayal-booking-context-visual { min-height:0; margin-top:2.25rem; border:0; background:transparent; box-shadow:none; }
+.vayal-booking-context-visual img, .vayal-booking-context-visual::after { display:none; }
+.vayal-booking-context-visual>div { position:relative; inset:auto; padding:1.25rem 1.35rem 1.4rem; border-right:3px solid #E1C982; background:var(--v-green); box-shadow:7px 7px 0 rgba(196,98,69,.2); }
+.vayal-booking-context-visual span { margin-bottom:.55rem; }
+.vayal-booking-context-visual strong { font-size:clamp(2rem,3.6vw,3.8rem); }
+.vayal-booking-context-visual small { color:rgba(255,255,255,.78); }
+.vayal-booking-lead { position:relative; padding-top:1.25rem; }
+.vayal-booking-lead .vayal-support-panel { position:relative; border-color:rgba(23,72,59,.2); background:rgba(245,242,232,.96); box-shadow:12px 16px 0 rgba(7,34,26,.22); }
+.vayal-booking-lead::before { left:auto; right:2.5rem; }
+.vayal-booking-lead::after { left:auto; right:2.22rem; }
+@media (max-width:900px) {
+  .vayal-booking { background-position:center; }
+  .vayal-booking-grid { grid-template-columns:1fr; gap:2rem; }
+  .vayal-booking-context { padding:1.5rem; }
+  .vayal-booking-lead { padding-top:0; }
+  .vayal-booking-context::before, .vayal-booking-context::after, .vayal-booking-lead::before, .vayal-booking-lead::after { display:none; }
+}
+@media (max-width:620px) {
+  .vayal-booking { background-position:58% center; }
+  .vayal-booking-context { padding:1.25rem; box-shadow:7px 9px 0 rgba(7,34,26,.2); }
+  .vayal-booking-context-visual { margin-top:1.5rem; }
+  .vayal-booking-context-visual>div { padding:1rem 1rem 1.1rem; box-shadow:5px 5px 0 rgba(196,98,69,.18); }
+  .vayal-booking-lead .vayal-support-panel { box-shadow:7px 9px 0 rgba(7,34,26,.2); }
+}

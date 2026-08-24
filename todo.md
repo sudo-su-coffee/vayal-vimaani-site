@@ -474,3 +474,10 @@
 - [x] Edit the About image to preserve a complete full-frame composition through the bottom edge.
 - [x] Integrate both edited assets, verify the site image treatment, and run the final build.
 
+
+## Full-background booking section with coordinated hanging panels
+
+- [x] Promote the village-field image to the background of the entire final booking section.
+- [x] Make the left field message and right support panel read as coordinated floating hanging panels.
+- [x] Preserve clear actions, responsive stacking, contrast, and verify the final build.
+
