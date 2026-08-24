@@ -226,6 +226,13 @@
 
 ## Festival popup image enhancement
 
+## Multi-season offer campaign
+
+- [x] Create Pongal, Tamil New Year, and general festive agricultural visuals with no baked-in offer text.
+- [x] Integrate the visuals into an accessible swipe/click seasonal popup with one clear support action.
+- [x] Verify mobile/desktop composition, close behavior, contrast, and final build before merging to main.
+
+
 - [x] Create a dedicated agricultural festival offer visual for the popup.
 - [x] Integrate the image without reducing offer-copy contrast or mobile usability.
 - [x] Re-test desktop/mobile popup behavior and finalize the visual update.

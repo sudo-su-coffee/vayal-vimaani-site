@@ -11,6 +11,12 @@ const APP_IMAGE = "/manus-storage/vayal-app-spray_b1e3338e.jpg";
 const BOOKING_IMAGE = "/manus-storage/vayal-booking-journey_8ba9e6b6.png";
 const FESTIVAL_IMAGE = "/manus-storage/vayal-festival-offer_6247d92f.png";
 
+const seasonalOffers = [
+  { label: "Pongal season / Field offer", title: ["Harvest less cost.", "More care for every field."], copy: "During the Pongal season, ask the Vayal support team about the current reduced booking price for your next crop-spraying visit.", image: "/manus-storage/vayal-pongal-offer_a374831a.png", alt: "Pongal harvest details beside a green rice field with a drone in the distance" },
+  { label: "Tamil New Year / Fresh crop cycle", title: ["Start the season.", "Plan the field well."], copy: "For a fresh crop cycle, share your field details with the Vayal support team and ask about the current seasonal booking offer.", image: "/manus-storage/vayal-tamil-new-year-offer_e0abad56.png", alt: "Tamil New Year field preparation beside a green crop field with a drone in the distance" },
+  { label: "Festival season / Field offer", title: ["A little less cost.", "A lot more field."], copy: "Book your next crop-spraying visit through the Vayal support team and ask about the current reduced booking price for your crop and location.", image: FESTIVAL_IMAGE, alt: "Agricultural drone flying above a green crop field while a farmer checks a booking phone" },
+];
+
 const services = [
   { number: "01", title: "Crop spraying", text: "Drone-based application support for pesticides, nutrients, and crop-care windows." },
   { number: "02", title: "Field work", text: "Practical aerial support for farms, plots, mapping, and everyday field operations." },
@@ -27,6 +33,8 @@ export default function Vayal() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [language, setLanguage] = useState<"en" | "ta">("en");
   const [offerOpen, setOfferOpen] = useState(true);
+  const [offerIndex, setOfferIndex] = useState(0);
+  const offer = seasonalOffers[offerIndex];
 
   useEffect(() => {
     if (!offerOpen) return;
@@ -69,7 +77,7 @@ export default function Vayal() {
         </div>
       </header>
 
-      {offerOpen && <div className="vayal-offer-backdrop" role="presentation" onMouseDown={(event) => { if (event.currentTarget === event.target) setOfferOpen(false); }}><section className="vayal-offer" role="dialog" aria-modal="true" aria-labelledby="vayal-offer-title" aria-describedby="vayal-offer-copy"><button className="vayal-offer-close" type="button" onClick={() => setOfferOpen(false)} aria-label="Close seasonal offer"><X size={20} /></button><div className="vayal-offer-mark"><Sprout size={22} /></div><div className="vayal-offer-image"><img src={FESTIVAL_IMAGE} alt="Agricultural drone flying above a green crop field while a farmer checks a booking phone" fetchPriority="high" decoding="async" /></div><div className="vayal-kicker">Festival season / Field offer</div><h2 id="vayal-offer-title">A little less cost.<br /><em>A lot more field.</em></h2><p id="vayal-offer-copy">Book your next crop-spraying visit through the Vayal support team during this festival season and ask about the current reduced booking price.</p><div className="vayal-offer-note"><ShieldCheck size={16} /><span>Offer details are confirmed by the support team for your crop and location.</span></div><a className="vayal-button vayal-button-primary vayal-offer-cta" href="#booking" onClick={() => setOfferOpen(false)}>Ask about this offer <ArrowRight size={17} /></a><button className="vayal-offer-dismiss" type="button" onClick={() => setOfferOpen(false)}>Continue to the site</button></section></div>}
+      {offerOpen && <div className="vayal-offer-backdrop" role="presentation" onMouseDown={(event) => { if (event.currentTarget === event.target) setOfferOpen(false); }}><section className="vayal-offer" role="dialog" aria-modal="true" aria-labelledby="vayal-offer-title" aria-describedby="vayal-offer-copy"><button className="vayal-offer-close" type="button" onClick={() => setOfferOpen(false)} aria-label="Close seasonal offer"><X size={20} /></button><div className="vayal-offer-mark"><Sprout size={22} /></div><div className="vayal-offer-image"><img src={offer.image} alt={offer.alt} fetchPriority="high" decoding="async" /></div><div className="vayal-kicker">{offer.label}</div><h2 id="vayal-offer-title">{offer.title[0]}<br /><em>{offer.title[1]}</em></h2><p id="vayal-offer-copy">{offer.copy}</p><div className="vayal-offer-note"><ShieldCheck size={16} /><span>Offer details are confirmed by the support team for your crop and location.</span></div><div className="vayal-offer-dots" aria-label="Choose a seasonal offer">{seasonalOffers.map((item, index) => <button key={item.label} type="button" className={index === offerIndex ? "is-active" : ""} aria-label={`Show ${item.label}`} aria-pressed={index === offerIndex} onClick={() => setOfferIndex(index)}><span>{String(index + 1).padStart(2, "0")}</span></button>)}</div><a className="vayal-button vayal-button-primary vayal-offer-cta" href="#booking" onClick={() => setOfferOpen(false)}>Ask about this offer <ArrowRight size={17} /></a><button className="vayal-offer-dismiss" type="button" onClick={() => setOfferOpen(false)}>Continue to the site</button></section></div>}
 
       <main id="main-content">
         <section id="top" className="vayal-hero">
