@@ -230,6 +230,12 @@
 
 ## Full seasonal image preview
 
+## Neutral seasonal image frame
+
+- [x] Remove the visible green side bands caused by the contain framing.
+- [x] Match the image frame to the popup surface and verify the full composition on mobile and desktop.
+
+
 - [x] Change the popup image frame from cropped cover to a complete responsive image preview.
 - [x] Verify all seasonal images remain visible on mobile and desktop, then finalize the patch.
 
