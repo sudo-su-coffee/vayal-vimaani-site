@@ -218,6 +218,13 @@
 
 ## Remove duplicate support card
 
+## Revert card/contact action change
+
+- [x] Restore the upper support/app card that was removed in the last patch.
+- [x] Remove the Call, WhatsApp, and Email cards from the booking section only.
+- [x] Verify the separate lower Support Desk card remains and push the corrected reversal.
+
+
 - [x] Remove the marked circular Support Desk 03 card from the booking section only.
 - [x] Verify the lower support guidance card and surrounding contact actions remain unchanged.
 
