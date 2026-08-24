@@ -439,3 +439,17 @@
 - [x] Keep the image focal area clean and maintain contrast on desktop and mobile.
 - [x] Verify the repositioned section and build output.
 
+
+## CEO portrait in pilot pathway
+
+- [x] Use the already supplied CEO portrait in place of the generic pilot image.
+- [x] Preserve responsive crop, contrast, and accessible alternative text.
+- [x] Verify the updated portrait and build output.
+
+
+## CEO-referenced About and field-plan visuals
+
+- [x] Generate a distinct CEO-in-field image for “Bringing the sky to your vayal.”
+- [x] Generate a distinct CEO field-planning image for “One clear plan for every field.”
+- [x] Integrate both visuals, verify responsive crops, and run the final build.
+
