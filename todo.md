@@ -244,6 +244,14 @@
 
 ## Dedicated three-step process section
 
+## Holistic process UI refinement
+
+- [x] Rework the process section to match the strongest visual language used elsewhere on the site.
+- [x] Improve card hierarchy, image treatment, spacing, transitions, and mobile scanability.
+- [x] Audit surrounding sections for inconsistent theme/UI details and correct high-impact issues.
+- [x] Verify the full site on mobile and desktop, record honest ratings, and push the update.
+
+
 - [x] Separate the 01/02/03 process from the surrounding content into its own clear section.
 - [x] Build larger step cards with the supplied copy and supporting image for each step.
 - [x] Verify mobile/desktop spacing, scanability, contrast, and push the update.
