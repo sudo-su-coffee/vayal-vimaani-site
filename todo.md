@@ -242,6 +242,13 @@
 
 ## Booking composition and collaboration strip
 
+## Dedicated three-step process section
+
+- [x] Separate the 01/02/03 process from the surrounding content into its own clear section.
+- [x] Build larger step cards with the supplied copy and supporting image for each step.
+- [x] Verify mobile/desktop spacing, scanability, contrast, and push the update.
+
+
 - [x] Add a purposeful field/village visual to the left side of the booking section.
 - [x] Move the support card into a balanced right-side column on desktop.
 - [x] Add an approved collaboration-logo strip inspired by the reference site.
