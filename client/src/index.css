@@ -533,3 +533,14 @@
 .vayal-booking::before { background:linear-gradient(180deg,rgba(16,46,40,.16),rgba(16,46,40,.48)); }
 @media (max-width:900px) { .vayal-app .vayal-app-image { min-height:380px; height:380px; } }
 @media (max-width:620px) { .vayal-app .vayal-app-image { min-height:320px; height:320px; } }
+
+/* LIGHTER BOOKING SCENE — let the field map breathe through the backdrop while the opaque panels carry the text contrast. */
+.vayal-booking { background:linear-gradient(90deg,rgba(16,46,40,.58),rgba(16,46,40,.26)),url('/manus-storage/reference-land_55d6cf0c.webp') center/cover; }
+.vayal-booking::before { background:linear-gradient(180deg,rgba(247,245,237,.04),rgba(16,46,40,.24)); }
+
+/* NARROWER SUPPORT CARD — keep the upper-right connection panel compact so the field backdrop has more air around it. */
+@media (min-width:901px) {
+  .vayal-booking-grid { grid-template-columns:minmax(0,1fr) minmax(320px,440px); }
+  .vayal-booking-lead { display:flex; justify-content:flex-end; }
+  .vayal-booking-lead .vayal-support-panel { width:100%; max-width:440px; }
+}

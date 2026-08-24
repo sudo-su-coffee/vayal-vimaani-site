@@ -503,3 +503,17 @@
 - [x] Reduce the brightness of the final booking-section background while keeping the support card readable.
 - [x] Verify desktop/mobile proportions and build output.
 
+
+## Lighter booking field background
+
+- [ ] Reduce the dark green overlay over the booking-section field image.
+- [ ] Keep the background visible without losing readable contrast for the hanging panels.
+- [ ] Verify the updated background and build output.
+
+
+## Narrower booking support card
+
+- [x] Reduce the desktop width of the upper-right support card.
+- [x] Keep action labels and tap targets readable, with mobile width unchanged.
+- [x] Verify the refined card and build output.
+
