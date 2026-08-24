@@ -481,3 +481,17 @@
 - [x] Make the left field message and right support panel read as coordinated floating hanging panels.
 - [x] Preserve clear actions, responsive stacking, contrast, and verify the final build.
 
+
+## Relocate field-plan copy away from the image subject
+
+- [ ] Move the field-plan label, heading, and supporting line to the opposite side of the services image.
+- [ ] Shift the contrast gradient with the copy so the primary image subject stays clear.
+- [ ] Verify desktop/mobile positioning and the production build.
+
+
+## Keep only the booking support card
+
+- [x] Remove the `FIELD NOTE / 05` visual card and its field-plan copy from the final booking section.
+- [x] Let the field background remain visible and keep only the support connection/action card.
+- [x] Rebalance the section on desktop/mobile and verify the build.
+
