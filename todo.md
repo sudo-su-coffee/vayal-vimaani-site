@@ -389,3 +389,17 @@
 - [x] Add a visual three-step “From your call to your crop” journey.
 - [x] Use proper inline SVG Google Play and Apple App Store marks with accessible labels.
 - [x] Complete responsive, keyboard, focus, contrast, and touch-target audit before pushing.
+
+## Larger image-led services transition revision
+
+- [ ] Replace the small field-plan card with a larger image-led composition matching the supplied visual direction.
+- [ ] Keep the section heading and supporting copy visually integrated above or over the image without reducing contrast.
+- [ ] Recheck desktop and mobile spacing, crop, and readability before finalizing.
+
+
+## Remove unnecessary subsidy guidance section
+
+- [x] Remove the subsidy guidance section and its support-card copy from the landing page.
+- [x] Remove the related primary navigation reference while preserving the remaining page anchors.
+- [x] Recheck the content flow and build output after the removal.
+
