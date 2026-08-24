@@ -467,3 +467,10 @@
 - [x] Generate a darker, naturally blended About visual with the CEO integrated into the agricultural setting.
 - [x] Change the About image from the tight square crop to a fuller responsive image treatment and verify the build.
 
+
+## Sharp drone-operation and full-frame About edits
+
+- [x] Edit the field-operation image so the CEO blends naturally, looks toward the flying drone, and the drone stays sharp rather than blurred.
+- [x] Edit the About image to preserve a complete full-frame composition through the bottom edge.
+- [x] Integrate both edited assets, verify the site image treatment, and run the final build.
+
