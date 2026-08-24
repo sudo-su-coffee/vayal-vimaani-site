@@ -458,3 +458,13 @@
 .vayal-services .vayal-service-bridge-copy small { display:block; max-width:380px; margin-top:.7rem; color:rgba(255,255,255,.8); font-size:13px; line-height:1.5; }
 @media (max-width:900px) { .vayal-services .vayal-service-bridge { min-height:520px; margin-top:2rem; } .vayal-services .vayal-service-bridge-image::after { background:linear-gradient(0deg,rgba(12,54,42,.88),rgba(12,54,42,.16) 72%),linear-gradient(90deg,rgba(12,54,42,.25),transparent); } .vayal-services .vayal-service-bridge-copy { left:1.25rem; right:1.25rem; bottom:1.5rem; max-width:470px; padding:1.15rem 1.25rem 1.25rem; } }
 @media (max-width:620px) { .vayal-services .vayal-service-bridge { min-height:455px; margin-top:1.5rem; } .vayal-services .vayal-service-bridge-copy { left:1rem; right:1rem; bottom:1rem; padding:1rem 1rem 1.1rem; } .vayal-services .vayal-service-bridge-copy strong { font-size:clamp(2.35rem,13vw,3.8rem); } .vayal-services .vayal-service-bridge-copy small { margin-top:.6rem; font-size:11px; } }
+/* CONTENT CLEANUP — with the intro removed, the image begins the section without an orphaned block of empty padding. */
+.vayal-services { padding-top:0; padding-bottom:0; }
+.vayal-services .vayal-service-bridge { margin-top:0; margin-bottom:0; }
+/* COLUMN RHYTHM REFINEMENT — bring paired content closer so each image and copy block reads as one composition rather than two distant islands. */
+@media (min-width:901px) { .vayal-two-col { column-gap:3.25rem; } .vayal-app-grid { column-gap:3.25rem; } .vayal-booking-grid { column-gap:3rem; } .vayal-section-intro { column-gap:3rem; } }
+/* OFFICIAL STORE BADGES — keep the reference project’s real SVG badges legible and balanced inside generous tap targets. */
+.vayal-store-placeholder { align-items:center; gap:.75rem; }
+.vayal-store-placeholder a { display:flex; align-items:center; justify-content:center; min-height:56px; padding:.35rem .45rem; overflow:hidden; }
+.vayal-store-placeholder a img { display:block; height:auto; max-width:100%; object-fit:contain; } .vayal-store-placeholder a:first-child img { width:180px; } .vayal-store-placeholder a:last-child img { width:135px; }
+@media (max-width:620px) { .vayal-store-placeholder { display:grid; grid-template-columns:1fr 1fr; width:100%; max-width:390px; } .vayal-store-placeholder a { width:100%; min-height:54px; padding:.25rem .35rem; } .vayal-store-placeholder a:first-child img { width:min(180px,100%); height:auto; max-height:54px; } .vayal-store-placeholder a:last-child img { width:min(135px,100%); height:auto; max-height:54px; } }

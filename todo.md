@@ -411,3 +411,24 @@
 - [x] Remove the standalone subsidy guidance/support block and its navigation item.
 - [x] Verify desktop and mobile presentation, then save and push the completed correction set.
 
+
+## Remove redundant services intro copy
+
+- [ ] Remove the “Useful in the field. Easy to begin.” heading and supporting paragraph.
+- [ ] Keep the large field-plan image and overlay as the visual lead, with balanced spacing.
+- [ ] Verify the revised section and production build.
+
+
+## Tighter column spacing refinement
+
+- [ ] Reduce excessive desktop gaps between paired columns across about, app, pilot, and booking sections.
+- [ ] Preserve readable content widths and intentional mobile stacking.
+- [ ] Verify the revised spacing and build output.
+
+
+## Official app-store SVG logo replacement
+
+- [x] Locate and inspect the Google Play and App Store SVG assets from the supplied reference ZIP.
+- [x] Replace the inline placeholder marks in the Vayal app section with the official logos.
+- [x] Verify the asset treatment, buttons, and build output.
+
