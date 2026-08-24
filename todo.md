@@ -232,6 +232,13 @@
 
 ## Neutral seasonal image frame
 
+## Final repository closure
+
+- [ ] Confirm the local working tree and final commit are clean.
+- [ ] Confirm remote `main` is synchronized and the preview responds.
+- [ ] Deliver final repository and preview confirmation.
+
+
 - [x] Remove the visible green side bands caused by the contain framing.
 - [x] Match the image frame to the popup surface and verify the full composition on mobile and desktop.
 
