@@ -228,6 +228,12 @@
 
 ## Multi-season offer campaign
 
+## Full seasonal image preview
+
+- [x] Change the popup image frame from cropped cover to a complete responsive image preview.
+- [x] Verify all seasonal images remain visible on mobile and desktop, then finalize the patch.
+
+
 - [x] Create Pongal, Tamil New Year, and general festive agricultural visuals with no baked-in offer text.
 - [x] Integrate the visuals into an accessible swipe/click seasonal popup with one clear support action.
 - [x] Verify mobile/desktop composition, close behavior, contrast, and final build before merging to main.
