@@ -240,6 +240,14 @@
 
 ## Reference content integration
 
+## Booking composition and collaboration strip
+
+- [x] Add a purposeful field/village visual to the left side of the booking section.
+- [x] Move the support card into a balanced right-side column on desktop.
+- [x] Add an approved collaboration-logo strip inspired by the reference site.
+- [x] Verify mobile stacking, spacing, contrast, and push the layout update.
+
+
 - [x] Add the reference-inspired 3-step process with selected process imagery.
 - [x] Expand the About section using verified reference content and appropriate existing imagery.
 - [x] Add the “Farm in Your Pocket” app section with proper Google Play and App Store badges.
