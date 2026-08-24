@@ -474,10 +474,3 @@
 - [x] Edit the About image to preserve a complete full-frame composition through the bottom edge.
 - [x] Integrate both edited assets, verify the site image treatment, and run the final build.
 
-
-## Full-background field plan with hanging billboard card
-
-- [x] Make “From the village to the field plan” use the image as the full section background.
-- [x] Reposition the copy into a hanging billboard-style card near the upper-right of the same image.
-- [x] Add responsive mobile behavior and verify the updated build.
-
