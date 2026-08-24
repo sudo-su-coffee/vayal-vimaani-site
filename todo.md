@@ -160,7 +160,16 @@
 
 ## Standalone Vayal project correction
 
-- [ ] Create Vayal Vimaani as a separate project directory, not just a route inside Raphael Drones.
-- [ ] Keep the existing Raphael Drones project and repository unchanged by the separation work.
-- [ ] Remove Raphael-only navigation, copy, and asset coupling from the standalone Vayal site.
-- [ ] Verify the standalone project independently and create a separate private GitHub repository.
+- [x] Create Vayal Vimaani as a separate project directory, not just a route inside Raphael Drones.
+- [x] Keep the existing Raphael Drones project and repository unchanged by the separation work.
+- [x] Remove Raphael-only navigation, copy, and asset coupling from the standalone Vayal site.
+- [x] Verify the standalone project independently and create a separate private GitHub repository.
+
+## Standalone Vayal visual polish
+
+- [x] Replace emoji/text-only visual marks with clean inline SVG-style icons.
+- [x] Add more friendly farming and drone visuals without adding a carousel.
+- [x] Reduce text density and make visual cards carry more of the story.
+- [x] Fix the mobile menu with a solid visible background and safe overlay behavior.
+- [x] Add restrained image and section motion with reduced-motion support.
+- [x] Verify the standalone site, push the separate repository, and refresh the preview.
