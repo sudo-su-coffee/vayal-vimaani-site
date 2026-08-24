@@ -453,3 +453,10 @@
 - [x] Generate a distinct CEO field-planning image for “One clear plan for every field.”
 - [x] Integrate both visuals, verify responsive crops, and run the final build.
 
+
+## CEO multi-drone pilot promotion visual
+
+- [x] Generate a distinct promotional image for “Take your skills to the field.”
+- [x] Show the CEO controlling the operation while two or three agricultural drones work over crop rows.
+- [x] Integrate the visual, verify the crop on desktop/mobile, and run the final build.
+

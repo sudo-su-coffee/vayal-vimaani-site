@@ -471,3 +471,6 @@
 /* RIGHT-SIDE FIELD PLAN — keep the visual subject open on the left and let the planning message sit on the quieter right side. */
 @media (min-width:901px) { .vayal-services .vayal-service-bridge-image::after { background:linear-gradient(270deg,rgba(12,54,42,.84),rgba(12,54,42,.38) 44%,rgba(12,54,42,.08) 82%),linear-gradient(0deg,rgba(12,54,42,.58),transparent 48%); } .vayal-services .vayal-service-bridge-copy { left:auto; right:clamp(1.25rem,8vw,8rem); border-left:0; border-right:3px solid #E1C982; } }
 @media (max-width:900px) { .vayal-services .vayal-service-bridge-copy { text-align:left; } }
+
+/* PILOT PROMOTION VISUAL — keep the CEO’s controller action in the left-third while retaining the multi-drone field depth on the right. */
+.vayal-pilot .vayal-photo-frame img { object-position:42% center; }
