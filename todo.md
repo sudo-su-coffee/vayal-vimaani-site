@@ -206,6 +206,14 @@
 
 ## Immersive booking journey
 
+## Farmer-first booking form redesign
+
+- [x] Rework the booking form into a clearer, reassuring request flow.
+- [x] Improve field grouping, labels, choices, and mobile input sizing.
+- [x] Add a useful after-submit explanation and success state.
+- [x] Verify keyboard, validation, responsive behavior, and push the finished form.
+
+
 - [x] Remove the call-number link from the “From your call to your crop” section.
 - [x] Add one field-booking visual that shows selecting the field, planning the visit, and completing the drone service.
 - [x] Connect the visual to the three practical steps with an accessible path and responsive layout.
