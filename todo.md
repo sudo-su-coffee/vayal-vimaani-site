@@ -208,6 +208,14 @@
 
 ## Farmer-first booking form redesign
 
+## Full-page UX/UI audit and content refinement
+
+- [x] Audit the landing page at mobile and desktop widths, including navigation, sections, booking, and footer.
+- [x] Improve the booking intro and contact content so it feels concise and intentional on mobile.
+- [x] Apply any high-impact spacing, typography, contrast, and touch-target fixes found in the audit.
+- [x] Re-verify the page and record mobile/desktop ratings before pushing.
+
+
 - [x] Rework the booking form into a clearer, reassuring request flow.
 - [x] Improve field grouping, labels, choices, and mobile input sizing.
 - [x] Add a useful after-submit explanation and success state.
