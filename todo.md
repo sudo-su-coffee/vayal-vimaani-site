@@ -216,6 +216,12 @@
 
 ## Support-led app booking handoff
 
+## Remove duplicate support card
+
+- [x] Remove the marked circular Support Desk 03 card from the booking section only.
+- [x] Verify the lower support guidance card and surrounding contact actions remain unchanged.
+
+
 - [x] Remove the website booking form and its submit interaction.
 - [x] Replace it with support/app booking actions using clear SVG-style icon markers.
 - [x] Keep phone, WhatsApp, and future official app links as wide accessible tap targets.
