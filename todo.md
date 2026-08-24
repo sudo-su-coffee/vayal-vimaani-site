@@ -197,6 +197,12 @@
 
 ## Screenshot-driven mobile UX correction
 
+## Support desk marker correction
+
+- [x] Give the Support Desk / 03 marker a clear green background and readable contrasting text/icon.
+- [x] Verify the marker on mobile and desktop, then push the focused patch.
+
+
 - [x] Restore a warmer green agricultural visual system and reduce the mobile footer height.
 - [x] Add a visual three-step “From your call to your crop” journey.
 - [x] Use proper inline SVG Google Play and Apple App Store marks with accessible labels.
