@@ -234,6 +234,13 @@
 
 ## Final repository closure
 
+## Uploaded reference audit
+
+- [x] Extract and run the uploaded Vayal Vimaani reference project.
+- [x] Create public reference and current-site previews for comparison.
+- [x] Record useful content, image directions, and honest mobile/desktop ratings.
+
+
 - [x] Confirm the local working tree and final commit are clean.
 - [x] Confirm remote `main` is synchronized and the preview responds.
 - [x] Deliver final repository and preview confirmation.
