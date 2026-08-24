@@ -238,6 +238,15 @@
 
 ## Seamless website entry
 
+## Reference content integration
+
+- [x] Add the reference-inspired 3-step process with selected process imagery.
+- [x] Expand the About section using verified reference content and appropriate existing imagery.
+- [x] Add the “Farm in Your Pocket” app section with proper Google Play and App Store badges.
+- [x] Add a Join as Pilot section using reference content with clear eligibility/support wording.
+- [x] Audit the merged site on mobile and desktop, then push the completed update to `main`.
+
+
 - [x] Disable automatic seasonal popup opening so the hero appears first on every visit.
 - [x] Preserve an intentional seasonal-offer entry point and verify mobile/desktop behavior.
 
