@@ -1,6 +1,6 @@
 /* STYLE REMINDER — Vayal Vimaani: farmer-first, optimistic, practical, readable, and warm. Use field green, soil terracotta, harvest gold, cream surfaces, clear CTAs, and accessible motion. */
 import { ArrowRight, Check, ChevronDown, Leaf, MapPinned, Menu, MessageCircle, Phone, ShieldCheck, Sprout, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const VAYAL_LOGO = "/manus-storage/vayal-vimaani-logo_a1343ffe.webp";
@@ -25,6 +25,15 @@ const steps = [
 export default function Vayal() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [language, setLanguage] = useState<"en" | "ta">("en");
+  const [offerOpen, setOfferOpen] = useState(true);
+
+  useEffect(() => {
+    if (!offerOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => { if (event.key === "Escape") setOfferOpen(false); };
+    document.addEventListener("keydown", closeOnEscape);
+    document.body.style.overflow = "hidden";
+    return () => { document.removeEventListener("keydown", closeOnEscape); document.body.style.overflow = ""; };
+  }, [offerOpen]);
 
   const copy = language === "ta" ? {
     eyebrow: "விவசாயிகளுக்கான ட்ரோன் சேவை",
@@ -58,6 +67,8 @@ export default function Vayal() {
           </div>
         </div>
       </header>
+
+      {offerOpen && <div className="vayal-offer-backdrop" role="presentation" onMouseDown={(event) => { if (event.currentTarget === event.target) setOfferOpen(false); }}><section className="vayal-offer" role="dialog" aria-modal="true" aria-labelledby="vayal-offer-title" aria-describedby="vayal-offer-copy"><button className="vayal-offer-close" type="button" onClick={() => setOfferOpen(false)} aria-label="Close seasonal offer"><X size={20} /></button><div className="vayal-offer-mark"><Sprout size={22} /></div><div className="vayal-kicker">Festival season / Field offer</div><h2 id="vayal-offer-title">A little less cost.<br /><em>A lot more field.</em></h2><p id="vayal-offer-copy">Book your next crop-spraying visit through the Vayal support team during this festival season and ask about the current reduced booking price.</p><div className="vayal-offer-note"><ShieldCheck size={16} /><span>Offer details are confirmed by the support team for your crop and location.</span></div><a className="vayal-button vayal-button-primary vayal-offer-cta" href="#booking" onClick={() => setOfferOpen(false)}>Ask about this offer <ArrowRight size={17} /></a><button className="vayal-offer-dismiss" type="button" onClick={() => setOfferOpen(false)}>Continue to the site</button></section></div>}
 
       <main id="main-content">
         <section id="top" className="vayal-hero">

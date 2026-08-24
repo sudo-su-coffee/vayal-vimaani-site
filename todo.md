@@ -220,6 +220,22 @@
 
 ## Revert card/contact action change
 
+## Final seasonal offer pop-up
+
+## Festival popup and responsive test
+
+- [x] Implement the missing festival-season offer popup before testing.
+
+- [x] Test the festival-season popup at mobile and desktop widths.
+- [x] Verify close button, Escape behavior, contrast, viewport fit, and focus handling.
+- [x] Verify the underlying responsive page remains usable after dismissal and document results.
+
+
+- [x] Audit the current responsive experience and record any final issues worth addressing.
+- [x] Add one clearly labelled sample festival-season offer pop-up with accessible close behavior.
+- [x] Verify desktop/mobile presentation, keyboard behavior, and final build before completion.
+
+
 - [x] Restore the upper support/app card that was removed in the last patch.
 - [x] Remove the Call, WhatsApp, and Email cards from the booking section only.
 - [x] Verify the separate lower Support Desk card remains and push the corrected reversal.
