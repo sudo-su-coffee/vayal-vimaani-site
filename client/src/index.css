@@ -516,3 +516,9 @@
   .vayal-booking-context-visual>div { padding:1rem 1rem 1.1rem; box-shadow:5px 5px 0 rgba(196,98,69,.18); }
   .vayal-booking-lead .vayal-support-panel { box-shadow:7px 9px 0 rgba(7,34,26,.2); }
 }
+
+/* LEFT-SIDE FIELD PLAN — keep the field-plan message on the quieter opposite side so it does not cover the image subject or drone activity. */
+@media (min-width:901px) {
+  .vayal-services .vayal-service-bridge-image::after { background:linear-gradient(90deg,rgba(12,54,42,.84),rgba(12,54,42,.38) 44%,rgba(12,54,42,.08) 82%),linear-gradient(0deg,rgba(12,54,42,.58),transparent 48%); }
+  .vayal-services .vayal-service-bridge-copy { right:auto; left:clamp(1.25rem,8vw,8rem); border-right:0; border-left:3px solid #E1C982; }
+}
