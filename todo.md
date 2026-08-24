@@ -212,6 +212,22 @@
 
 ## Final conversion and Lighthouse pass
 
+## Mobile app integration
+
+## Support-led app booking handoff
+
+- [x] Remove the website booking form and its submit interaction.
+- [x] Replace it with support/app booking actions using clear SVG-style icon markers.
+- [x] Keep phone, WhatsApp, and future official app links as wide accessible tap targets.
+- [x] Verify responsive layout and push the update to the main branch.
+
+
+- [ ] Confirm the official Android package/store URL and iOS App Store URL, if available.
+- [ ] Confirm whether the app supports a deep link or booking API handoff.
+- [ ] Wire verified app links and a safe web fallback without inventing production endpoints.
+- [ ] Test the handoff on mobile and desktop and push the integration update.
+
+
 - [x] Expand the booking contact cards into wider, clearly clickable tap targets with improved spacing.
 - [x] Apply safe performance and accessibility improvements that can raise Lighthouse scores.
 - [x] Verify mobile and desktop layouts, run final checks, and document honest score expectations.
