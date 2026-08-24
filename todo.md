@@ -246,6 +246,13 @@
 
 ## Holistic process UI refinement
 
+## Content-flow reordering
+
+- [x] Reorder the landing sections into a clear farmer journey from discovery to support action.
+- [x] Align navigation/footer anchors with the reordered sections.
+- [x] Verify top-to-bottom scanning and responsive behavior before pushing.
+
+
 - [x] Rework the process section to match the strongest visual language used elsewhere on the site.
 - [x] Improve card hierarchy, image treatment, spacing, transitions, and mobile scanability.
 - [x] Audit surrounding sections for inconsistent theme/UI details and correct high-impact issues.
