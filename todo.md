@@ -250,6 +250,14 @@
 
 ## Join as pilot routing
 
+## App-before-process flow and final UX review
+
+- [x] Move “The farm in your pocket” before the 01/02/03 process section.
+- [x] Add a purposeful image/transition before the services 03 area so the page does not feel empty.
+- [x] Audit the full page for hierarchy, spacing, contrast, responsive behavior, and action clarity.
+- [x] Verify mobile/desktop flow and push the completed update.
+
+
 - [x] Connect “Ask about pilot training” to a dedicated pilot-support destination.
 - [x] Connect “Book through the Vayal support team” to the appropriate pilot/support action without breaking farmer booking.
 - [x] Verify both routes and push the focused update.
