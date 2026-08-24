@@ -180,3 +180,10 @@
 - [x] Add clearer SVG-style visual markers to the three field service points.
 - [x] Add restrained service-card hover and entrance motion with reduced-motion support.
 - [x] Verify desktop/mobile layouts, run checks, and push the separate repository update.
+
+## Mobile preview inspection and performance pass
+
+- [x] Inspect the mobile menu in the running preview and document the concrete issue.
+- [ ] Optimize landing-page loading cost and responsive behavior.
+- [x] Fix the mobile-menu issue and re-check touch layout.
+- [x] Expose the refreshed preview publicly and report the preview URL.
