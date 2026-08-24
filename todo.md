@@ -495,3 +495,11 @@
 - [x] Let the field background remain visible and keep only the support connection/action card.
 - [x] Rebalance the section on desktop/mobile and verify the build.
 
+
+## Larger About/app visuals and softer booking background
+
+- [x] Make the About image larger beside the existing About content without changing the copy.
+- [x] Make the app image larger and more visually prominent beside the existing app content and store badges.
+- [x] Reduce the brightness of the final booking-section background while keeping the support card readable.
+- [x] Verify desktop/mobile proportions and build output.
+

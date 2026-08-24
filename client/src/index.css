@@ -522,3 +522,14 @@
   .vayal-services .vayal-service-bridge-image::after { background:linear-gradient(90deg,rgba(12,54,42,.84),rgba(12,54,42,.38) 44%,rgba(12,54,42,.08) 82%),linear-gradient(0deg,rgba(12,54,42,.58),transparent 48%); }
   .vayal-services .vayal-service-bridge-copy { right:auto; left:clamp(1.25rem,8vw,8rem); border-right:0; border-left:3px solid #E1C982; }
 }
+
+/* VISUAL WEIGHT REFINEMENT — give the About and app photographs more presence while keeping the final booking scene calm behind its support panel. */
+@media (min-width:901px) {
+  .vayal-about .vayal-two-col, .vayal-app .vayal-app-grid { grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr); column-gap:clamp(2rem,3.5vw,4rem); }
+  .vayal-about .vayal-photo-frame { width:100%; }
+  .vayal-app .vayal-app-image { min-height:500px; height:500px; }
+}
+.vayal-booking { background:linear-gradient(90deg,rgba(16,46,40,.8),rgba(16,46,40,.52)),url('/manus-storage/reference-land_55d6cf0c.webp') center/cover; }
+.vayal-booking::before { background:linear-gradient(180deg,rgba(16,46,40,.16),rgba(16,46,40,.48)); }
+@media (max-width:900px) { .vayal-app .vayal-app-image { min-height:380px; height:380px; } }
+@media (max-width:620px) { .vayal-app .vayal-app-image { min-height:320px; height:320px; } }
