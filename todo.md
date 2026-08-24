@@ -204,6 +204,14 @@
 
 ## Support Desk card text contrast correction
 
+## Immersive booking journey
+
+- [x] Remove the call-number link from the “From your call to your crop” section.
+- [x] Add one field-booking visual that shows selecting the field, planning the visit, and completing the drone service.
+- [x] Connect the visual to the three practical steps with an accessible path and responsive layout.
+- [x] Verify the result on mobile and desktop, then push the update.
+
+
 - [x] Change the light Support Desk card heading and paragraph to readable dark green tones.
 - [x] Verify the card at mobile and desktop sizes, then push the patch.
 
