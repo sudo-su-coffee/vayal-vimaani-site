@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bulk Booking - Raphael Aero-Agriculture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#719586",
+                        "inverse-surface": "#213145",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#00160f",
+                        "on-background": "#0b1c30",
+                        "secondary-fixed": "#b2f746",
+                        "tertiary-fixed": "#bbedd8",
+                        "primary": "#00150e",
+                        "on-tertiary-fixed": "#002117",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "secondary": "#446900",
+                        "background": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#414845",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "surface-dim": "#cbdbf5",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary-fixed": "#121f00",
+                        "surface-tint": "#426558",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#002d21",
+                        "on-surface": "#0b1c30",
+                        "primary-fixed": "#c4ebda",
+                        "surface-container": "#e5eeff",
+                        "primary-container": "#062c21",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-container": "#689785",
+                        "on-secondary-container": "#496f00",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#a9cfbe",
+                        "secondary-container": "#b2f746",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "outline": "#717974",
+                        "on-primary-fixed": "#002117",
+                        "surface": "#f8f9ff",
+                        "outline-variant": "#c1c8c3",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "surface-container-high": "#dce9ff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#98da27"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "margin-desktop": "64px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "data-display": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #717974; border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface-container-low border-b border-outline-variant dark:border-outline flex justify-between items-center px-margin-mobile h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed hover:bg-surface-container-high transition-colors p-2 rounded-full">menu</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed-dim">Raphael Aero-Agriculture</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden border border-outline">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC91kpsgeUIfFVRW5ZrZCuzev4NotIL7hVPhzN77ExeYRJTkqMVSy0DAtLn5ggOpUG4Awg0-d_mGXEE53U3_sZcn50OghvRsqs6dufeoHkJ9-KuJ5dCT14C1WYxkppaXOg8xJ_33SDKaGRwk0k7dHaZCPzXW-UztHJ3ecaEjb7mizTST3Gsde0XSzTv5rN4PZa99W5WewnD2C-oX4pkaQCTfqwjetC0yk4sx68dfQm_95inpi3jiFsDEBDHm5eNP7bYPnkl-UIH3oNP"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Booking Interface -->
+<div class="lg:col-span-8 space-y-stack-lg">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Bulk Booking Request</h2>
+<p class="text-on-surface-variant font-body-md">Manage up to 10 survey plots for large-scale drone operations.</p>
+</div>
+<button class="flex items-center gap-2 bg-secondary text-on-secondary px-6 py-3 rounded-full font-title-md hover:bg-secondary-container hover:text-on-secondary-container transition-all active:scale-95" onclick="addPlotRow()">
+<span class="material-symbols-outlined">add_circle</span>
+                        Add Multiple Plots
+                    </button>
+</div>
+<!-- Plot List Table -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase text-on-surface-variant">Plot / Survey No.</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase text-on-surface-variant">Area (Acres)</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase text-on-surface-variant">Crop Type</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase text-on-surface-variant text-right">Action</th>
+</tr>
+</thead>
+<tbody id="plot-list">
+<!-- Initial Row -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-high transition-colors">
+<td class="px-6 py-4">
+<input class="bg-transparent border-b border-outline focus:border-primary focus:ring-0 w-full outline-none py-1" placeholder="e.g. SRV-772/A" type="text"/>
+</td>
+<td class="px-6 py-4">
+<input class="area-input bg-transparent border-b border-outline focus:border-primary focus:ring-0 w-40 outline-none py-1 font-data-display text-data-display" oninput="calculateTotal()" placeholder="0.00" type="number"/>
+</td>
+<td class="px-6 py-4">
+<select class="bg-transparent border-none focus:ring-0 cursor-pointer">
+<option>Wheat</option>
+<option>Cotton</option>
+<option>Soybean</option>
+<option>Corn</option>
+</select>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-error hover:bg-error-container p-2 rounded-full transition-colors" onclick="removeRow(this)">delete</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Government Subsidy Check Section -->
+<div class="glass-panel border border-secondary-container rounded-xl p-6 flex flex-col md:flex-row items-center gap-6">
+<div class="bg-secondary-container p-4 rounded-full">
+<span class="material-symbols-outlined text-on-secondary-container scale-150">account_balance</span>
+</div>
+<div class="flex-1">
+<h3 class="font-title-md text-title-md text-primary">Government Subsidy Integration</h3>
+<p class="text-on-surface-variant">Verify eligibility for the National Agri-Tech Drone Subsidy (40% coverage).</p>
+</div>
+<button class="border border-secondary text-secondary font-label-sm px-6 py-2 rounded-full hover:bg-secondary-container transition-colors">Verify Registration</button>
+</div>
+</div>
+<!-- Right Column: Summary & Controls -->
+<div class="lg:col-span-4">
+<div class="sticky top-24 space-y-stack-md">
+<!-- Summary Card -->
+<div class="bg-primary text-on-primary rounded-xl p-8 shadow-lg">
+<h3 class="font-label-sm text-label-sm uppercase opacity-70 tracking-widest mb-4">Service Summary</h3>
+<div class="flex justify-between items-end mb-6">
+<span class="font-body-md opacity-80">Total Area</span>
+<div class="text-right">
+<span class="font-data-display text-display-lg text-secondary-fixed" id="total-area">0.00</span>
+<span class="font-label-sm ml-1 text-secondary-fixed">Acres</span>
+</div>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between font-body-md">
+<span class="opacity-80">Standard Rate</span>
+<span>$12.50 / Acre</span>
+</div>
+<div class="flex justify-between font-body-md text-secondary-fixed-dim">
+<span class="opacity-80">Bulk Discount (10%+)</span>
+<span>- $1.25 / Acre</span>
+</div>
+</div>
+<div class="pt-6 border-t border-white/10">
+<label class="block font-label-sm text-label-sm uppercase opacity-70 mb-4">Service Priority</label>
+<div class="flex bg-primary-container p-1 rounded-full">
+<button class="flex-1 py-2 rounded-full text-center transition-all bg-on-primary-container text-on-primary" id="btn-standard" onclick="setPriority('standard')">Standard</button>
+<button class="flex-1 py-2 rounded-full text-center transition-all text-on-primary-container" id="btn-express" onclick="setPriority('express')">Express</button>
+</div>
+<p class="text-[10px] mt-2 text-on-primary-container italic" id="priority-desc">Estimated arrival: 3-5 business days.</p>
+</div>
+<button class="w-full mt-10 bg-secondary-fixed text-on-secondary-fixed py-4 rounded-xl font-headline-lg-mobile text-headline-lg-mobile hover:bg-secondary-fixed-dim transition-all active:scale-95 flex items-center justify-center gap-3">
+                            Submit Request
+                            <span class="material-symbols-outlined">send</span>
+</button>
+<p class="text-center mt-4 text-[12px] opacity-60">Your request will be sent to the Regional Admin for quote confirmation.</p>
+</div>
+<!-- Visual Tech Card -->
+<div class="relative h-48 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-tech industrial agricultural drone flying over vast green crop fields during sunset. The lighting is golden and cinematic, emphasizing the precision technology. The aesthetic is professional and visionary, using a palette of deep greens and blacks. The image captures the reliability and advanced nature of aerospace agriculture technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9VBoS5NCeaU9MCV12kYqq-PnUsfbCZusDGSijYVi8lVtbRiZhM7xJXoF2k4c_o47R9sFMTaM9qSt5wlhtEVk1arZRy3jz2qyLQap29s2SGdk345QgfhiikatBasZTFMziYACg6WucCc7WdS-HoKBqwSw9Fa9AkWBr9a9KoYUB3haC-SYDF3sTUW42RcMqk8eUs4v6EIZUEv6AqT_VJ1r2NAiE8HI6Ly8On3e0GmYvnWdPbU4J7znRZsgJlmBozmSEA_-ZlDOiXQYs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></div>
+<span class="text-white font-label-sm">Fleet: 12 Active Drones</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface dark:bg-surface-container-lowest flex justify-around items-center h-20 pb-safe w-full px-2 shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-5 py-1 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm text-label-sm">Payments</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        function addPlotRow() {
+            const list = document.getElementById('plot-list');
+            const newRow = document.createElement('tr');
+            newRow.className = "border-b border-outline-variant hover:bg-surface-container-high transition-colors";
+            newRow.innerHTML = `
+                <td class="px-6 py-4">
+                    <input type="text" placeholder="e.g. SRV-772/A" class="bg-transparent border-b border-outline focus:border-primary focus:ring-0 w-full outline-none py-1">
+                </td>
+                <td class="px-6 py-4">
+                    <input type="number" oninput="calculateTotal()" placeholder="0.00" class="area-input bg-transparent border-b border-outline focus:border-primary focus:ring-0 w-40 outline-none py-1 font-data-display text-data-display">
+                </td>
+                <td class="px-6 py-4">
+                    <select class="bg-transparent border-none focus:ring-0 cursor-pointer">
+                        <option>Wheat</option>
+                        <option>Cotton</option>
+                        <option>Soybean</option>
+                        <option>Corn</option>
+                    </select>
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <button onclick="removeRow(this)" class="material-symbols-outlined text-error hover:bg-error-container p-2 rounded-full transition-colors">delete</button>
+                </td>
+            `;
+            list.appendChild(newRow);
+        }
+
+        function removeRow(btn) {
+            const rows = document.querySelectorAll('#plot-list tr');
+            if(rows.length > 1) {
+                btn.closest('tr').remove();
+                calculateTotal();
+            }
+        }
+
+        function calculateTotal() {
+            const inputs = document.querySelectorAll('.area-input');
+            let total = 0;
+            inputs.forEach(input => {
+                total += parseFloat(input.value) || 0;
+            });
+            document.getElementById('total-area').innerText = total.toFixed(2);
+        }
+
+        function setPriority(type) {
+            const stdBtn = document.getElementById('btn-standard');
+            const expBtn = document.getElementById('btn-express');
+            const desc = document.getElementById('priority-desc');
+
+            if(type === 'standard') {
+                stdBtn.classList.add('bg-on-primary-container', 'text-on-primary');
+                stdBtn.classList.remove('text-on-primary-container');
+                expBtn.classList.remove('bg-on-primary-container', 'text-on-primary');
+                expBtn.classList.add('text-on-primary-container');
+                desc.innerText = "Estimated arrival: 3-5 business days.";
+            } else {
+                expBtn.classList.add('bg-on-primary-container', 'text-on-primary');
+                expBtn.classList.remove('text-on-primary-container');
+                stdBtn.classList.remove('bg-on-primary-container', 'text-on-primary');
+                stdBtn.classList.add('text-on-primary-container');
+                desc.innerText = "Priority dispatch: 24-48 hours. (+20% fee)";
+            }
+        }
+    </script>
+</body></html>

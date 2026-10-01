@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#002d21",
+                    "tertiary-fixed": "#bbedd8",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#b2f746",
+                    "outline-variant": "#c1c8c3",
+                    "on-tertiary-container": "#689785",
+                    "on-secondary-fixed": "#121f00",
+                    "secondary-fixed": "#b2f746",
+                    "on-secondary-container": "#496f00",
+                    "on-primary-fixed": "#002117",
+                    "surface-tint": "#426558",
+                    "primary-container": "#062c21",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#414845",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-fixed-variant": "#204f40",
+                    "on-primary-fixed-variant": "#2a4d41",
+                    "primary-fixed-dim": "#a9cfbe",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#c4ebda",
+                    "on-tertiary-fixed": "#002117",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed-dim": "#a0d1bd",
+                    "surface-variant": "#d3e4fe",
+                    "surface-dim": "#cbdbf5",
+                    "on-background": "#0b1c30",
+                    "outline": "#717974",
+                    "tertiary": "#00160f",
+                    "inverse-surface": "#213145",
+                    "on-surface": "#0b1c30",
+                    "on-primary-container": "#719586",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#98da27",
+                    "surface-container": "#e5eeff",
+                    "secondary": "#446900",
+                    "on-secondary-fixed-variant": "#334f00",
+                    "inverse-primary": "#a9cfbe",
+                    "primary": "#00150e",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#eff4ff",
+                    "surface": "#f8f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "stack-lg": "32px",
+                    "gutter": "24px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "margin-desktop": "64px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "title-md": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"],
+                    "data-display": ["JetBrains Mono"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #c1c8c3; border-radius: 10px; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- SideNavBar Shell -->
+<aside class="bg-primary dark:bg-primary-container h-screen w-64 fixed left-0 top-0 flex flex-col py-stack-lg z-50">
+<div class="px-6 mb-10">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-primary dark:text-on-primary-container">AgroDrone</h1>
+<p class="font-label-sm text-label-sm text-on-primary-fixed-variant opacity-70">Enterprise Admin</p>
+</div>
+<nav class="flex-grow space-y-2">
+<a class="flex items-center gap-4 px-6 py-3 text-on-primary-fixed-variant pl-5 hover:bg-primary-fixed-dim/10 hover:text-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-primary-fixed-variant pl-5 hover:bg-primary-fixed-dim/10 hover:text-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-body-md">Bookings</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-primary-fixed-variant pl-5 hover:bg-primary-fixed-dim/10 hover:text-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">agriculture</span>
+<span class="font-body-md">Farmers</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-primary-fixed-variant pl-5 hover:bg-primary-fixed-dim/10 hover:text-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">flight_takeoff</span>
+<span class="font-body-md">Pilots</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-primary-fixed-variant pl-5 hover:bg-primary-fixed-dim/10 hover:text-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-body-md">Payments</span>
+</a>
+</nav>
+<div class="mt-auto space-y-2">
+<a class="flex items-center gap-4 px-6 py-3 text-secondary-fixed font-bold border-l-4 border-secondary-fixed pl-4 bg-primary-fixed-dim/10" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-primary-fixed-variant pl-5 hover:bg-primary-fixed-dim/10 hover:text-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-body-md">Support</span>
+</a>
+<div class="px-6 mt-6">
+<button class="w-full py-3 bg-secondary text-on-secondary font-bold rounded-lg active:scale-95 transition-transform">
+                    Deploy Fleet
+                </button>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="flex justify-between items-center ml-64 px-margin-desktop h-20 w-[calc(100%-16rem)] bg-surface dark:bg-surface-dim border-b border-outline-variant fixed top-0 z-40">
+<div class="flex items-center gap-4">
+<span class="font-title-md text-title-md font-bold text-primary dark:text-on-surface">AgroDrone Control</span>
+<div class="h-6 w-px bg-outline-variant mx-2"></div>
+<span class="font-body-md text-on-surface-variant">System Configuration</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-48" placeholder="Search settings..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all">notifications</button>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant">
+<span class="font-body-md font-bold text-primary">Admin Profile</span>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional close-up portrait of a mid-40s male administrator in a clean, high-tech industrial environment. He is wearing a minimalist dark polo shirt. The lighting is crisp and cool, suggesting a modern aerospace control room. The background is softly blurred with hints of glowing server lights and glass interfaces, maintaining a premium corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzqcc7bM0sVVXkYtnefpUd4YpQ5YRp9IPf_JBz69ShDvL1HCIzSrLd4EPprDi1m5TtZgmS88NMP0Qvp_6cjhkcXUfNEfK-T2qjayqlWaIpS4cAq4Cl6KFBAO5PJ2r2X7l2bk1OhIP4VBbv7SUjbXWur7GmC1Zxk7XMAmb5I3LPe9TtwfWwihoH83kWb6aE7AezS1_Sb2_-NoBfYWLsc6s_PoVqHSlPgdo0yo0M6m3h7KacFblE5ox_jPf8-2HSZ60oTf37ru9bVAIw"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-20 p-margin-desktop min-h-screen">
+<div class="max-w-[1200px] mx-auto">
+<header class="mb-stack-lg">
+<h2 class="font-display-lg text-display-lg text-primary">Configuration</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Manage your fleet parameters, global pricing strategies, and administrative access levels for the Raphael Aero-Agriculture ecosystem.</p>
+</header>
+<!-- Settings Grid -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- General & Brand Section (Left Column) -->
+<div class="col-span-12 lg:col-span-7 space-y-gutter">
+<!-- General Settings -->
+<section class="bg-surface-container-lowest p-stack-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-3 mb-stack-md">
+<span class="material-symbols-outlined text-secondary">tune</span>
+<h3 class="font-title-md text-title-md text-primary">General Platform Settings</h3>
+</div>
+<div class="grid grid-cols-2 gap-stack-md">
+<div class="space-y-unit">
+<label class="font-label-sm text-label-sm text-outline">PLATFORM NAME</label>
+<input class="w-full p-stack-md border-b-2 border-outline-variant focus:border-secondary focus:ring-0 transition-all bg-transparent font-body-md" type="text" value="Raphael Aero-Agriculture"/>
+</div>
+<div class="space-y-unit">
+<label class="font-label-sm text-label-sm text-outline">PRIMARY TIMEZONE</label>
+<select class="w-full p-stack-md border-b-2 border-outline-variant focus:border-secondary focus:ring-0 bg-transparent font-body-md">
+<option>UTC -05:00 Eastern Time</option>
+<option>UTC -08:00 Pacific Time</option>
+<option>UTC +00:00 GMT</option>
+</select>
+</div>
+<div class="space-y-unit">
+<label class="font-label-sm text-label-sm text-outline">BASE CURRENCY</label>
+<select class="w-full p-stack-md border-b-2 border-outline-variant focus:border-secondary focus:ring-0 bg-transparent font-body-md">
+<option>USD ($)</option>
+<option>EUR (€)</option>
+<option>AUD (A$)</option>
+</select>
+</div>
+<div class="space-y-unit">
+<label class="font-label-sm text-label-sm text-outline">MEASUREMENT SYSTEM</label>
+<div class="flex gap-4 mt-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="text-secondary focus:ring-secondary" name="unit" type="radio"/>
+<span class="font-body-md">Imperial (Acres)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="text-secondary focus:ring-secondary" name="unit" type="radio"/>
+<span class="font-body-md">Metric (Hectares)</span>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission Parameters -->
+<section class="bg-surface-container-lowest p-stack-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center justify-between mb-stack-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">monetization_on</span>
+<h3 class="font-title-md text-title-md text-primary">Mission Parameters &amp; Pricing</h3>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm">LIVE UPDATING</span>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between p-stack-md bg-surface-container-low rounded-lg">
+<div>
+<p class="font-body-md font-bold">Drone Spraying Service</p>
+<p class="font-label-sm text-label-sm text-outline">High-precision liquid application</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-data-display text-data-display text-secondary">$</span>
+<input class="w-24 p-2 bg-white border border-outline-variant rounded font-data-display text-data-display text-center focus:ring-secondary focus:border-secondary" type="number" value="45.00"/>
+<span class="font-body-md text-outline">/ acre</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-stack-md bg-surface-container-low rounded-lg">
+<div>
+<p class="font-body-md font-bold">NDVI Mapping &amp; Analysis</p>
+<p class="font-label-sm text-label-sm text-outline">Multi-spectral crop health imaging</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-data-display text-data-display text-secondary">$</span>
+<input class="w-24 p-2 bg-white border border-outline-variant rounded font-data-display text-data-display text-center focus:ring-secondary focus:border-secondary" type="number" value="12.50"/>
+<span class="font-body-md text-outline">/ acre</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Users & Notifications (Right Column) -->
+<div class="col-span-12 lg:col-span-5 space-y-gutter">
+<!-- User Roles -->
+<section class="bg-surface-container-lowest p-stack-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center justify-between mb-stack-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">group</span>
+<h3 class="font-title-md text-title-md text-primary">User Roles</h3>
+</div>
+<button class="text-secondary font-bold flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-[18px]">add</span> Add User
+                            </button>
+</div>
+<div class="space-y-4">
+<!-- User Item -->
+<div class="flex items-center justify-between py-2 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-fixed-dim flex items-center justify-center text-primary font-bold">JD</div>
+<div>
+<p class="font-body-md leading-none">James Dalton</p>
+<p class="text-[12px] text-outline">Fleet Operations Manager</p>
+</div>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-0.5 rounded font-label-sm text-[10px]">FULL ACCESS</span>
+</div>
+<!-- User Item -->
+<div class="flex items-center justify-between py-2 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-primary font-bold">SK</div>
+<div>
+<p class="font-body-md leading-none">Sarah Koenig</p>
+<p class="text-[12px] text-outline">Billing &amp; Accounting</p>
+</div>
+</div>
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded font-label-sm text-[10px]">BILLING ONLY</span>
+</div>
+</div>
+</section>
+<!-- Alert Thresholds -->
+<section class="bg-primary p-stack-lg rounded-xl border border-primary-container shadow-xl text-white">
+<div class="flex items-center gap-3 mb-stack-md">
+<span class="material-symbols-outlined text-secondary-fixed">sensors</span>
+<h3 class="font-title-md text-title-md text-on-primary">Notification Thresholds</h3>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between font-label-sm text-label-sm text-on-primary-fixed-variant">
+<span>LOW PILOT AVAILABILITY ALERT</span>
+<span class="text-secondary-fixed">8% Threshold</span>
+</div>
+<div class="h-1.5 w-full bg-primary-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed w-[8%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-sm text-label-sm text-on-primary-fixed-variant">
+<span>TELEMETRY SIGNAL WARNING</span>
+<span class="text-secondary-fixed">65% Quality</span>
+</div>
+<div class="h-1.5 w-full bg-primary-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed w-[65%]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-body-md">SMS Critical Overrides</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-primary-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Brand Assets -->
+<section class="bg-surface-container-lowest p-stack-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-3 mb-stack-md">
+<span class="material-symbols-outlined text-secondary">branding_watermark</span>
+<h3 class="font-title-md text-title-md text-primary">Brand Identity</h3>
+</div>
+<div class="flex items-start gap-gutter">
+<div class="flex-shrink-0">
+<label class="font-label-sm text-label-sm text-outline block mb-2">SYSTEM LOGO</label>
+<div class="w-24 h-24 border-2 border-dashed border-outline-variant rounded-lg flex flex-col items-center justify-center text-center p-2 cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-outline">upload</span>
+<span class="text-[10px] text-outline mt-1 leading-tight">PNG/SVG MAX 2MB</span>
+</div>
+</div>
+<div class="flex-grow space-y-4">
+<div class="space-y-unit">
+<label class="font-label-sm text-label-sm text-outline">PRIMARY COLOR</label>
+<div class="flex items-center gap-3 p-stack-md border-b-2 border-outline-variant">
+<div class="w-6 h-6 rounded-full bg-secondary shadow-sm"></div>
+<span class="font-label-sm text-label-sm">#446900</span>
+<span class="material-symbols-outlined text-[16px] text-outline ml-auto cursor-pointer">edit</span>
+</div>
+</div>
+<div class="space-y-unit">
+<label class="font-label-sm text-label-sm text-outline">ACCENT COLOR</label>
+<div class="flex items-center gap-3 p-stack-md border-b-2 border-outline-variant">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed shadow-sm"></div>
+<span class="font-label-sm text-label-sm">#B2F746</span>
+<span class="material-symbols-outlined text-[16px] text-outline ml-auto cursor-pointer">edit</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Global Actions Footer -->
+<div class="mt-stack-lg flex justify-end gap-stack-md pb-stack-lg">
+<button class="px-8 py-3 border border-outline font-bold text-primary rounded hover:bg-surface-container transition-colors">Discard Changes</button>
+<button class="px-8 py-3 bg-primary text-on-primary font-bold rounded shadow-lg hover:bg-primary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">save</span>
+                    Update Configuration
+                </button>
+</div>
+</div>
+</main>
+<!-- Visual Polish: Background Grid -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1]" style="background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px); background-size: 40px 40px;"></div>
+<script>
+        // Micro-interaction for input fields
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+
+        // Simple notification toggle simulation
+        document.querySelector('input[type="checkbox"]').addEventListener('change', function() {
+            if(this.checked) {
+                console.log('Critical Overrides Enabled');
+            }
+        });
+    </script>
+</body></html>

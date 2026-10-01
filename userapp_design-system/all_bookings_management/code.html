@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AeroCrop Fleet Intelligence - Bookings Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#719586",
+                        "on-surface-variant": "#414845",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#002d21",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-container": "#062c21",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "outline": "#717974",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "outline-variant": "#c1c8c3",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed": "#121f00",
+                        "on-tertiary-container": "#689785",
+                        "surface-variant": "#d3e4fe",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#b2f746",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-container": "#496f00",
+                        "inverse-primary": "#a9cfbe",
+                        "surface-tint": "#426558",
+                        "surface-dim": "#cbdbf5",
+                        "on-background": "#0b1c30",
+                        "primary-fixed": "#c4ebda",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "secondary": "#446900",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "primary": "#00150e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "tertiary-fixed": "#bbedd8",
+                        "surface": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary": "#00160f",
+                        "secondary-fixed-dim": "#98da27",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "on-primary-fixed": "#002117",
+                        "inverse-surface": "#213145",
+                        "secondary-container": "#b2f746",
+                        "on-tertiary-fixed": "#002117"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "data-display": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(193, 200, 195, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-surface-bright font-body-md text-on-surface flex overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<aside class="flex flex-col h-screen w-64 border-r border-outline-variant bg-surface-container-lowest py-stack-lg shrink-0">
+<div class="px-6 mb-stack-lg">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary tracking-tighter">AeroCrop</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant/70 uppercase tracking-widest">Fleet Intelligence</p>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-title-md text-title-md tracking-tight">Dashboard</span>
+</a>
+<!-- Bookings (ACTIVE) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold border-r-4 border-secondary bg-surface-container-low transition-all duration-200" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-title-md text-title-md tracking-tight">Bookings</span>
+</a>
+<!-- Farmers -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container transition-all duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-title-md text-title-md tracking-tight">Farmers</span>
+</a>
+<!-- Pilots -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container transition-all duration-200" href="#">
+<span class="material-symbols-outlined">flight</span>
+<span class="font-title-md text-title-md tracking-tight">Pilots</span>
+</a>
+<!-- Payments -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container transition-all duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-title-md text-title-md tracking-tight">Payments</span>
+</a>
+</nav>
+<div class="px-4 mt-auto border-t border-outline-variant pt-stack-lg space-y-2">
+<button class="w-full bg-primary text-on-primary py-3 px-4 rounded-lg flex items-center justify-center gap-2 font-bold active:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+<span>Schedule Mission</span>
+</button>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-medium hover:bg-surface-container rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-title-md text-title-md tracking-tight">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-medium hover:bg-surface-container rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-title-md text-title-md tracking-tight">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- TopNavBar (Shared Component) -->
+<header class="sticky top-0 z-40 flex justify-between items-center px-margin-desktop h-16 w-full border-b border-outline-variant backdrop-blur-md bg-surface-bright/90">
+<div class="flex items-center gap-stack-lg">
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary">Fleet Overview</h2>
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 focus:ring-2 focus:ring-secondary transition-all text-body-md" placeholder="Search mission ID, farmer, or location..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="hover:bg-surface-container-high rounded-full p-2 transition-all active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button class="hover:bg-surface-container-high rounded-full p-2 transition-all active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">settings_suggest</span>
+</button>
+<button class="hover:bg-surface-container-high rounded-full p-2 transition-all active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">dark_mode</span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-stack-sm"></div>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-bold active:scale-95 transition-all">
+                    Deploy Drone
+                </button>
+<img alt="Administrator Profile" class="h-10 w-10 rounded-full border-2 border-primary-container object-cover" data-alt="A professional headshot of a female agricultural enterprise administrator with a neutral background. She is wearing a modern corporate jacket, and the image is lit with bright, soft studio lighting to fit a clean, high-tech corporate aesthetic. The overall mood is authoritative and trustworthy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASvYrotX9NQ5vI1fRgOC9iqgYeORDFJqMGU7QSACsMSSZpaDHl_Dz6aqoGw6vaTDdVTI4ONdMlenhSUsT0BIjoOjHfbeHB-YSACRmAoHEG7EAdb0YvthvD_dfwX-uLxmhhlepAMAeErwqmgi2sN3f6e3OMzd_zzDajDz5wFxcoFgNYM1acrn480t-m2PdWIeMT4Fscys83Y_VuWDLOecTNBnhhW-fbNB6pQ-5rjrnF2bDw4uVsduyi63DpSX2XxnVnWX42H_YoWqFv"/>
+</div>
+</header>
+<!-- Canvas -->
+<div class="flex-1 overflow-y-auto px-margin-desktop py-stack-lg space-y-stack-lg bg-surface-bright">
+<!-- Page Header & Global Stats -->
+<section class="flex flex-col md:flex-row justify-between items-end gap-stack-lg">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary">Bookings Management</h3>
+<p class="text-on-surface-variant font-body-lg">A comprehensive list of all active and pending agricultural service requests across the fleet.</p>
+</div>
+<div class="flex gap-stack-md">
+<div class="glass-panel px-6 py-4 rounded-xl flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Total Missions</span>
+<span class="font-data-display text-data-display text-primary">1,284</span>
+</div>
+<div class="glass-panel px-6 py-4 rounded-xl flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Live Ops</span>
+<span class="font-data-display text-data-display text-secondary">24</span>
+</div>
+</div>
+</section>
+<!-- Filters & Actions Bar -->
+<section class="glass-panel p-stack-md rounded-xl flex flex-wrap items-center gap-stack-md">
+<div class="flex items-center gap-2 bg-surface-container-lowest px-4 py-2 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">filter_list</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">STATUS:</span>
+<select class="bg-transparent border-none focus:ring-0 text-sm font-bold text-primary">
+<option>All Statuses</option>
+<option>Pending</option>
+<option>Scheduled</option>
+<option>Live</option>
+<option>Done</option>
+</select>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-4 py-2 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">calendar_today</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">RANGE:</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-bold text-primary" type="date"/>
+<span class="text-on-surface-variant">to</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-bold text-primary" type="date"/>
+</div>
+<div class="flex-1"></div>
+<button class="flex items-center gap-2 text-secondary hover:bg-secondary-container/20 px-4 py-2 rounded-lg transition-all font-bold border border-secondary" onclick="alert('Broadcasting missions to available pilots...')">
+<span class="material-symbols-outlined text-sm">broadcast_on_home</span>
+                    Broadcast to Pilots
+                </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-2 rounded-lg font-bold active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Export CSV
+                </button>
+</section>
+<!-- Bookings Table Container -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container text-on-surface-variant">
+<tr>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase tracking-wider">Booking ID</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase tracking-wider">Farmer Name</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase tracking-wider">Service Type</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase tracking-wider">Pilot Assigned</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase tracking-wider">Date</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<!-- Row 1: Live Mapping -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 font-label-sm text-secondary font-bold">#AC-8891</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="font-title-md text-primary">Samuel Thompson</span>
+<span class="text-xs text-on-surface-variant">Oak Ridge Orchards</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-bold border border-tertiary-container/10">
+<span class="material-symbols-outlined text-base">map</span> MAPPING
+                                </span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img alt="Pilot" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMi1G2BiNV46aEYLbONfkL8zLEQY7zBTq0RuCSFV__3Mf7mQwzzR7TxsDFKFf0nPBW0siwrX-Dr1g-tvULVg96U1cGPzF0EW_3zSa7OAK2-0ZiPx8aMr0T8LS8GjgzbuoJ8uliJZmT8KU6UAMbzXOyfXbcyKwuxVWD0fF5mWtBph-XLEj3s7cMct0TR6Tg8NnRjVmnHwoWGb7d5HujrBuNANp682RdcFAD5dmXp5IHugAVHoVRlpTnR4fRsxb0IUG4VSq-T2QaV_cY"/>
+<span class="font-body-md font-medium">Capt. David Miller</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+                                    LIVE
+                                </span>
+</td>
+<td class="px-6 py-5 text-on-surface-variant">24 Oct, 2023</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 hover:bg-surface-container-highest rounded-full text-on-surface-variant transition-all">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Unassigned Spraying -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 font-label-sm text-secondary font-bold">#AC-8894</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="font-title-md text-primary">Elena Rodriguez</span>
+<span class="text-xs text-on-surface-variant">Sun Valley Vineyard</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-xs font-bold border border-primary-container/10">
+<span class="material-symbols-outlined text-base">air</span> SPRAYING
+                                </span>
+</td>
+<td class="px-6 py-5">
+<button class="flex items-center gap-2 border-2 border-dashed border-outline-variant text-outline px-4 py-1 rounded-lg hover:border-secondary hover:text-secondary transition-all text-sm font-bold">
+<span class="material-symbols-outlined text-sm">person_add</span> Assign
+                                </button>
+</td>
+<td class="px-6 py-5">
+<span class="px-2.5 py-1 rounded-full bg-error-container text-on-error-container text-xs font-bold">PENDING</span>
+</td>
+<td class="px-6 py-5 text-on-surface-variant">26 Oct, 2023</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 hover:bg-surface-container-highest rounded-full text-on-surface-variant transition-all">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Scheduled Spraying -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 font-label-sm text-secondary font-bold">#AC-8899</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="font-title-md text-primary">Marcus Vane</span>
+<span class="text-xs text-on-surface-variant">Vane Family Wheat</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-xs font-bold border border-primary-container/10">
+<span class="material-symbols-outlined text-base">air</span> SPRAYING
+                                </span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img alt="Pilot" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbSZnqsj4z0PKp6HYpZdXmbRD9aS4_FXXadw6PgNoJ0O7VYkT5yEO5wBQa246AvvkwBbILXQNt6FOLY9eLRLsnZj65Y8WAIOaV8T5nUK9NHUMa1v5L4Ha5c7vj9CHBPgGyo-pnLpO3fr1n8wmg738eBJZHaedbbRzceiLAXAahsRpsN4UIJiQEBlhD9e8STFDAlxjhp3q2Vb6y2oiAesyt2L2WJnGZRILni51EefDU7cnxnj4hfcK0Uc-2V0y5BL5ovw91yPbukcxx"/>
+<span class="font-body-md font-medium">Sarah Jenkins</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed-variant text-xs font-bold">SCHEDULED</span>
+</td>
+<td class="px-6 py-5 text-on-surface-variant">28 Oct, 2023</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 hover:bg-surface-container-highest rounded-full text-on-surface-variant transition-all">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Done Mapping -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 font-label-sm text-secondary font-bold">#AC-8850</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="font-title-md text-primary">Thomas Shelby</span>
+<span class="text-xs text-on-surface-variant">Birmingham Hills</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-bold border border-tertiary-container/10">
+<span class="material-symbols-outlined text-base">map</span> MAPPING
+                                </span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img alt="Pilot" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzc3HOzFXVeKeZtD2wvscpqFerG5iAHpMUttWzrLyXCl_B2ZM98_926bGw6m_oycCJu98xG8crMAb05-LPD6SI5EfBZNAHtO5tJ6ncBEXRjbM9w6zKK_s2g6_Gwc3553Eo_WisKH2JNInM7BnsQz4xL2E8s_6zjN6CjwGhOvZGc93ou36NJN4fHbsJCLGnjWG4vBt1ePDtfyY234M66MHpLk6HDatk92Eh4yXxIH5RmLdVJ-KhLjEhvYV3IQJZW978heOF4d_VSNZE"/>
+<span class="font-body-md font-medium">Capt. David Miller</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-bold">DONE</span>
+</td>
+<td class="px-6 py-5 text-on-surface-variant">20 Oct, 2023</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 hover:bg-surface-container-highest rounded-full text-on-surface-variant transition-all">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 bg-surface-container-lowest border-t border-outline-variant flex items-center justify-between">
+<span class="text-sm text-on-surface-variant">Showing 1-10 of 1,284 bookings</span>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center bg-primary text-on-primary rounded font-bold text-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center hover:bg-surface-container rounded font-bold text-sm">2</button>
+<button class="w-8 h-8 flex items-center justify-center hover:bg-surface-container rounded font-bold text-sm">3</button>
+<button class="p-2 border border-outline-variant rounded hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Micro-interactions for table rows
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('click', (e) => {
+                if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'SPAN' && e.target.tagName !== 'SELECT') {
+                    // Logic for opening booking details
+                    console.log('Row clicked, navigating to details...');
+                }
+            });
+        });
+
+        // Search bar interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-105');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-105');
+        });
+    </script>
+</body></html>

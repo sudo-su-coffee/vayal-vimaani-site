@@ -1,0 +1,286 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Payments | Raphael Aero-Agriculture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#002117",
+                    "on-tertiary-container": "#689785",
+                    "on-primary": "#ffffff",
+                    "background": "#f8f9ff",
+                    "surface-container-high": "#dce9ff",
+                    "surface": "#f8f9ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "secondary-fixed": "#b2f746",
+                    "primary-fixed": "#c4ebda",
+                    "on-tertiary-fixed-variant": "#204f40",
+                    "surface-container-low": "#eff4ff",
+                    "on-secondary-fixed-variant": "#334f00",
+                    "on-tertiary-fixed": "#002117",
+                    "tertiary": "#00160f",
+                    "on-secondary-container": "#496f00",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-surface-variant": "#414845",
+                    "on-primary-container": "#719586",
+                    "primary": "#00150e",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#cbdbf5",
+                    "surface-tint": "#426558",
+                    "inverse-primary": "#a9cfbe",
+                    "secondary-fixed-dim": "#98da27",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "surface-variant": "#d3e4fe",
+                    "inverse-surface": "#213145",
+                    "tertiary-fixed": "#bbedd8",
+                    "error": "#ba1a1a",
+                    "outline": "#717974",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#c1c8c3",
+                    "tertiary-fixed-dim": "#a0d1bd",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "on-surface": "#0b1c30",
+                    "tertiary-container": "#002d21",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary-fixed-variant": "#2a4d41",
+                    "primary-fixed-dim": "#a9cfbe",
+                    "primary-container": "#062c21",
+                    "secondary-container": "#b2f746",
+                    "on-secondary-fixed": "#121f00",
+                    "secondary": "#446900"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "margin-mobile": "16px",
+                    "unit": "4px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "title-md": ["Hanken Grotesk"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "data-display": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface-bright dark:bg-inverse-surface border-b border-outline-variant px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center">
+<div class="flex items-center gap-stack-md">
+<button class="p-2 hover:bg-surface-container-high transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary">Raphael Aero-Agriculture</h1>
+</div>
+<div class="flex items-center">
+<button class="p-2 hover:bg-surface-container-high transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Balance Section (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-stack-lg">
+
+<div class="bg-primary-container text-on-primary p-stack-lg flex flex-col justify-between border border-primary md:col-span-12"><div><p class="font-label-sm text-label-sm text-primary-fixed-dim mb-unit uppercase">Cumulative Missions Cost</p><h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Total Lifetime Spend</h3></div><div class="pt-stack-md border-t border-primary-container/30"><div class="flex justify-between items-end"><span class="font-data-display text-data-display">$24,850.00</span><p class="font-body-md text-primary-fixed-dim">Across 42 completed missions</p></div></div></div>
+</div>
+<!-- Filtering & Search -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-md mb-stack-md">
+<div class="flex bg-surface-container p-1 rounded-full border border-outline-variant">
+<button class="px-6 py-2 rounded-full font-label-sm text-label-sm transition-all hover:bg-surface-container-high filter-btn active-filter bg-primary text-on-primary" id="btn-all" onclick="filterItems('all')">All Transactions</button>
+<button class="px-6 py-2 rounded-full font-label-sm text-label-sm transition-all hover:bg-surface-container-high filter-btn" id="btn-paid" onclick="filterItems('paid')">Paid</button>
+<button class="px-6 py-2 rounded-full font-label-sm text-label-sm transition-all hover:bg-surface-container-high filter-btn" id="btn-pending" onclick="filterItems('pending')">Pending</button>
+</div>
+<div class="relative w-full md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-1 focus:ring-secondary focus:border-secondary transition-all font-body-md" placeholder="Search transactions..." type="text">
+</div>
+</div>
+<!-- Transaction List -->
+<div class="bg-surface-container-lowest border border-outline-variant divide-y divide-outline-variant">
+<!-- Header -->
+<div class="hidden md:grid grid-cols-12 px-stack-lg py-stack-sm bg-surface-container-low">
+<div class="col-span-5 font-label-sm text-label-sm text-on-surface-variant">DESCRIPTION / REFERENCE</div>
+<div class="col-span-2 font-label-sm text-label-sm text-on-surface-variant">DATE</div>
+<div class="col-span-2 font-label-sm text-label-sm text-on-surface-variant">STATUS</div>
+<div class="col-span-3 font-label-sm text-label-sm text-on-surface-variant text-right">AMOUNT</div>
+</div>
+<!-- Row 1 -->
+<div class="grid grid-cols-1 md:grid-cols-12 px-stack-lg py-stack-md hover:bg-surface-container-lowest transition-colors items-center transaction-item" data-status="paid">
+<div class="col-span-5 flex items-center gap-stack-md mb-stack-sm md:mb-0">
+<div class="w-10 h-10 flex-shrink-0 bg-surface-container-highest rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">flight_takeoff</span>
+</div>
+<div>
+<p class="font-title-md text-primary">NDVI Mapping - North Sector Field</p>
+<p class="font-label-sm text-on-surface-variant uppercase">TXN_998273615</p>
+</div>
+</div>
+<div class="col-span-2 font-body-md text-on-surface-variant mb-unit md:mb-0">Sept 28, 2023</div>
+<div class="col-span-2">
+<span class="inline-flex items-center px-2 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded uppercase tracking-wider"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span> Bank Transfer</span>
+</div>
+<div class="col-span-3 text-right font-data-display text-primary">$450.00</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-1 md:grid-cols-12 px-stack-lg py-stack-md hover:bg-surface-container-lowest transition-colors items-center transaction-item" data-status="pending">
+<div class="col-span-5 flex items-center gap-stack-md mb-stack-sm md:mb-0">
+<div class="w-10 h-10 flex-shrink-0 bg-surface-container-highest rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">precision_manufacturing</span>
+</div>
+<div>
+<p class="font-title-md text-primary">Drone Fleet Maintenance - Annual Service</p>
+<p class="font-label-sm text-on-surface-variant uppercase">TXN_998273616</p>
+</div>
+</div>
+<div class="col-span-2 font-body-md text-on-surface-variant mb-unit md:mb-0">Oct 02, 2023</div>
+<div class="col-span-2">
+<span class="inline-flex items-center px-2 py-1 bg-error-container text-on-error-container text-[11px] font-bold rounded uppercase tracking-wider"><span class="w-2 h-2 bg-error rounded-full mr-2"></span> Cash On Site</span>
+</div>
+<div class="col-span-3 text-right font-data-display text-primary">$2,100.00</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-1 md:grid-cols-12 px-stack-lg py-stack-md hover:bg-surface-container-lowest transition-colors items-center transaction-item" data-status="paid">
+<div class="col-span-5 flex items-center gap-stack-md mb-stack-sm md:mb-0">
+<div class="w-10 h-10 flex-shrink-0 bg-surface-container-highest rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">database</span>
+</div>
+<div>
+<p class="font-title-md text-primary">Cloud Storage Upgrade (50TB Tier)</p>
+<p class="font-label-sm text-on-surface-variant uppercase">TXN_998273617</p>
+</div>
+</div>
+<div class="col-span-2 font-body-md text-on-surface-variant mb-unit md:mb-0">Sept 15, 2023</div>
+<div class="col-span-2">
+<span class="inline-flex items-center px-2 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded uppercase tracking-wider"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span> Bank Transfer</span>
+</div>
+<div class="col-span-3 text-right font-data-display text-primary">$89.99</div>
+</div>
+<!-- Row 4 -->
+<div class="grid grid-cols-1 md:grid-cols-12 px-stack-lg py-stack-md hover:bg-surface-container-lowest transition-colors items-center transaction-item" data-status="paid">
+<div class="col-span-5 flex items-center gap-stack-md mb-stack-sm md:mb-0">
+<div class="w-10 h-10 flex-shrink-0 bg-surface-container-highest rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">sensors</span>
+</div>
+<div>
+<p class="font-title-md text-primary">Soil Sensor Calibration - Zone B</p>
+<p class="font-label-sm text-on-surface-variant uppercase">TXN_998273618</p>
+</div>
+</div>
+<div class="col-span-2 font-body-md text-on-surface-variant mb-unit md:mb-0">Sept 10, 2023</div>
+<div class="col-span-2">
+<span class="inline-flex items-center px-2 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded uppercase tracking-wider"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span> Bank Transfer</span>
+</div>
+<div class="col-span-3 text-right font-data-display text-primary">$150.00</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-between items-center mt-stack-md">
+<p class="font-label-sm text-on-surface-variant">SHOWING 1-4 OF 28 TRANSACTIONS</p>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant hover:bg-surface-container-high rounded transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-2 border border-outline-variant hover:bg-surface-container-high rounded transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container dark:bg-surface-container-highest shadow-[0_-1px_10px_rgba(0,0,0,0.05)] md:hidden"><a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-full transition-all active:scale-90 duration-200" href="#"><span class="material-symbols-outlined">home</span><span class="font-label-sm text-label-sm">Home</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-full transition-all active:scale-90 duration-200" href="#"><span class="material-symbols-outlined">calendar_month</span><span class="font-label-sm text-label-sm">Bookings</span></a><a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 active:scale-90 transition-transform duration-200" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span><span class="font-label-sm text-label-sm">Payments</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container-highest dark:hover:bg-inverse-surface rounded-full transition-all active:scale-90 duration-200" href="#"><span class="material-symbols-outlined">person</span><span class="font-label-sm text-label-sm">Profile</span></a></nav>
+<!-- Desktop Side Navigation (Implicitly handled by Grid but visualized here as top buttons) -->
+<div class="hidden md:flex fixed left-0 top-24 bottom-0 w-20 flex-col items-center py-stack-lg gap-stack-lg border-r border-outline-variant bg-surface-bright">
+<a class="p-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="p-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+</a>
+<a class="p-3 bg-secondary-container text-on-secondary-container transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+</a>
+<a class="p-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</div>
+<script>
+        function filterItems(status) {
+            const items = document.querySelectorAll('.transaction-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Handle buttons state
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-on-primary', 'active-filter');
+                if(btn.id === `btn-${status}`) {
+                    btn.classList.add('bg-primary', 'text-on-primary', 'active-filter');
+                }
+            });
+
+            // Handle items visibility
+            items.forEach(item => {
+                if (status === 'all') {
+                    item.style.display = 'grid';
+                } else {
+                    if (item.getAttribute('data-status') === status) {
+                        item.style.display = 'grid';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Initialize default state
+        document.addEventListener('DOMContentLoaded', () => {
+            const allBtn = document.getElementById('btn-all');
+            allBtn.classList.add('bg-primary', 'text-on-primary', 'active-filter');
+        });
+    </script>
+
+
+</body></html>

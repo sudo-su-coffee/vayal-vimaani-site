@@ -1,0 +1,220 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Payment Success - Raphael Aero-Agriculture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#98da27",
+                    "on-primary-fixed-variant": "#2a4d41",
+                    "surface-dim": "#cbdbf5",
+                    "on-secondary": "#ffffff",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed-dim": "#a0d1bd",
+                    "surface-container-high": "#dce9ff",
+                    "surface-tint": "#426558",
+                    "on-tertiary-fixed-variant": "#204f40",
+                    "surface-variant": "#d3e4fe",
+                    "inverse-surface": "#213145",
+                    "tertiary-fixed": "#bbedd8",
+                    "tertiary-container": "#002d21",
+                    "on-surface": "#0b1c30",
+                    "surface-container-low": "#eff4ff",
+                    "outline-variant": "#c1c8c3",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#717974",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "on-secondary-fixed": "#121f00",
+                    "primary": "#00150e",
+                    "on-primary-fixed": "#002117",
+                    "on-secondary-container": "#496f00",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-fixed": "#002117",
+                    "on-surface-variant": "#414845",
+                    "secondary-container": "#b2f746",
+                    "on-secondary-fixed-variant": "#334f00",
+                    "primary-fixed": "#c4ebda",
+                    "primary-fixed-dim": "#a9cfbe",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#b2f746",
+                    "inverse-primary": "#a9cfbe",
+                    "primary-container": "#062c21",
+                    "on-primary-container": "#719586",
+                    "inverse-on-surface": "#eaf1ff",
+                    "tertiary": "#00160f",
+                    "surface-container": "#e5eeff",
+                    "surface": "#f8f9ff",
+                    "on-error-container": "#93000a",
+                    "secondary": "#446900",
+                    "on-tertiary-container": "#689785",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "stack-md": "16px",
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "unit": "4px",
+                    "margin-mobile": "16px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "data-display": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "title-md": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .success-bg-pattern {
+            background-image: radial-gradient(circle at 2px 2px, #c1c8c3 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .backdrop-blur-custom {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden min-h-screen">
+<!-- Top AppBar (Mobile Style - Transactional Hide Shell Rule Applied) -->
+<!-- Note: Following the "Transactional/Focused Journey" rule, the TopAppBar and BottomNavBar are simplified or suppressed. 
+         However, the user requirement implies a persistent brand anchor. -->
+<header class="flex justify-between items-center px-margin-mobile py-4 w-full z-50 bg-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="agriculture">agriculture</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Raphael Aero-Agriculture</span>
+</div>
+<div class="active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="close">close</span>
+</div>
+</header>
+<main class="flex flex-col items-center justify-center px-margin-mobile py-10 min-h-[calc(100vh-80px)] relative overflow-hidden">
+<!-- Background Atmospheric Element -->
+<div class="absolute inset-0 success-bg-pattern opacity-10 pointer-events-none"></div>
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl"></div>
+<!-- Success Content Container -->
+<div class="w-full max-w-lg z-10">
+<!-- Hero Success Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 flex flex-col items-center text-center shadow-sm">
+<!-- Animated Checkmark Circle -->
+<div class="w-24 h-24 bg-secondary-fixed rounded-full flex items-center justify-center mb-6 animate-bounce transition-all duration-700">
+<span class="material-symbols-outlined text-on-secondary-fixed text-5xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Payment Verified</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-2">Transaction Successful</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Funds received and locked for Flight Operation #AERO-9921</p>
+<!-- Payment Details Bento -->
+<div class="grid grid-cols-2 gap-stack-md w-full text-left">
+<div class="col-span-2 md:col-span-1 bg-surface-container-low p-4 border border-outline-variant rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">AMOUNT PAID</span>
+<span class="font-data-display text-data-display text-primary">$4,850.00</span>
+</div>
+<div class="col-span-2 md:col-span-1 bg-surface-container-low p-4 border border-outline-variant rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">STATUS</span>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-secondary-fixed-dim rounded-full animate-pulse"></span>
+<span class="font-title-md text-title-md text-secondary">Ready to Fly</span>
+</div>
+</div>
+</div>
+<!-- Technical Specs/Receipt Meta -->
+<div class="mt-8 pt-8 border-t border-outline-variant w-full">
+<div class="flex justify-between items-center text-left">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">OPERATOR</span>
+<span class="font-body-md text-body-md font-bold text-primary">Capt. Elias Thorne</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">FLEET ID</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">DRONE-04-NDVI</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Contextual Image Placeholder (Drone readying for takeoff) -->
+<div class="mt-stack-lg relative h-48 w-full rounded-xl overflow-hidden border border-outline-variant group">
+<img alt="Agricultural Drone" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional high-tech agricultural drone sitting on a landing pad in a vast, vibrant green cornfield at dawn. The lighting is crisp and golden, emphasizing the industrial premium design of the drone's carbon-fiber chassis. The atmosphere is quiet and authoritative, signaling readiness for a precision data-driven flight operation under a clear blue sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Io-WPIwPv_UF92_1QzHlCZiEIEgiRvIAVzsTPh0WGqI3WVafUHRgX9hyi2hB7qkQtSQo00HL597U66pdbEe2df--FWOIG--I2soT6mo9VrOpEStxMEUWeGbt3-yOW96b_4EZkc2DcCIyIvaeP57Kg2Y-Q0xXyWKmfhP7hMZNFM08o0JPda_tii2X-p1-p3kd02WBy-0a6JtOlx2K5kt3beuB4Zguo6JWI8cV1ZoFWv7AmwYaEyIRNrjxxz4a8bGd1c8z_SzMhcDy">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 text-surface-container-lowest">
+<span class="material-symbols-outlined text-sm" data-icon="sensors">sensors</span>
+<span class="font-label-sm text-label-sm">Satellite Link: Optimal</span>
+</div>
+</div>
+<!-- Action Section -->
+<div class="mt-10 flex flex-col gap-4">
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-title-md text-title-md flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                    Proceed to Assignment &amp; Prep
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full py-4 border border-secondary text-secondary rounded-lg font-title-md text-title-md flex items-center justify-center gap-2 hover:bg-secondary-container/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+                    Download Tax Invoice
+                </button>
+</div>
+<p class="text-center mt-6 text-on-surface-variant font-label-sm text-label-sm">
+                A confirmation email has been sent to the registered address.
+            </p>
+</div>
+</main>
+<!-- Success Confetti/Interaction Script -->
+<script>
+        // Simple micro-interaction for the success state
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkIcon = document.querySelector('.animate-bounce');
+            
+            // Pulse the background color slightly on hover of the main button
+            const mainBtn = document.querySelector('button.bg-primary');
+            mainBtn.addEventListener('mouseenter', () => {
+                document.body.style.backgroundColor = '#f1f5fe';
+            });
+            mainBtn.addEventListener('mouseleave', () => {
+                document.body.style.backgroundColor = '#f8f9ff';
+            });
+        });
+    </script>
+</body></html>

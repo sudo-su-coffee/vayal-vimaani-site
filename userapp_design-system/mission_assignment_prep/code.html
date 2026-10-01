@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mission Assignment &amp; Prep</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "tertiary-fixed": "#bbedd8",
+                        "secondary-container": "#b2f746",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-surface": "#0b1c30",
+                        "primary-fixed": "#c4ebda",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "secondary": "#446900",
+                        "on-primary-fixed": "#002117",
+                        "secondary-fixed-dim": "#98da27",
+                        "outline": "#717974",
+                        "inverse-primary": "#a9cfbe",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "on-surface-variant": "#414845",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-surface": "#213145",
+                        "surface-tint": "#426558",
+                        "surface-container-highest": "#d3e4fe",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#b2f746",
+                        "on-tertiary-container": "#689785",
+                        "tertiary": "#00160f",
+                        "primary": "#00150e",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#eff4ff",
+                        "surface": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "on-secondary-container": "#496f00",
+                        "on-background": "#0b1c30",
+                        "surface-bright": "#f8f9ff",
+                        "primary-container": "#062c21",
+                        "on-tertiary-fixed": "#002117",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#002d21",
+                        "outline-variant": "#c1c8c3",
+                        "on-primary-container": "#719586",
+                        "on-secondary-fixed": "#121f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-display": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-display": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner technical look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface-container'); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant'); 
+            border-radius: theme('borderRadius.full');
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline'); 
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar (From JSON) -->
+<header class="bg-surface dark:bg-on-background flex justify-between items-center px-margin-mobile py-4 w-full z-50 sticky top-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">agriculture</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim">Raphael Aero-Agriculture</span>
+</div>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200 flex items-center justify-center p-2 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">notifications</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin-mobile py-stack-lg md:px-margin-desktop flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:justify-between md:items-end gap-stack-sm border-b border-outline-variant pb-stack-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-wider">Mission ID: AX-7742</p>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-display-lg md:text-display-lg text-primary">Assignment &amp; Prep</h1>
+</div>
+<div class="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full w-max border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Awaiting Launch</span>
+</div>
+</div>
+<!-- Bento Grid: Mission Details -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-stack-md md:gap-gutter">
+<!-- Map/Location Card -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden relative min-h-[300px] md:min-h-[400px] flex flex-col shadow-sm">
+<!-- Map Image Background -->
+<div class="absolute inset-0 z-0">
+<img alt="Satellite view of agricultural farmland" class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A high-altitude satellite view of vast agricultural farmlands divided into neat geometric grids. The color palette is dominated by deep forest greens, earthy browns, and subtle technological overlays. The lighting is crisp and bright, suggesting a clear midday light-mode aesthetic. A subtle, modern telemetry grid pattern is overlaid on the terrain, giving it an industrial, precision-agriculture feel." data-location="North Sector Field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW_Nst6sQvq3AaUFiyaFuZEo5Jr4xbf0QF_RA96CAVY8Vp3AARGVWCf0EA5kIBVQ33X3RMPBGKPzsvBFCjKbpVY4SmwMxhOyAIip9BQbVJkVjGBJ8fp1qgcB-aMjQzw68OLiTOilSlJN9eIpUaEeBC2nfkZSgkbnd8dw8JADnKYeq4OMBCLwqxLLTTpptlP8Uyr1RLlf1IwgNocywWJZK4-ajJkg-yXRBekke3e37qTgB0KiVPhVaqSJk4lLBru7ZemwKlAV4rv6oQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-90"></div>
+</div>
+<!-- Overlay Content -->
+<div class="relative z-10 flex flex-col h-full justify-between p-stack-md md:p-gutter">
+<div class="flex justify-between items-start">
+<div class="bg-surface/80 backdrop-blur-md border border-outline-variant rounded-lg p-3 inline-flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">North Sector Field</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Coordinates: 43.8912° N, -103.4421° W</p>
+</div>
+</div>
+<button class="bg-surface/80 backdrop-blur-md border border-outline-variant rounded-full p-2 text-on-surface hover:bg-surface transition-colors shadow-sm">
+<span class="material-symbols-outlined">layers</span>
+</button>
+</div>
+<!-- Target Reticle Overlay (Decorative) -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-secondary/30 rounded-full flex items-center justify-center pointer-events-none">
+<div class="w-1 h-1 bg-secondary rounded-full"></div>
+<div class="absolute top-0 w-px h-4 bg-secondary/50"></div>
+<div class="absolute bottom-0 w-px h-4 bg-secondary/50"></div>
+<div class="absolute left-0 h-px w-4 bg-secondary/50"></div>
+<div class="absolute right-0 h-px w-4 bg-secondary/50"></div>
+</div>
+</div>
+</div>
+<!-- Specs & Telemetry Card -->
+<div class="md:col-span-4 flex flex-col gap-stack-md">
+<!-- Area Spec -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md shadow-sm flex flex-col justify-center flex-1">
+<div class="flex items-center gap-2 mb-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">aspect_ratio</span>
+<span class="font-label-sm text-label-sm uppercase">Coverage Area</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-data-display text-data-display text-primary text-4xl">120</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Acres</span>
+</div>
+<div class="mt-4 w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-full w-[85%] rounded-full"></div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2 text-right">Est. Flight Time: 45m</p>
+</div>
+<!-- Payload Spec -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md shadow-sm flex flex-col justify-center flex-1">
+<div class="flex items-center gap-2 mb-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">science</span>
+<span class="font-label-sm text-label-sm uppercase">Mission Type</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">opacity</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary">Pesticide App</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Formula: NX-200</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pre-flight Checklist -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md md:p-gutter shadow-sm">
+<div class="flex items-center justify-between mb-stack-md pb-4 border-b border-outline-variant">
+<h2 class="font-title-md text-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">checklist</span>
+                    Pre-flight Checklist
+                </h2>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-container px-3 py-1 rounded-full">System Ready</span>
+</div>
+<ul class="space-y-3">
+<!-- Checklist Item 1 -->
+<li class="flex items-center justify-between p-3 rounded-lg bg-surface hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant group cursor-default">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface">Power Systems</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Battery fully charged (98%)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[28px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</li>
+<!-- Checklist Item 2 -->
+<li class="flex items-center justify-between p-3 rounded-lg bg-surface hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant group cursor-default">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">water_drop</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface">Payload Capacity</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Tanks filled and pressurized</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[28px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</li>
+<!-- Checklist Item 3 -->
+<li class="flex items-center justify-between p-3 rounded-lg bg-surface hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant group cursor-default">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">satellite_alt</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface">Telemetry &amp; Navigation</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Signal RTK locked (14 satellites)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[28px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</li>
+</ul>
+</section>
+<!-- Action Area -->
+<div class="mt-auto pt-stack-md pb-margin-mobile">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-title-md text-title-md py-4 px-6 rounded-xl flex items-center justify-center gap-3 transition-all active:scale-[0.98] shadow-md hover:shadow-lg relative overflow-hidden group">
+<span class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
+<span class="material-symbols-outlined relative z-10" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
+<span class="relative z-10 tracking-wide uppercase">Start Mission</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant mt-4">Initiating mission will transfer control to autonomous flight system.</p>
+</div>
+</main>
+<!-- BottomNavBar Suppressed per "Automatic Suppression" rule for Task-Focused screens -->
+</body></html>

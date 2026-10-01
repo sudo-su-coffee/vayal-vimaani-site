@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Raphael Aero-Agriculture | Splash</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0.5; }
+        }
+        .loading-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .progress-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(178, 247, 70, 0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "primary-fixed": "#c4ebda",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-fixed": "#b2f746",
+                        "tertiary": "#00160f",
+                        "on-tertiary-fixed": "#002117",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "on-surface-variant": "#414845",
+                        "on-primary-container": "#719586",
+                        "on-secondary-container": "#496f00",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary-container": "#689785",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#002117",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "outline-variant": "#c1c8c3",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "primary-container": "#062c21",
+                        "tertiary-container": "#002d21",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "on-surface": "#0b1c30",
+                        "secondary": "#446900",
+                        "on-secondary-fixed": "#121f00",
+                        "secondary-container": "#b2f746",
+                        "surface-tint": "#426558",
+                        "inverse-primary": "#a9cfbe",
+                        "surface-dim": "#cbdbf5",
+                        "primary": "#00150e",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#98da27",
+                        "surface-variant": "#d3e4fe",
+                        "inverse-surface": "#213145",
+                        "surface-container": "#e5eeff",
+                        "on-error": "#ffffff",
+                        "outline": "#717974",
+                        "tertiary-fixed": "#bbedd8",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "data-display": ["JetBrains Mono"],
+                        "label-sm": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-primary text-primary-fixed overflow-hidden font-body-md antialiased">
+<!-- Splash Background Canvas -->
+<div class="relative min-h-screen w-full flex items-center justify-center">
+<!-- Hero Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A sophisticated matte-black hexacopter agricultural drone hovering precisely over a vast, dew-covered emerald green cornfield at the break of dawn. The morning sun casts long, dramatic shadows and a soft golden glow against a deep forest green landscape. The visual style is industrial-premium and authoritative, with high contrast and a cinematic, visionary atmosphere that highlights the cutting-edge technology of aero-agriculture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5fP4ZeQEgW-0wV2_SZrjjl3TZeb254MNvA3jmN4MudmRq6ujh-e1CuJ1zhNNdQOe9H-aH5UbFBggFgQnYEv-AgGq-PEPhJ1UnzWDWkOgd9eVWSbum3rD1Je8YPviA8IszokC902WPFnPR4IGYRlpHClEQ0rSwjRAGpbymX6Xu9E2YsiIZPC4QAeK_kmWsOG1IrSCpLcCL933x1Iy4UbvS_FZtsqEeND_O1uEmgFEYVZSmQszEJIKXHKm4RwK108DffSNHKLonAGzh"/>
+<!-- Dark Gradient Overlays for Premium "Black & Dark Green" Aesthetic -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-primary/40 via-transparent to-primary/60"></div>
+<div class="absolute inset-0 backdrop-brightness-[0.7] backdrop-contrast-[1.1]"></div>
+</div>
+<!-- Content Shell -->
+<div class="relative z-10 flex flex-col items-center justify-center px-margin-mobile text-center max-w-2xl">
+<!-- Branding Header -->
+<div class="mb-stack-lg space-y-unit">
+<div class="flex items-center justify-center mb-stack-sm">
+<span class="material-symbols-outlined text-[48px] text-secondary-fixed loading-pulse" style="font-variation-settings: 'FILL' 1;">
+                        agriculture
+                    </span>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg tracking-tight text-white leading-tight">
+                    Raphael <br class="md:hidden"/> Aero-Agriculture
+                </h1>
+<p class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-primary-fixed/60">
+                    Industrial Scale Precision
+                </p>
+</div>
+<!-- Technical Detail Ornament -->
+<div class="hidden md:flex items-center gap-gutter border-y border-white/10 py-stack-sm px-stack-lg mb-stack-lg">
+<div class="flex flex-col items-start">
+<span class="font-label-sm text-label-sm text-secondary-fixed">TELEMETRY</span>
+<span class="font-data-display text-label-sm text-white/80">48.2505° N</span>
+</div>
+<div class="h-8 w-px bg-white/20"></div>
+<div class="flex flex-col items-start">
+<span class="font-label-sm text-label-sm text-secondary-fixed">FLIGHT</span>
+<span class="font-data-display text-label-sm text-white/80">READY</span>
+</div>
+<div class="h-8 w-px bg-white/20"></div>
+<div class="flex flex-col items-start">
+<span class="font-label-sm text-label-sm text-secondary-fixed">SIGNAL</span>
+<span class="font-data-display text-label-sm text-white/80">STABLE</span>
+</div>
+</div>
+<!-- Loading Interaction Shell -->
+<div class="w-full max-w-[280px] mt-stack-lg space-y-4">
+<div class="relative h-[2px] w-full bg-white/10 rounded-full overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-secondary-fixed w-0 transition-all duration-700 ease-out" id="loading-bar">
+<div class="absolute inset-0 progress-shimmer"></div>
+</div>
+</div>
+<div class="flex justify-between items-center px-1">
+<span class="font-label-sm text-label-sm text-primary-fixed/40 uppercase tracking-widest">System Boot</span>
+<span class="font-data-display text-label-sm text-secondary-fixed" id="loading-percentage">0%</span>
+</div>
+</div>
+</div>
+<!-- Ambient Data Particles (Decorative) -->
+<div class="absolute bottom-margin-desktop left-margin-desktop hidden lg:block opacity-30">
+<div class="space-y-stack-sm">
+<div class="h-px w-24 bg-gradient-to-r from-secondary-fixed to-transparent"></div>
+<p class="font-label-sm text-label-sm text-primary-fixed">V. 4.02.9 BETA</p>
+<p class="font-label-sm text-label-sm text-primary-fixed/60">AUTOPILOT_EN_29</p>
+</div>
+</div>
+<!-- Right Side Accent -->
+<div class="absolute bottom-margin-desktop right-margin-desktop hidden lg:block opacity-30 text-right">
+<div class="space-y-stack-sm flex flex-col items-end">
+<div class="h-px w-24 bg-gradient-to-l from-secondary-fixed to-transparent"></div>
+<p class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-tighter">Enterprise Agriculture Suite</p>
+<div class="flex gap-2">
+<div class="h-1.5 w-1.5 rounded-full bg-secondary-fixed"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-white/20"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-white/20"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Script for Loading Micro-Interaction -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingBar = document.getElementById('loading-bar');
+            const percentText = document.getElementById('loading-percentage');
+            let progress = 0;
+
+            const updateProgress = () => {
+                if (progress < 100) {
+                    // Random technical-feeling increments
+                    const increment = Math.floor(Math.random() * 15) + 5;
+                    progress = Math.min(progress + increment, 100);
+                    
+                    loadingBar.style.width = `${progress}%`;
+                    percentText.innerText = `${progress}%`;
+                    
+                    // Slower at the end for "checking sensors" feel
+                    const nextTick = progress > 80 ? 800 : 300;
+                    setTimeout(updateProgress, nextTick);
+                }
+            };
+
+            setTimeout(updateProgress, 500);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Equipment &amp; Maintenance Log - Raphael Aero-Agriculture</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#d3e4fe",
+                      "primary-fixed-dim": "#a9cfbe",
+                      "tertiary-fixed": "#bbedd8",
+                      "secondary-container": "#b2f746",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-surface": "#0b1c30",
+                      "primary-fixed": "#c4ebda",
+                      "surface-dim": "#cbdbf5",
+                      "surface-container": "#e5eeff",
+                      "on-tertiary-fixed-variant": "#204f40",
+                      "secondary": "#446900",
+                      "on-primary-fixed": "#002117",
+                      "secondary-fixed-dim": "#98da27",
+                      "outline": "#717974",
+                      "inverse-primary": "#a9cfbe",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#334f00",
+                      "on-primary-fixed-variant": "#2a4d41",
+                      "on-surface-variant": "#414845",
+                      "surface-container-high": "#dce9ff",
+                      "inverse-surface": "#213145",
+                      "surface-tint": "#426558",
+                      "surface-container-highest": "#d3e4fe",
+                      "background": "#f8f9ff",
+                      "secondary-fixed": "#b2f746",
+                      "on-tertiary-container": "#689785",
+                      "tertiary": "#00160f",
+                      "primary": "#00150e",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#eff4ff",
+                      "surface": "#f8f9ff",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed-dim": "#a0d1bd",
+                      "on-secondary-container": "#496f00",
+                      "on-background": "#0b1c30",
+                      "surface-bright": "#f8f9ff",
+                      "primary-container": "#062c21",
+                      "on-tertiary-fixed": "#002117",
+                      "error": "#ba1a1a",
+                      "tertiary-container": "#002d21",
+                      "outline-variant": "#c1c8c3",
+                      "on-primary-container": "#719586",
+                      "on-secondary-fixed": "#121f00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "stack-md": "16px",
+                      "stack-lg": "32px",
+                      "stack-sm": "8px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "title-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "data-display": [
+                              "JetBrains Mono"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "data-display": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for technical feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8f9ff; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c1c8c3; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #717974; 
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="sticky top-0 bg-surface flex justify-between items-center px-margin-mobile py-4 w-full z-50">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="agriculture" style="font-variation-settings: 'FILL' 1;">agriculture</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-bold text-primary tracking-tight">Raphael Aero-Agriculture</h1>
+</div>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-2xl" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg md:py-margin-desktop pb-24 md:pb-margin-desktop">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:justify-between md:items-end mb-stack-lg gap-stack-md">
+<div>
+<p class="font-label-sm text-label-sm text-outline tracking-widest uppercase mb-1">FLEET OPERATIONS</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">Equipment &amp; Maintenance Log</h2>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low border border-outline-variant rounded-lg px-4 py-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">TOTAL FLEET HOURS</span>
+<span class="font-data-display text-data-display text-primary">1,248.5</span>
+</div>
+<div class="h-10 w-px bg-outline-variant mx-2"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">ACTIVE UNITS</span>
+<span class="font-data-display text-data-display text-primary">12/15</span>
+</div>
+</div>
+</div>
+<!-- Technical Layout Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: Agras T40 #04 (Ready) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-sm transition-shadow duration-300 flex flex-col">
+<!-- Visual/Image Area -->
+<div class="h-48 bg-surface-variant relative border-b border-outline-variant">
+<img alt="Drone" class="w-full h-full object-cover mix-blend-multiply opacity-90" data-alt="A highly detailed, photorealistic render of a massive, industrial-grade agricultural spraying drone resting on a clean concrete launch pad. The drone features sleek carbon fiber arms, large foldable propellers, and a sophisticated sensor payload, styled in a premium corporate modern aesthetic. The lighting is crisp, high-key studio lighting against a bright, minimalist slate-gray background, emphasizing precision and technological authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO_MYwE2__NWlZy3xGov_OjjgaeFVERo8qpSx8ovlaU92soUH2rcGbHCQTZC6RqqDqtdaX-zmRHODz4f1SleDf1mYWwRUeLrLLp_IyUgGbiNtuo-3WmjGRmsYPGN4unBdPxt85bsrkIPhVS7yqQXA00T9dxxmgTnMCcCoR_StxdTSsXBbR7m-m2qzp8KVlQ-VaRhU5I2SxUDmEFxPBQC68yzj5WPuigsO2Eli5y5Kv3Pw7mbnshg91pdoTI1brPpF-gNPonHkoUWpy"/>
+<div class="absolute top-4 right-4 flex items-center gap-2 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full border border-secondary-fixed-dim backdrop-blur-md bg-opacity-90">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm font-semibold">READY</span>
+</div>
+</div>
+<!-- Content Area -->
+<div class="p-stack-md flex-grow flex flex-col">
+<div class="mb-4">
+<h3 class="font-title-md text-title-md text-on-surface">Agras T40</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">UNIT ID: #04-T40-AG</p>
+</div>
+<!-- Telemetry Data Grid -->
+<div class="grid grid-cols-2 gap-x-4 gap-y-4 mb-6 flex-grow">
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">FLIGHT_HOURS</p>
+<p class="font-data-display text-data-display text-on-surface">342.1<span class="text-sm text-outline font-body-md ml-1">h</span></p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">NEXT_MAINT.</p>
+<p class="font-data-display text-[20px] leading-[28px] font-semibold text-on-surface mt-1">400.0<span class="text-sm text-outline font-body-md ml-1">h</span></p>
+</div>
+<div class="col-span-2">
+<div class="flex justify-between items-end mb-1">
+<p class="font-label-sm text-label-sm text-outline">BATT_LEVEL</p>
+<p class="font-label-sm text-label-sm text-secondary font-bold">98%</p>
+</div>
+<div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 98%"></div>
+</div>
+</div>
+</div>
+<!-- Action -->
+<button class="w-full py-3 border border-outline rounded-lg font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-[18px] group-hover:text-primary transition-colors">history</span>
+                        VIEW LOGS
+                    </button>
+</div>
+</div>
+<!-- Card 2: Mavic 3M #01 (Charging) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-sm transition-shadow duration-300 flex flex-col">
+<div class="h-48 bg-surface-container relative border-b border-outline-variant">
+<img alt="Mavic Drone" class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="A sleek, professional multispectral imaging drone connected to a high-tech charging station. The scene is illuminated by clean, cool white light, emphasizing the pristine white and slate-gray components of the drone, with a subtle glowing indicator light. The environment suggests an advanced, clinical maintenance facility, reflecting an authoritative and visionary industrial premium aesthetic, utilizing a minimalist color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFgG5YOARC_YL4enBnpiE74zwa3SyDJ_5FekEPDpk6G0zL_TPFGZp5N94s2v4JXVIrgF38U0NK3EpO9RkYtbow3sJEDjZuYexnUumx03D6nWr8EKSOceer7bpVj89UurLNRflESFli0je91fxQ0dhFCFEohFyPMImsjAue6sKbJ8_HYUwSY-5Qq8aNPXQIi55N57y8VDN1bjp94tUzQfnQt222vOcG272XxQGag0kmyib8YmsB2MXambYXjVTfdtJpUKUg8P97Uc2h"/>
+<div class="absolute top-4 right-4 flex items-center gap-2 bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full border border-outline-variant backdrop-blur-md bg-opacity-90">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-sm text-label-sm font-semibold">CHARGING</span>
+</div>
+</div>
+<div class="p-stack-md flex-grow flex flex-col">
+<div class="mb-4">
+<h3 class="font-title-md text-title-md text-on-surface">Mavic 3M</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">UNIT ID: #01-M3M-MS</p>
+</div>
+<div class="grid grid-cols-2 gap-x-4 gap-y-4 mb-6 flex-grow">
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">FLIGHT_HOURS</p>
+<p class="font-data-display text-data-display text-on-surface">128.5<span class="text-sm text-outline font-body-md ml-1">h</span></p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">NEXT_MAINT.</p>
+<p class="font-data-display text-[20px] leading-[28px] font-semibold text-on-surface mt-1">200.0<span class="text-sm text-outline font-body-md ml-1">h</span></p>
+</div>
+<div class="col-span-2">
+<div class="flex justify-between items-end mb-1">
+<p class="font-label-sm text-label-sm text-outline">BATT_LEVEL</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-bold">45%</p>
+</div>
+<div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-surface-tint rounded-full animate-pulse" style="width: 45%"></div>
+</div>
+</div>
+</div>
+<button class="w-full py-3 border border-outline rounded-lg font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-[18px] group-hover:text-primary transition-colors">history</span>
+                        VIEW LOGS
+                    </button>
+</div>
+</div>
+<!-- Card 3: Agras T40 #02 (Maintenance Required) -->
+<div class="bg-surface-container-lowest border border-error-container rounded-xl overflow-hidden shadow-[0_0_15px_rgba(186,26,26,0.05)] flex flex-col relative">
+<!-- Subtle warning tint overlay -->
+<div class="absolute inset-0 bg-error-container opacity-[0.03] pointer-events-none"></div>
+<div class="h-48 bg-surface-container relative border-b border-error-container/30">
+<div class="absolute inset-0 bg-error-container mix-blend-multiply opacity-20"></div>
+<img alt="Drone Maintenance" class="w-full h-full object-cover opacity-80 grayscale-[30%]" data-alt="A close-up, highly detailed shot of industrial drone components undergoing maintenance. The image focuses on precision metallic gears, carbon fiber struts, and wiring within a clean, high-tech engineering environment. The lighting is slightly dramatic, highlighting the texture of the materials. The overall aesthetic is corporate modern and technical, using a palette of deep grays, blacks, and subtle metallic reflections, conveying a sense of rigorous upkeep." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfNTTPXTkR9JSomC-ZXy9yF6n2iBU7LEohmzKR1zgCY_6DMWGmr1pDlV_A4EfdvW4DD-BnZAQmAQFoVgot2oxSxcxu3bNgK-_7K9c1OUO36g9OILMZcPotFONeIVo3GbxyxYYhYUqvmNu73faZnc4AVKUCJTYpsIIPhaAepHSb4_sKCqWWlOoyOYb2e0FNZMUXlNmcl1IXzSrOZBLKoFDVasCl4CWgvH0Osz80r6AtbAZWQ_Nq_PizYOzhLrkB9sPRHHHy7MD7qQRx"/>
+<div class="absolute top-4 right-4 flex items-center gap-2 bg-error-container text-on-error-container px-3 py-1 rounded-full border border-error/20 backdrop-blur-md bg-opacity-90 shadow-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-sm text-label-sm font-semibold">MAINTENANCE REQ</span>
+</div>
+</div>
+<div class="p-stack-md flex-grow flex flex-col relative z-10">
+<div class="mb-4 flex justify-between items-start">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Agras T40</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">UNIT ID: #02-T40-AG</p>
+</div>
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">build</span>
+</div>
+<div class="grid grid-cols-2 gap-x-4 gap-y-4 mb-6 flex-grow">
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">FLIGHT_HOURS</p>
+<p class="font-data-display text-data-display text-error">402.5<span class="text-sm text-outline font-body-md ml-1">h</span></p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">DUE_AT</p>
+<p class="font-data-display text-[20px] leading-[28px] font-semibold text-on-surface mt-1">400.0<span class="text-sm text-outline font-body-md ml-1">h</span></p>
+</div>
+<div class="col-span-2 mt-2 bg-error-container/30 border border-error-container rounded p-3">
+<p class="font-label-sm text-label-sm text-on-error-container mb-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                                DIAGNOSTIC_CODE: ERR_MTR_03
+                            </p>
+<p class="text-xs font-body-md text-on-surface-variant">Scheduled replacement of rotor bearing assembly required.</p>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+                        SCHEDULE SERVICE
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<!-- Active Tab: Services (Index 2) to align with Equipment/Maintenance context -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-2 bg-surface-container border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Bookings (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<!-- Services (Active - Equipment falls under technical services/management) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-150 shadow-sm" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<span class="font-label-sm text-label-sm font-semibold">Services</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

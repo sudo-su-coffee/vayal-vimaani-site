@@ -1,0 +1,331 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Farmer Profile - Raphael Aero-Agriculture</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#002d21",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "inverse-primary": "#a9cfbe",
+                        "secondary-fixed-dim": "#98da27",
+                        "primary-fixed": "#c4ebda",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "inverse-surface": "#213145",
+                        "primary": "#00150e",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#121f00",
+                        "on-surface": "#0b1c30",
+                        "on-primary-fixed": "#002117",
+                        "primary-container": "#062c21",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed": "#b2f746",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-dim": "#cbdbf5",
+                        "secondary-container": "#b2f746",
+                        "on-tertiary-fixed": "#002117",
+                        "on-error": "#ffffff",
+                        "outline": "#717974",
+                        "on-primary-container": "#719586",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-container": "#e5eeff",
+                        "on-background": "#0b1c30",
+                        "surface-tint": "#426558",
+                        "outline-variant": "#c1c8c3",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#689785",
+                        "error": "#ba1a1a",
+                        "secondary": "#446900",
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "surface-bright": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-secondary-container": "#496f00",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#bbedd8",
+                        "tertiary": "#00160f",
+                        "on-surface-variant": "#414845",
+                        "on-secondary-fixed-variant": "#334f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "margin-mobile": "16px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "data-display": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "data-display": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Hide scrollbars but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex flex-col pb-24 md:pb-0 selection:bg-secondary selection:text-on-secondary">
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full border-b border-outline-variant/30">
+<div class="flex items-center gap-stack-sm hover:opacity-80 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[28px]">agriculture</span>
+<h1 class="font-headline-lg-mobile text-[20px] md:text-headline-lg font-bold text-primary tracking-tight">Raphael Aero-Agriculture</h1>
+</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="font-label-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">Home</a>
+<a class="font-label-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">Bookings</a>
+<a class="font-label-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">Services</a>
+<a class="font-label-sm text-primary font-bold flex items-center gap-2" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-stack-md">
+<button class="text-on-surface-variant p-2 rounded-full hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+
+</div>
+</header>
+<main class="flex-grow max-w-[1200px] w-full mx-auto px-margin-mobile md:px-margin-desktop pt-6 md:pt-10 pb-16 flex flex-col gap-8">
+<!-- Streamlined Header -->
+<section class="flex flex-col md:flex-row items-center md:items-start gap-6">
+<div class="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-outline-variant p-1">
+<img alt="Farmer John" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSr9rYgXebKb6amCrDLLxRnweLArYrYMUpmu5vnxxQWDmlGaJ-IrINTnpeuxNHYzhgtXVTD7H8hqQ1Be2wRGRVXO9YqS80NRAmZXQx3LeVeVYR2uY9tpcfCy7wG9eDaXR99l3f0ZAL4VyTx9LiZTd4r472auLhlZLmMMvn9KeCZnaj4-XqysCDO0YkyeK8SjztXVY4DY9xY7CMroOuQQ_x56LjB9Vnn6TxlxAd3Fd5LOyc4Q04XDsy0texBpc3pbpn_anDEqZtjgSw">
+</div>
+<div class="flex-grow text-center md:text-left flex flex-col justify-center">
+<div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Farmer John</h2>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm border border-secondary-fixed shadow-sm self-center md:self-auto uppercase tracking-wider">
+                    Optimal Status
+                </span>
+</div>
+<p class="font-body-md text-on-surface-variant flex items-center justify-center md:justify-start gap-1.5"><span class="material-symbols-outlined text-[18px] text-primary fill">verified</span>
+                <span class="font-semibold">Enterprise Agricultural Partner</span></p>
+<div class="mt-4 flex gap-3 justify-center md:justify-start">
+<button class="px-5 py-2 bg-primary text-on-primary rounded-full text-label-sm font-bold hover:opacity-90 active:scale-95 transition-all">
+                    Edit Profile
+                </button>
+<button class="px-5 py-2 border border-outline-variant text-on-surface rounded-full text-label-sm font-bold hover:bg-surface-container transition-all">
+                    Share
+                </button>
+</div>
+</div>
+</section>
+<!-- Main Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Left: High Density Fields & Simplified Fleet -->
+<div class="md:col-span-7 flex flex-col gap-8">
+<!-- High-Density Fields List -->
+<section class="bg-surface-container-lowest rounded-2xl border border-outline-variant/30 p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">layers</span>
+                        My Fields
+                    </h3>
+<button class="text-primary font-label-sm hover:underline">Add New</button>
+</div>
+<div class="flex flex-col">
+<!-- Field 1 -->
+<div class="group py-3 border-b border-outline-variant/20 last:border-0 flex items-center justify-between hover:bg-surface-container-low/50 transition-colors cursor-pointer -mx-2 px-2 rounded-lg">
+<div class="flex flex-col">
+<span class="font-body-md font-semibold text-on-surface">North Sector Alpha</span>
+<span class="font-label-sm text-on-surface-variant opacity-70">34.0522° N, 118.2437° W</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-data-display text-[18px] text-on-surface">420 <span class="text-[12px] font-label-sm uppercase opacity-50">ac</span></span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Field 2 -->
+<div class="group py-3 border-b border-outline-variant/20 last:border-0 flex items-center justify-between hover:bg-surface-container-low/50 transition-colors cursor-pointer -mx-2 px-2 rounded-lg">
+<div class="flex flex-col">
+<span class="font-body-md font-semibold text-on-surface">River Bend Parcel</span>
+<span class="font-label-sm text-on-surface-variant opacity-70">34.1139° N, 118.3065° W</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-data-display text-[18px] text-on-surface">150 <span class="text-[12px] font-label-sm uppercase opacity-50">ac</span></span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Simplified Fleet Preferences (Horizontal Scroll) -->
+<section class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h3 class="font-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">rocket_launch</span>
+                        Active Fleet
+                    </h3>
+<span class="text-label-sm bg-surface-variant px-2 py-0.5 rounded text-on-surface-variant">2 Units</span>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<!-- Drone Card 1 -->
+<div class="min-w-[200px] bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-3 flex flex-col gap-3 group hover:border-primary/50 transition-all">
+<div class="h-24 bg-surface rounded-lg overflow-hidden flex items-center justify-center p-2">
+<img alt="Agras T40" class="h-full object-contain grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6zxWYZmt9rps7-H_dbQ9NGy5-H0jfsnPDELV84Qtx9EpzgeG-MSq3yUOn_9n3eDPpvt9LRrqwhcOaJnZBnkICdcLxkHY0NGPpHl9oaYpInl7wLciWQlXUhzTx9JmirtrK55zeMnBxDcRI1FOUyv_bqCgVN7TC-JX1SbgiqBb6tjiXJDuz_1yQkCg1M65mY3sMhrvWqzqJ9_FiAwDc6ACSK85Tf2KGsBGha_pZGs3Q71cEI_pYvzMDgS0f7qKiRO-xxU1ZXJu6haT4">
+</div>
+<div class="flex flex-col">
+<span class="font-body-md font-bold text-on-surface">Agras T40</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant">Heavy Lift</span>
+</div>
+</div>
+<!-- Drone Card 2 -->
+<div class="min-w-[200px] bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-3 flex flex-col gap-3 group hover:border-primary/50 transition-all">
+<div class="h-24 bg-surface rounded-lg overflow-hidden flex items-center justify-center p-2">
+<img alt="Mavic 3M" class="h-full object-contain grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_lobcMZpcCCPdHdA4pCmeJ8SlnEIOEsqN8pihTXmAlPjNveE8ytEPuKyRk6pVgBi20SRjG9jPwsg9XUfAesquHX-35TSJ-M_PAdITKfuSx92xiZ0FUsnQbEHOSsSIW6LTaBuDzJvRCChwLhiCsEQ_80XDTg4CxqW_JqOd89SlegPtBY0lCxwRmLifDtHHv6gvC7NgnjNI87K1zTHLUPdvM7uVi1o7zsI5-eU9gAA6fsDxVlcwtjL2_s10ut0sXP8RJDTtu_I0tuc-">
+</div>
+<div class="flex flex-col">
+<span class="font-body-md font-bold text-on-surface">Mavic 3M</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant">Survey</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right: Sleek Banner & Grouped Settings -->
+<div class="md:col-span-5 flex flex-col gap-6">
+<!-- Sleek Data Subscription Banner -->
+<section class="bg-primary p-6 rounded-2xl relative overflow-hidden flex items-center justify-between group">
+<div class="relative z-10">
+<h3 class="text-secondary-fixed-dim text-[10px] font-bold tracking-[0.2em] mb-1">PRO PLAN</h3>
+<div class="flex items-center gap-2">
+<span class="text-on-primary font-headline-lg-mobile text-[24px]">Active</span>
+<span class="material-symbols-outlined fill text-secondary-fixed-dim text-[18px]">verified</span>
+</div>
+</div>
+<div class="relative z-10 text-right">
+<p class="text-on-primary/60 text-[12px]">Next bill: Oct 12</p>
+<button class="text-secondary-fixed-dim text-[12px] font-bold hover:underline">Manage</button>
+</div>
+<!-- Abstract BG Decor -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+</section>
+<!-- Settings & Help Combined with Generous Spacing -->
+<div class="flex flex-col gap-8 bg-surface-container-lowest/50 rounded-2xl border border-outline-variant/20 p-6">
+<!-- Settings Group -->
+<div class="flex flex-col gap-4">
+<h4 class="text-[11px] font-bold tracking-[0.15em] text-on-surface-variant uppercase mb-2 opacity-60">System Settings</h4>
+<a class="flex items-center justify-between group py-2" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<span class="font-body-md text-on-surface">Payment Methods</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a class="flex items-center justify-between group py-2" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<span class="font-body-md text-on-surface">Security &amp; Privacy</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</div>
+<hr class="border-outline-variant/10">
+<!-- Help Group -->
+<div class="flex flex-col gap-4">
+<h4 class="text-[11px] font-bold tracking-[0.15em] text-on-surface-variant uppercase mb-2 opacity-60">Support</h4>
+<a class="flex items-center justify-between group py-2" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">help_center</span>
+</div>
+<span class="font-body-md text-on-surface">Help Center</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a class="flex items-center justify-between group py-2" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<span class="font-body-md text-on-surface">Documentation</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform">open_in_new</span>
+</a>
+</div>
+<button class="mt-4 w-full py-4 rounded-xl text-error font-bold border border-error/20 hover:bg-error/5 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                    Sign Out
+                </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface/95 backdrop-blur-md border-t border-outline-variant/30 flex justify-around items-center px-4 py-3 z-[60]"><a class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="text-[10px] font-medium">Home</span></a><a class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="text-[10px] font-medium">Bookings</span></a><a class="flex flex-col items-center gap-1 text-on-surface-variant opacity-60" href="#"><span class="material-symbols-outlined text-[24px]">payments</span><span class="text-[10px] font-medium">Payments</span></a><a class="flex flex-col items-center gap-1 text-primary" href="#"><span class="material-symbols-outlined fill text-[24px]">person</span><span class="text-[10px] font-bold">Profile</span></a></nav>
+<script>
+    // Header scroll effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            header.classList.add('shadow-lg', 'border-b-primary/10');
+        } else {
+            header.classList.remove('shadow-lg', 'border-b-primary/10');
+        }
+    });
+</script>
+
+
+
+
+</body></html>

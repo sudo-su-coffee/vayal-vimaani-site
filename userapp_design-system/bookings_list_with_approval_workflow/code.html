@@ -1,0 +1,364 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>All Bookings | Raphael Aero-Agriculture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#414845",
+                    "on-tertiary-container": "#689785",
+                    "on-secondary": "#ffffff",
+                    "outline": "#717974",
+                    "on-primary-fixed": "#002117",
+                    "surface-tint": "#426558",
+                    "primary-container": "#062c21",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#0b1c30",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-fixed-variant": "#204f40",
+                    "inverse-primary": "#a9cfbe",
+                    "primary-fixed": "#c4ebda",
+                    "tertiary-fixed-dim": "#a0d1bd",
+                    "outline-variant": "#c1c8c3",
+                    "secondary-container": "#446900",
+                    "surface": "#f8f9ff",
+                    "on-primary-fixed-variant": "#2a4d41",
+                    "secondary-fixed": "#b2f746",
+                    "on-tertiary-fixed": "#002117",
+                    "primary-fixed-dim": "#a9cfbe",
+                    "surface-bright": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#d3e4fe",
+                    "secondary": "#446900",
+                    "on-primary-container": "#719586",
+                    "error": "#ba1a1a",
+                    "background": "#f8f9ff",
+                    "on-background": "#0b1c30",
+                    "surface-container-low": "#eff4ff",
+                    "primary": "#00150e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#ffffff",
+                    "tertiary": "#00160f",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container": "#e5eeff",
+                    "secondary-fixed-dim": "#98da27",
+                    "on-secondary-fixed": "#121f00",
+                    "tertiary-fixed": "#bbedd8",
+                    "tertiary-container": "#002d21",
+                    "surface-dim": "#cbdbf5",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#334f00",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#dce9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "unit": "4px",
+                    "stack-md": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "data-display": ["JetBrains Mono"],
+                    "title-md": ["Hanken Grotesk"],
+                    "label-sm": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        body {
+            background-color: #f8f9ff;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface flex justify-between items-center px-margin-mobile py-4 transition-opacity border-b border-outline-variant">
+<div class="flex items-center gap-3"><h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Raphael Aero-Agriculture</h1></div>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-20 pb-24 min-h-screen px-margin-mobile max-w-[1440px] mx-auto md:px-margin-desktop">
+<!-- Search & Filter Bar -->
+<section class="mb-stack-lg">
+<div class="flex flex-col gap-4 md:flex-row md:items-center">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-xl focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none font-body-md" placeholder="Search by farmer, mission, or field..." type="text">
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container transition-colors font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="">Date</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container transition-colors font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+<span class="">Filters</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Category Tabs -->
+<nav class="flex border-b border-outline-variant mb-stack-md sticky top-20 bg-background/80 backdrop-blur-md z-40 overflow-x-auto scrollbar-hide">
+<button class="px-6 py-4 font-title-md border-b-2 border-secondary text-secondary transition-all whitespace-nowrap">Requests (2)</button>
+<button class="px-6 py-4 font-title-md border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all whitespace-nowrap">Upcoming</button>
+<button class="px-6 py-4 font-title-md border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all whitespace-nowrap">Completed</button>
+<button class="px-6 py-4 font-title-md border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-all whitespace-nowrap">Cancelled</button>
+</nav>
+<!-- Pending Approval Warning Banner -->
+<div class="mb-6 p-4 bg-error-container text-on-error-container rounded-xl flex items-start gap-3 border border-error/20">
+<span class="material-symbols-outlined shrink-0" data-icon="warning">warning</span>
+<p class="font-body-md text-[14px]">
+<strong>Pilot Approval Required:</strong> Mission operations cannot commence until a pilot has reviewed and accepted the booking request.
+    </p>
+</div>
+<!-- Mission Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- REQUEST CARD 1: Red River Orchards -->
+<div class="bg-surface-container-lowest border-2 border-primary/20 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 px-3 py-1 bg-primary text-on-primary font-label-sm text-[10px] rounded-bl-lg tracking-widest">NEW REQUEST</div>
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="hourglass_empty">hourglass_empty</span>
+    PENDING APPROVAL
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors" data-icon="more_vert">more_vert</span>
+</div>
+<h2 class="font-title-md text-title-md mb-1">Red River Orchards</h2>
+<p class="font-body-md text-on-surface-variant flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                        West Valley Perimeter
+                    </p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="space-y-1">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Service</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-body-md">Aerial Spraying</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Requested</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="schedule">schedule</span>
+<span class="font-body-md">Oct 28, 05:45</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div>
+<p class="font-label-sm text-label-sm text-outline">ESTIMATED EARNING</p>
+<p class="font-data-display text-data-display text-on-background">$1,890.00</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-outline">PAYMENT STATUS</p>
+<p class="font-body-md text-secondary font-medium">Secured</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-primary text-on-primary py-3 rounded-lg font-body-md hover:bg-primary-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="check">check</span> Accept
+        </button>
+<button class="bg-surface-container-highest text-on-surface-variant py-3 rounded-lg font-body-md hover:bg-outline-variant transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span> Decline
+        </button>
+</div>
+</div>
+</div>
+<!-- REQUEST CARD 2: Sunrise Fields -->
+<div class="bg-surface-container-lowest border-2 border-primary/20 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 px-3 py-1 bg-primary text-on-primary font-label-sm text-[10px] rounded-bl-lg tracking-widest">NEW REQUEST</div>
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="hourglass_empty">hourglass_empty</span>
+    PENDING APPROVAL
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors" data-icon="more_vert">more_vert</span>
+</div>
+<h2 class="font-title-md text-title-md mb-1">Sunrise Fields Co.</h2>
+<p class="font-body-md text-on-surface-variant flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                        North Plateau 4
+                    </p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="space-y-1">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Service</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="monitoring">monitoring</span>
+<span class="font-body-md">NDVI Scanning</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Requested</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="schedule">schedule</span>
+<span class="font-body-md">Oct 29, 08:30</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div>
+<p class="font-label-sm text-label-sm text-outline">ESTIMATED EARNING</p>
+<p class="font-data-display text-data-display text-on-background">$920.00</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-outline">PAYMENT STATUS</p>
+<p class="font-body-md text-outline font-medium">Escrow Pending</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-primary text-on-primary py-3 rounded-lg font-body-md hover:bg-primary-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="check">check</span> Accept
+        </button>
+<button class="bg-surface-container-highest text-on-surface-variant py-3 rounded-lg font-body-md hover:bg-outline-variant transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span> Decline
+        </button>
+</div>
+</div>
+</div>
+<!-- Dashboard Graphic Overlay -->
+<div class="relative overflow-hidden bg-primary-container rounded-xl p-8 lg:col-span-2 flex flex-col justify-center min-h-[240px]">
+<div class="relative z-10 max-w-md">
+<h3 class="font-headline-lg text-white mb-2">High Efficiency Week</h3>
+<p class="text-on-primary-container font-body-md mb-6">Your schedule is 85% optimized for fuel economy and flight paths. Consider batching Oakley Ridge and Green Valley for maximum efficiency.</p>
+<button class="border border-secondary-fixed text-secondary-fixed px-6 py-2 rounded-full font-label-sm tracking-wide uppercase hover:bg-secondary-fixed hover:text-primary transition-all">Optimize Routes</button>
+</div>
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-30 pointer-events-none">
+<img alt="Optimized Drone Flight Paths" class="w-full h-full object-cover" data-alt="A clean, minimalist 3D visualization of digital agricultural drone flight paths over stylized geometric fields. The aesthetic is corporate modern with high-tech reliability, featuring a palette of deep forest greens, vibrant lime accents, and soft slate blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy7YWVKR5oBjWP1h5l0UQgtFAwSlZ3SHofcF5OPTbQ1_ARroevezpaJ2a7Zn90e6tKlywWgVQ1Bij6HaRbgnxD4fQD32NDpQ6Vl9JDarrg0_aACKO_xzaVZjT3Tm208_Y8q0uG1FDLZq2jRI8SQcRvzIvworXxMR9skVHMTPK3nfBsgcx2pTgqN43yqqpBw3qG8kg9v4WGdeuufAdw_1anJCbLfAKTh2AHE6IMjnkgJeM6YAuHtd05nId6A_on-1AvthzltFSlH5ui">
+</div>
+</div>
+<!-- Card 3: Miller Highlands Estate -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 hover:shadow-lg transition-shadow group flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">
+                            CONFIRMED
+                        </div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors" data-icon="more_vert">more_vert</span>
+</div>
+<h2 class="font-title-md text-title-md mb-1">Miller Highlands Estate</h2>
+<p class="font-body-md text-on-surface-variant flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                        Sector 7-B, Highland Plains
+                    </p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="space-y-1">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Service</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-body-md">Aerial Spraying</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Schedule</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="schedule">schedule</span>
+<span class="font-body-md">Oct 24, 06:00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant flex justify-between items-center">
+<div>
+<p class="font-label-sm text-label-sm text-outline">ESTIMATED EARNING</p>
+<p class="font-data-display text-data-display text-on-background">$1,450.00</p>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-body-md hover:bg-primary-container transition-colors">
+                        Details
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container flex justify-around items-center px-margin-mobile py-2 transition-colors border-t border-outline-variant"><a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm">Payments</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a></nav>
+<script>
+        // Simple tab switching interaction
+        const tabs = document.querySelectorAll('nav[class*="border-b"] button');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('border-secondary', 'text-secondary');
+                    t.classList.add('border-transparent', 'text-on-surface-variant');
+                });
+                tab.classList.add('border-secondary', 'text-secondary');
+                tab.classList.remove('border-transparent', 'text-on-surface-variant');
+            });
+        });
+
+        // Search highlight interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.01]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.01]');
+        });
+    </script>
+</body></html>

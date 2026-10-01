@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pilot Profile - Erik Magnusson | AgroDrone Control</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(203, 219, 245, 0.5);
+    }
+    body {
+      background-color: #f8f9ff;
+    }
+    /* Chart animation simulation */
+    @keyframes grow { from { height: 0; } to { height: var(--h); } }
+    .bar-grow { animation: grow 1s ease-out forwards; }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#002d21",
+            "tertiary-fixed": "#bbedd8",
+            "error-container": "#ffdad6",
+            "secondary-container": "#b2f746",
+            "outline-variant": "#c1c8c3",
+            "on-tertiary-container": "#689785",
+            "on-secondary-fixed": "#121f00",
+            "secondary-fixed": "#b2f746",
+            "on-secondary-container": "#496f00",
+            "on-primary-fixed": "#002117",
+            "surface-tint": "#426558",
+            "primary-container": "#062c21",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#414845",
+            "surface-container-highest": "#d3e4fe",
+            "surface-bright": "#f8f9ff",
+            "surface-container-high": "#dce9ff",
+            "on-tertiary-fixed-variant": "#204f40",
+            "on-primary-fixed-variant": "#2a4d41",
+            "primary-fixed-dim": "#a9cfbe",
+            "on-error": "#ffffff",
+            "primary-fixed": "#c4ebda",
+            "on-tertiary-fixed": "#002117",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#eaf1ff",
+            "background": "#f8f9ff",
+            "tertiary-fixed-dim": "#a0d1bd",
+            "surface-variant": "#d3e4fe",
+            "surface-dim": "#cbdbf5",
+            "on-background": "#0b1c30",
+            "outline": "#717974",
+            "tertiary": "#00160f",
+            "inverse-surface": "#213145",
+            "on-surface": "#0b1c30",
+            "on-primary-container": "#719586",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#98da27",
+            "surface-container": "#e5eeff",
+            "secondary": "#446900",
+            "on-secondary-fixed-variant": "#334f00",
+            "inverse-primary": "#a9cfbe",
+            "primary": "#00150e",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface": "#f8f9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-mobile": "16px",
+            "stack-lg": "32px",
+            "gutter": "24px",
+            "stack-sm": "8px",
+            "stack-md": "16px",
+            "margin-desktop": "64px",
+            "unit": "4px"
+          },
+          "fontFamily": {
+            "title-md": ["Hanken Grotesk"],
+            "body-lg": ["Inter"],
+            "data-display": ["JetBrains Mono"],
+            "label-sm": ["JetBrains Mono"],
+            "headline-lg": ["Hanken Grotesk"],
+            "display-lg": ["Hanken Grotesk"],
+            "body-md": ["Inter"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Side Navigation Shell -->
+<aside class="bg-primary dark:bg-primary-container h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-stack-lg z-50">
+<div class="px-6 mb-10">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-primary dark:text-on-primary-container">AgroDrone</h1>
+<p class="text-on-primary-fixed-variant text-label-sm opacity-80">Enterprise Admin</p>
+</div>
+<nav class="flex-1">
+<ul class="space-y-1">
+<li><a class="flex items-center gap-4 py-3 pl-5 text-on-primary-fixed-variant hover:bg-primary-fixed-dim/10 hover:text-secondary-fixed transition-colors duration-200" href="#"><span class="material-symbols-outlined">dashboard</span>Dashboard</a></li>
+<li><a class="flex items-center gap-4 py-3 pl-5 text-on-primary-fixed-variant hover:bg-primary-fixed-dim/10 hover:text-secondary-fixed transition-colors duration-200" href="#"><span class="material-symbols-outlined">calendar_month</span>Bookings</a></li>
+<li><a class="flex items-center gap-4 py-3 pl-5 text-on-primary-fixed-variant hover:bg-primary-fixed-dim/10 hover:text-secondary-fixed transition-colors duration-200" href="#"><span class="material-symbols-outlined">agriculture</span>Farmers</a></li>
+<!-- Active Tab: Pilots -->
+<li><a class="flex items-center gap-4 py-3 text-secondary-fixed font-bold border-l-4 border-secondary-fixed pl-4 active:scale-95 transition-transform" href="#"><span class="material-symbols-outlined">flight_takeoff</span>Pilots</a></li>
+<li><a class="flex items-center gap-4 py-3 pl-5 text-on-primary-fixed-variant hover:bg-primary-fixed-dim/10 hover:text-secondary-fixed transition-colors duration-200" href="#"><span class="material-symbols-outlined">payments</span>Payments</a></li>
+</ul>
+</nav>
+<div class="mt-auto px-6 space-y-4">
+<button class="w-full bg-secondary text-on-secondary font-title-md py-3 rounded-lg hover:brightness-110 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">rocket_launch</span>Deploy Fleet
+      </button>
+<hr class="border-on-primary-fixed-variant/20"/>
+<ul class="space-y-1">
+<li><a class="flex items-center gap-4 py-2 text-on-primary-fixed-variant hover:text-secondary-fixed" href="#"><span class="material-symbols-outlined">settings</span>Settings</a></li>
+<li><a class="flex items-center gap-4 py-2 text-on-primary-fixed-variant hover:text-secondary-fixed" href="#"><span class="material-symbols-outlined">help_outline</span>Support</a></li>
+</ul>
+</div>
+</aside>
+<!-- Top App Bar -->
+<header class="flex justify-between items-center ml-64 px-margin-desktop h-20 w-[calc(100%-16rem)] bg-surface dark:bg-surface-dim border-b border-outline-variant fixed top-0 z-40">
+<div class="flex items-center gap-6">
+<span class="font-title-md text-title-md font-bold text-primary dark:text-on-surface">AgroDrone Control</span>
+<div class="relative group">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-outline">
+<span class="material-symbols-outlined">search</span>
+</span>
+<input class="bg-surface-container-low border-none focus:ring-2 focus:ring-secondary rounded-full pl-10 pr-4 py-1.5 text-body-md w-64 transition-all" placeholder="Search mission IDs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="flex items-center gap-3 border-l pl-6 border-outline-variant">
+<div class="text-right">
+<p class="text-label-sm font-bold leading-none">Admin Profile</p>
+<p class="text-[10px] text-on-surface-variant">Systems Controller</p>
+</div>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full object-cover border-2 border-secondary-container" data-alt="A professional headshot of a corporate administrative controller in a modern office environment. The person is wearing a dark charcoal suit with a crisp white shirt, exuding authority and technical competence. The lighting is soft and even, typical of a high-end corporate setting, with a shallow depth of field blurring a background of glowing server monitors and sleek industrial architecture. The overall tone is professional, minimalist, and authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4tOW7sEqDXfJ0dNsVs9tGV_cgBXzZYKCPnLUv2tRMOwAT_eB2ag9oDUCWm1HRcZe7Y95mtBA8i2EBooGdY4QbVbFIZX9EkwieN559L5LcDw-33kXekUTGKcJhxLTiAC99KiZo_QnbtYOT5LycxvjHRjDiX-sgDFpWwTpHxtYru6ujP8DSPNTB2vayzDaxrIv_ntORRv3tfpd9frNQhDetTkQQI6BvO5iNUMLVf6ExFCz4Lno6LFE8uHrxCowxJtoZO5V-yvzhv0kM"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-20 p-margin-desktop min-h-screen">
+<!-- Profile Header Section -->
+<section class="flex flex-col md:flex-row gap-stack-lg items-start mb-stack-lg">
+<div class="relative group shrink-0">
+<img alt="Erik Magnusson Profile Photo" class="w-48 h-48 rounded-xl object-cover shadow-lg" data-alt="A detailed portrait of Erik Magnusson, a seasoned drone pilot with a focused and intelligent expression. He wears a technical outdoor vest with the AgroDrone logo and a communication headset. The setting is a vast agricultural field at sunset, with golden hour light illuminating his face and highlighting his professionalism. The image has a cinematic, high-contrast style that emphasizes expertise and visionary character." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGkow9mSJ8BSz_8kNZZC603vfaT6AFVEock0-JT8r58_veYF0M7zVGqUfcNJCaVf_2WH3SV3IJd44iCH-RsKEr7S29R7YA-cxFNvWOBmjzEo5Lp8x_z7cUD7Pzbol4n3oOSDBhLBRvAsf_Wi5rr2nACcHEcbIlgEP5WCRBW19F1nerYX5429XjoU12Y6m96aOsEVMjTYgZYATCUx-eGEfSi8KZugJhhTwEdbHcQFTrmYYnylZFGEDTOiOo-GnJpsnk3bdCaDGymwdX"/>
+<div class="absolute -bottom-3 -right-3 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1 border-2 border-surface">
+<span class="w-2 h-2 bg-on-secondary-container rounded-full animate-pulse"></span>
+          ON MISSION
+        </div>
+</div>
+<div class="flex-1 space-y-4">
+<div>
+<div class="flex items-center gap-4">
+<h2 class="font-display-lg text-display-lg text-primary">Erik Magnusson</h2>
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded text-label-sm">ID: AD-7729-DELTA</span>
+</div>
+<p class="text-body-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+            Senior Fleet Commander • Stockholm Regional Hub
+          </p>
+</div>
+<div class="flex flex-wrap gap-stack-md">
+<div class="bg-surface-container-low px-6 py-4 rounded-xl border border-outline-variant/30 flex-1 min-w-[200px]">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Performance Rating</p>
+<div class="flex items-end gap-2">
+<span class="font-data-display text-display-lg leading-none text-secondary">4.98</span>
+<div class="flex text-secondary-fixed-dim mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low px-6 py-4 rounded-xl border border-outline-variant/30 flex-1 min-w-[200px]">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Total Missions</p>
+<span class="font-data-display text-display-lg leading-none text-primary">1,240</span>
+</div>
+<div class="bg-surface-container-low px-6 py-4 rounded-xl border border-outline-variant/30 flex-1 min-w-[200px]">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Payout Balance</p>
+<span class="font-data-display text-display-lg leading-none text-secondary">$12,450.00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-12 gap-stack-lg">
+<!-- Payout History Chart (Column 1-8) -->
+<div class="col-span-12 lg:col-span-8 glass-card rounded-xl p-8">
+<div class="flex justify-between items-center mb-10">
+<h3 class="font-title-md text-title-md text-primary">Monthly Earnings Trend</h3>
+<div class="flex gap-2">
+<button class="text-label-sm bg-surface-container-highest px-3 py-1 rounded">6 Months</button>
+<button class="text-label-sm text-on-surface-variant px-3 py-1">1 Year</button>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-2">
+<!-- Mock Chart Bars -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary-fixed-dim/20 rounded-t-lg relative group overflow-hidden">
+<div class="bar-grow w-full bg-secondary-fixed rounded-t-lg" style="--h: 60%; height: 60%;"></div>
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-primary/10 flex items-center justify-center text-label-sm font-bold">$1.8k</div>
+</div>
+<span class="text-label-sm text-on-surface-variant">JAN</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary-fixed-dim/20 rounded-t-lg relative group overflow-hidden">
+<div class="bar-grow w-full bg-secondary-fixed rounded-t-lg" style="--h: 75%; height: 75%;"></div>
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-primary/10 flex items-center justify-center text-label-sm font-bold">$2.2k</div>
+</div>
+<span class="text-label-sm text-on-surface-variant">FEB</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary-fixed-dim/20 rounded-t-lg relative group overflow-hidden">
+<div class="bar-grow w-full bg-secondary-fixed rounded-t-lg" style="--h: 45%; height: 45%;"></div>
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-primary/10 flex items-center justify-center text-label-sm font-bold">$1.4k</div>
+</div>
+<span class="text-label-sm text-on-surface-variant">MAR</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary-fixed-dim/20 rounded-t-lg relative group overflow-hidden">
+<div class="bar-grow w-full bg-secondary-fixed rounded-t-lg" style="--h: 90%; height: 90%;"></div>
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-primary/10 flex items-center justify-center text-label-sm font-bold">$2.8k</div>
+</div>
+<span class="text-label-sm text-on-surface-variant">APR</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary-fixed-dim/20 rounded-t-lg relative group overflow-hidden">
+<div class="bar-grow w-full bg-secondary-fixed rounded-t-lg" style="--h: 85%; height: 85%;"></div>
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-primary/10 flex items-center justify-center text-label-sm font-bold">$2.6k</div>
+</div>
+<span class="text-label-sm text-on-surface-variant">MAY</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full bg-primary-fixed-dim/20 rounded-t-lg relative group overflow-hidden">
+<div class="bar-grow w-full bg-secondary-fixed rounded-t-lg" style="--h: 100%; height: 100%;"></div>
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-primary/10 flex items-center justify-center text-label-sm font-bold">$3.1k</div>
+</div>
+<span class="text-label-sm text-on-surface-variant">JUN</span>
+</div>
+</div>
+</div>
+<!-- Fleet Info (Column 9-12) -->
+<div class="col-span-12 lg:col-span-4 bg-primary text-on-primary rounded-xl p-8 flex flex-col">
+<h3 class="font-title-md text-title-md mb-6">Active Fleet</h3>
+<div class="space-y-6 flex-1">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl">airplanemode_active</span>
+</div>
+<div>
+<p class="font-bold text-body-md">Raphael S1-Pro</p>
+<p class="text-label-sm text-on-primary-fixed-variant">SN: RS1-99802-X</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between text-label-sm">
+<span>Battery Health</span>
+<span>98%</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full" style="width: 98%"></div>
+</div>
+<div class="flex justify-between text-label-sm">
+<span>Signal Strength</span>
+<span>Optimal</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full" style="width: 100%"></div>
+</div>
+</div>
+<div class="mt-4 p-4 rounded-lg bg-on-primary-fixed-variant/10 border border-white/5">
+<div class="flex items-center gap-2 text-secondary-fixed mb-1">
+<span class="material-symbols-outlined text-sm">build</span>
+<span class="text-label-sm font-bold">MAINTENANCE STATUS</span>
+</div>
+<p class="text-label-sm opacity-80 italic">Next inspection in 14 flight hours. No issues detected in latest logs.</p>
+</div>
+</div>
+<button class="mt-8 border border-secondary-fixed text-secondary-fixed py-2 rounded-lg text-label-sm hover:bg-secondary-fixed/10 transition-all uppercase tracking-widest font-bold">
+          View Fleet Telemetry
+        </button>
+</div>
+<!-- Certifications (Column 1-4) -->
+<div class="col-span-12 lg:col-span-4 glass-card rounded-xl p-8">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-title-md text-title-md text-primary">Certifications</h3>
+<span class="material-symbols-outlined text-secondary cursor-pointer">add_circle</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-3 rounded-lg border border-outline-variant/30 hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+<div class="flex-1">
+<p class="text-label-sm font-bold text-primary">CAA Grade A License</p>
+<p class="text-[10px] text-on-surface-variant">Expires Oct 2025</p>
+</div>
+<span class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Verified</span>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-lg border border-outline-variant/30 hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl">security</span>
+<div class="flex-1">
+<p class="text-label-sm font-bold text-primary">Advanced Safety Clearance</p>
+<p class="text-[10px] text-on-surface-variant">Issued by AgroSecurity</p>
+</div>
+<span class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Verified</span>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-lg border border-outline-variant/30 hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl">description</span>
+<div class="flex-1">
+<p class="text-label-sm font-bold text-primary">Precision Agronomy Cert</p>
+<p class="text-[10px] text-on-surface-variant">Certified NDVI Specialist</p>
+</div>
+<span class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Verified</span>
+</div>
+</div>
+</div>
+<!-- Mission History Table (Column 5-12) -->
+<div class="col-span-12 lg:col-span-8 glass-card rounded-xl p-8 overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-title-md text-title-md text-primary">Recent Mission History</h3>
+<button class="text-secondary text-label-sm font-bold hover:underline flex items-center gap-1">
+            VIEW ALL MISSIONS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-label-sm text-on-surface-variant border-b border-outline-variant/30 uppercase tracking-wider">
+<th class="pb-4 font-medium">Mission ID</th>
+<th class="pb-4 font-medium">Client / Area</th>
+<th class="pb-4 font-medium">Type</th>
+<th class="pb-4 font-medium">Date</th>
+<th class="pb-4 font-medium">Payout</th>
+<th class="pb-4 font-medium text-right">Status</th>
+</tr>
+</thead>
+<tbody class="text-body-md">
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container/50 transition-all cursor-pointer">
+<td class="py-4 font-data-display text-sm">#M-88219</td>
+<td class="py-4">
+<p class="font-bold">GreenValley Farms</p>
+<p class="text-[10px] text-on-surface-variant">North Sector - 400ha</p>
+</td>
+<td class="py-4"><span class="text-label-sm bg-surface-container-highest px-2 py-0.5 rounded">NDVI Scan</span></td>
+<td class="py-4 text-sm">12 Jun 2024</td>
+<td class="py-4 font-bold text-primary">$450.00</td>
+<td class="py-4 text-right">
+<span class="text-secondary font-bold text-[10px] bg-secondary/10 px-2 py-1 rounded">COMPLETED</span>
+</td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container/50 transition-all cursor-pointer">
+<td class="py-4 font-data-display text-sm">#M-88104</td>
+<td class="py-4">
+<p class="font-bold">BlueRiver Co.</p>
+<p class="text-[10px] text-on-surface-variant">Coastal Vineyard - 120ha</p>
+</td>
+<td class="py-4"><span class="text-label-sm bg-surface-container-highest px-2 py-0.5 rounded">Crop Spraying</span></td>
+<td class="py-4 text-sm">10 Jun 2024</td>
+<td class="py-4 font-bold text-primary">$820.00</td>
+<td class="py-4 text-right">
+<span class="text-secondary font-bold text-[10px] bg-secondary/10 px-2 py-1 rounded">COMPLETED</span>
+</td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container/50 transition-all cursor-pointer">
+<td class="py-4 font-data-display text-sm">#M-88055</td>
+<td class="py-4">
+<p class="font-bold">Andersson Est.</p>
+<p class="text-[10px] text-on-surface-variant">Södermanland - 80ha</p>
+</td>
+<td class="py-4"><span class="text-label-sm bg-surface-container-highest px-2 py-0.5 rounded">Soil Analysis</span></td>
+<td class="py-4 text-sm">08 Jun 2024</td>
+<td class="py-4 font-bold text-primary">$310.00</td>
+<td class="py-4 text-right">
+<span class="text-secondary font-bold text-[10px] bg-secondary/10 px-2 py-1 rounded">COMPLETED</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- Interactive Map Micro-interaction for Mission Tracking -->
+<div class="fixed bottom-10 right-10 w-64 h-40 rounded-xl overflow-hidden shadow-2xl border-2 border-surface-container-lowest transition-transform hover:scale-105 cursor-pointer z-50">
+<div class="absolute inset-0 bg-primary/20 z-10 flex flex-col justify-end p-4">
+<div class="flex justify-between items-center text-white">
+<div>
+<p class="text-[10px] font-bold uppercase tracking-tighter opacity-70 leading-none">Live Telemetry</p>
+<p class="text-label-sm font-bold">M-88341 IN PROGRESS</p>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed animate-pulse">location_on</span>
+</div>
+</div>
+<div class="w-full h-full bg-cover bg-center" data-location="Stockholm Region Fields" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD24knPrHzylYYfI2Khj7Pbyoq6Iavkeb3ggvrwDA34KlQmbcGJHahj89A0HTUWwy5_WDklevC3Z5f8BKTKnscp7GlQv4OslvZc5sdkYBObpd8t4wwmIPHVt_D7FAJUDhHQClo4mgsaZvHjTMBuhczEr7P7l8NRVEy3zkN35iliIEKr544aTVEDDQu37unZnXtopIBKiH1pfpESZck83gpA5zGhnSpC0wBxVaj4iaTeqm9hhteAom9BE_FiQvQZyBJDnh2moYIEO0v0')">
+</div>
+</div>
+<script>
+    // Subtle interactivity
+    document.querySelectorAll('.glass-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-2px)';
+        card.style.transition = 'transform 0.3s ease';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+      });
+    });
+
+    // Toggle Search Bar Focus Ring
+    const searchInput = document.querySelector('input[type="text"]');
+    searchInput.addEventListener('focus', () => {
+      searchInput.parentElement.classList.add('ring-2', 'ring-secondary');
+    });
+    searchInput.addEventListener('blur', () => {
+      searchInput.parentElement.classList.remove('ring-2', 'ring-secondary');
+    });
+  </script>
+</body></html>

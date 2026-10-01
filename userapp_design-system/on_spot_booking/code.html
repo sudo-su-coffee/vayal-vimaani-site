@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Immediate Deployment - Raphael Drones</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f8f9ff",
+                        "primary-container": "#062c21",
+                        "on-tertiary-fixed": "#002117",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#121f00",
+                        "tertiary-container": "#002d21",
+                        "outline-variant": "#c1c8c3",
+                        "on-primary-container": "#719586",
+                        "on-background": "#0b1c30",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "on-secondary-container": "#496f00",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#00160f",
+                        "primary": "#00150e",
+                        "surface-container-low": "#eff4ff",
+                        "surface": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#426558",
+                        "surface-container-highest": "#d3e4fe",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#b2f746",
+                        "on-tertiary-container": "#689785",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-surface": "#213145",
+                        "on-surface-variant": "#414845",
+                        "secondary": "#446900",
+                        "on-primary-fixed": "#002117",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#98da27",
+                        "outline": "#717974",
+                        "inverse-primary": "#a9cfbe",
+                        "tertiary-fixed": "#bbedd8",
+                        "secondary-container": "#b2f746",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-surface": "#0b1c30",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed": "#c4ebda",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "surface-variant": "#d3e4fe"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "stack-sm": "8px",
+                        "margin-desktop": "64px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-display": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "title-md": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "data-display": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        /* Ambient Background Pattern */
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(113, 121, 116, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(113, 121, 116, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        
+        /* Utility for Material Symbols */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom Input Focus Ring overriding standard outline */
+        input:focus, button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px theme('colors.primary');
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Ambient Grid Background -->
+<div class="absolute inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+<!-- Transactional Header (Suppressed global nav for linear flow) -->
+<header class="w-full flex items-center justify-between px-margin-mobile md:px-margin-desktop py-stack-md relative z-10">
+<button aria-label="Cancel request" class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" type="button">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<div class="text-on-surface font-title-md text-title-md tracking-tight">
+            RAPHAEL
+        </div>
+<div class="w-10 h-10"></div> <!-- Spacer for flex balance -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-2xl mx-auto px-margin-mobile md:px-0 py-stack-lg relative z-10 flex flex-col justify-center">
+<!-- Header Section -->
+<div class="mb-stack-lg text-center md:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm mb-stack-md uppercase">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+                Priority Override Active
+            </div>
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface mb-unit leading-tight">
+                Request Immediate Deployment
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+                Bypass standard scheduling. A telemetry-equipped drone will be dispatched to your coordinates immediately upon confirmation.
+            </p>
+</div>
+<!-- Form Canvas (Level 1 Card) -->
+<form class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 md:p-8 shadow-sm flex flex-col gap-stack-lg">
+<!-- Location Block (Bento-style layout within card) -->
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2 uppercase">
+<span class="material-symbols-outlined text-[16px]" data-icon="my_location">my_location</span>
+                    Target Coordinates
+                </label>
+<div class="group relative flex items-center bg-surface-bright border border-outline-variant rounded-lg p-4 transition-colors focus-within:border-primary">
+<div class="flex-1 flex flex-col">
+<span class="font-data-display text-body-md text-on-surface tracking-widest">34°03'15"N 118°14'28"W</span>
+<span class="font-body-md text-[13px] text-on-surface-variant mt-1">Accuracy: ±2.4 meters (GPS)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Locked
+                        </span>
+</div>
+</div>
+<!-- Manual Override Toggle (Visual only for prototype) -->
+<button class="self-start font-label-sm text-label-sm text-primary underline decoration-primary/30 hover:decoration-primary mt-1 transition-all" type="button">
+                    Enter Manual Coordinates
+                </button>
+</div>
+<hr class="border-outline-variant/50">
+<!-- Field Size Block -->
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2 uppercase" for="field-size">
+<span class="material-symbols-outlined text-[16px]" data-icon="square_foot">square_foot</span>
+                    Estimated Area
+                </label>
+<div class="flex gap-2 items-stretch h-14">
+<!-- Number Input -->
+<div class="relative flex-1">
+<input class="w-full h-full bg-surface-bright border border-outline-variant rounded-lg px-4 font-data-display text-data-display text-on-surface transition-colors focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-outline" id="field-size" placeholder="0.00" type="number">
+</div>
+<!-- Unit Selector (Segmented Control style) -->
+<div class="flex bg-surface-container border border-outline-variant rounded-lg p-1">
+<button aria-pressed="true" class="px-4 h-full rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm transition-all uppercase" type="button">
+                            Acres
+                        </button>
+<button aria-pressed="false" class="px-4 h-full rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all uppercase" type="button">
+                            Hectares
+                        </button>
+</div>
+</div>
+<p class="font-body-md text-[13px] text-on-surface-variant mt-1">Required to optimize battery allocation for the flight path.</p>
+</div>
+<!-- Action Area -->
+<div class="mt-stack-md">
+<button class="w-full h-14 bg-primary hover:bg-tertiary-container text-on-primary rounded-lg font-title-md text-title-md flex items-center justify-center gap-2 transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined" data-icon="flight_takeoff">flight_takeoff</span>
+                    Authorize Immediate Launch
+                </button>
+<div class="text-center mt-3 font-body-md text-[12px] text-on-surface-variant flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="info">info</span>
+                    Standard priority fees apply. Estimated ETA provided post-launch.
+                </div>
+</div>
+</form>
+</main>
+<script>
+        // Simple micro-interaction for the unit toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const unitButtons = document.querySelectorAll('[aria-pressed]');
+            
+            unitButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    // Reset all
+                    unitButtons.forEach(btn => {
+                        btn.setAttribute('aria-pressed', 'false');
+                        btn.classList.remove('bg-surface-container-lowest', 'shadow-sm', 'text-on-surface');
+                        btn.classList.add('text-on-surface-variant');
+                    });
+                    
+                    // Set active
+                    const target = e.currentTarget;
+                    target.setAttribute('aria-pressed', 'true');
+                    target.classList.remove('text-on-surface-variant');
+                    target.classList.add('bg-surface-container-lowest', 'shadow-sm', 'text-on-surface');
+                });
+            });
+        });
+    </script>
+</body></html>

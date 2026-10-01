@@ -1,0 +1,302 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Payment Collection | Raphael Aero-Agriculture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#e5eeff",
+                    "secondary-container": "#b2f746",
+                    "on-primary": "#ffffff",
+                    "background": "#f8f9ff",
+                    "on-tertiary-fixed": "#002117",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#a0d1bd",
+                    "on-tertiary-container": "#689785",
+                    "surface-variant": "#d3e4fe",
+                    "inverse-surface": "#213145",
+                    "error": "#ba1a1a",
+                    "surface": "#f8f9ff",
+                    "secondary-fixed": "#b2f746",
+                    "surface-container-high": "#dce9ff",
+                    "secondary-fixed-dim": "#98da27",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#121f00",
+                    "primary-container": "#062c21",
+                    "on-primary-container": "#719586",
+                    "primary": "#00150e",
+                    "on-secondary-container": "#496f00",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#0b1c30",
+                    "outline": "#717974",
+                    "on-primary-fixed": "#002117",
+                    "tertiary-fixed": "#bbedd8",
+                    "on-primary-fixed-variant": "#2a4d41",
+                    "surface-container-low": "#eff4ff",
+                    "on-surface-variant": "#414845",
+                    "tertiary-container": "#002d21",
+                    "on-background": "#0b1c30",
+                    "primary-fixed": "#c4ebda",
+                    "inverse-primary": "#a9cfbe",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-tint": "#426558",
+                    "surface-dim": "#cbdbf5",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary-fixed-variant": "#334f00",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#00160f",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#446900",
+                    "outline-variant": "#c1c8c3",
+                    "on-tertiary-fixed-variant": "#204f40",
+                    "primary-fixed-dim": "#a9cfbe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "label-sm": ["JetBrains Mono"],
+                    "data-display": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "title-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bg-glass {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-bright border-b border-outline-variant flex justify-between items-center px-margin-mobile h-16 md:px-margin-desktop">
+<div class="flex items-center gap-4">
+<button class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary tracking-tight">Raphael Aero-Agriculture</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-primary hover:bg-surface-container-high transition-colors p-2 rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<!-- Breadcrumb / Task Focus Header -->
+<div class="mb-stack-lg">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mb-stack-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_back">arrow_back</span>
+<span>RETURN TO MISSION LOG</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">Payment Collection</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Content Column -->
+<div class="lg:col-span-8 space-y-gutter">
+<!-- Mission Identity Card -->
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-lg rounded-lg shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-stack-md">
+<div>
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">MISSION COMPLETED</span>
+<h3 class="font-title-md text-title-md text-on-surface mt-1">Field Sector Alpha-9: NDVI Analysis</h3>
+<div class="flex items-center gap-4 mt-stack-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="tag">tag</span> B-992031</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span> Oct 24, 2023</span>
+</div>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-stack-md py-stack-sm rounded-full flex items-center gap-2 w-fit">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm">READY FOR SETTLEMENT</span>
+</div>
+</div>
+</div>
+<!-- Payment Selection Area -->
+<section>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant mb-stack-md uppercase tracking-wider">Select Payment Method</h4>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-stack-md">
+<!-- Cash -->
+<button class="method-card flex flex-col items-center justify-center p-stack-lg border-2 border-outline-variant rounded-xl bg-surface-container-lowest hover:border-secondary transition-all active:scale-95" id="method-cash" onclick="selectMethod('cash')">
+<span class="material-symbols-outlined text-[32px] text-primary mb-stack-sm" data-icon="payments">payments</span>
+<span class="font-title-md text-title-md">Cash</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant text-center mt-2">Physical hand-off</p>
+</button>
+<!-- Digital -->
+<button class="method-card flex flex-col items-center justify-center p-stack-lg border-2 border-outline-variant rounded-xl bg-surface-container-lowest hover:border-secondary transition-all active:scale-95" id="method-digital" onclick="selectMethod('digital')">
+<span class="material-symbols-outlined text-[32px] text-primary mb-stack-sm" data-icon="account_balance">account_balance</span>
+<span class="font-title-md text-title-md">Digital</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant text-center mt-2">Bank / UPI Transfer</p>
+</button>
+<!-- Credit -->
+<button class="method-card flex flex-col items-center justify-center p-stack-lg border-2 border-outline-variant rounded-xl bg-surface-container-lowest hover:border-secondary transition-all active:scale-95" id="method-credit" onclick="selectMethod('credit')">
+<span class="material-symbols-outlined text-[32px] text-primary mb-stack-sm" data-icon="credit_card">credit_card</span>
+<span class="font-title-md text-title-md">Credit</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant text-center mt-2">Enterprise Account</p>
+</button>
+</div>
+</section>
+<!-- On-Spot Verification Details (Conditional-like container) -->
+<div class="bg-surface-container-low border border-outline-variant p-stack-lg rounded-xl" id="payment-details">
+<div class="flex items-start gap-4">
+<div class="bg-primary-container p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="info">info</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Payment Verification</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Please ensure you have verified the transaction or received the physical cash before marking this mission as collected. This action is final and will trigger the data release to the client.</p>
+</div>
+</div>
+<div class="mt-stack-lg space-y-stack-md">
+<div class="group">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1 block">Reference Number (Optional)</label>
+<input class="w-full bg-surface-container-lowest border-b-2 border-outline-variant focus:border-secondary outline-none py-2 font-data-display text-body-lg transition-colors" placeholder="e.g. TXN-12345678" type="text">
+</div>
+<div class="group">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1 block">Pilot Notes</label>
+<textarea class="w-full bg-surface-container-lowest border-b-2 border-outline-variant focus:border-secondary outline-none py-2 font-body-md transition-colors resize-none" placeholder="Any discrepancies or on-field notes..." rows="3"></textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar / Amount Summary -->
+<div class="lg:col-span-4">
+<div class="sticky top-24 space-y-gutter">
+<!-- Pricing Card -->
+<div class="bg-inverse-surface text-inverse-on-surface p-stack-lg rounded-xl shadow-lg border border-primary-container">
+<span class="font-label-sm text-label-sm text-secondary-fixed opacity-80 uppercase tracking-widest">Amount Due</span>
+<div class="flex items-baseline gap-2 mt-stack-sm">
+<span class="font-data-display text-display-lg">$</span>
+<span class="font-data-display text-display-lg" id="final-amount">1,450.00</span>
+</div>
+<hr class="border-on-primary-fixed-variant my-stack-lg">
+<div class="space-y-stack-md">
+<div class="flex justify-between font-body-md">
+<span class="opacity-70">Base Mission Fee</span>
+<span class="font-label-sm">$1,200.00</span>
+</div>
+<div class="flex justify-between font-body-md">
+<span class="opacity-70">Data Processing (NDVI)</span>
+<span class="font-label-sm">$200.00</span>
+</div>
+<div class="flex justify-between font-body-md">
+<span class="opacity-70">Aero-Tax (4.2%)</span>
+<span class="font-label-sm">$50.00</span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-title-md text-title-md py-6 rounded-full flex items-center justify-center gap-3 transition-all active:scale-95 shadow-md" onclick="handleCollection()">
+<span class="material-symbols-outlined" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+                        Mark as Collected
+                    </button>
+<!-- Safety Check -->
+<div class="bg-surface-container border border-outline-variant p-stack-md rounded-lg flex gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="verified_user">verified_user</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Secure collection logged via encrypted pilot terminal. Timestamp: 2023-10-24 14:22 GMT</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container shadow-[0_-1px_10px_rgba(0,0,0,0.05)] rounded-t-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm">Payments</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Success Overlay (Hidden by default) -->
+<div class="fixed inset-0 z-[100] bg-primary/40 backdrop-blur-xl flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500" id="success-overlay">
+<div class="bg-surface-container-lowest p-margin-desktop rounded-xl shadow-2xl max-w-md w-full text-center scale-90 transition-transform duration-500" id="success-modal">
+<div class="w-24 h-24 bg-secondary-container rounded-full flex items-center justify-center mx-auto mb-stack-lg">
+<span class="material-symbols-outlined text-[48px] text-on-secondary-container" data-icon="celebration">celebration</span>
+</div>
+<h3 class="font-display-lg text-title-md text-primary mb-stack-sm">Mission Settled</h3>
+<p class="font-body-md text-on-surface-variant mb-stack-lg">The payment for B-992031 has been successfully recorded. Agricultural data is now syncing with client portal.</p>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-title-md" onclick="window.location.reload()">Done</button>
+</div>
+</div>
+<script>
+        function selectMethod(method) {
+            // Reset all
+            document.querySelectorAll('.method-card').forEach(card => {
+                card.classList.remove('border-secondary', 'bg-secondary-container', 'bg-opacity-10');
+                card.classList.add('border-outline-variant', 'bg-surface-container-lowest');
+            });
+            
+            // Highlight selected
+            const active = document.getElementById('method-' + method);
+            active.classList.remove('border-outline-variant', 'bg-surface-container-lowest');
+            active.classList.add('border-secondary', 'bg-secondary-container', 'bg-opacity-20');
+        }
+
+        function handleCollection() {
+            const overlay = document.getElementById('success-overlay');
+            const modal = document.getElementById('success-modal');
+            
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100');
+            modal.classList.remove('scale-90');
+            modal.classList.add('scale-100');
+        }
+
+        // Initialize with Cash selected
+        selectMethod('cash');
+    </script>
+</body></html>

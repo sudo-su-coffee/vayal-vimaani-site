@@ -1,0 +1,404 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Farmer Profile - Raphael Aero-Agriculture</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c1c8c3",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "on-primary-container": "#719586",
+                        "on-primary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "secondary-fixed-dim": "#98da27",
+                        "error": "#ba1a1a",
+                        "tertiary": "#00160f",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed": "#121f00",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-primary": "#a9cfbe",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#c4ebda",
+                        "on-surface-variant": "#414845",
+                        "surface-tint": "#426558",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed": "#002117",
+                        "primary-container": "#062c21",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "on-background": "#0b1c30",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#689785",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#496f00",
+                        "on-error": "#ffffff",
+                        "secondary": "#446900",
+                        "primary": "#00150e",
+                        "on-primary-fixed": "#002117",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#e5eeff",
+                        "outline": "#717974",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "tertiary-fixed": "#bbedd8",
+                        "secondary-fixed": "#b2f746",
+                        "secondary-container": "#b2f746",
+                        "tertiary-container": "#002d21",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "surface-container-low": "#eff4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "32px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-display": ["JetBrains Mono"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-display": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Subtle glassmorphism utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex flex-col pb-20 md:pb-0 selection:bg-secondary selection:text-on-secondary">
+<!-- TopAppBar (Desktop Navigation & Mobile Header) -->
+<header class="bg-surface sticky top-0 z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full transition-colors duration-300">
+<!-- Brand / Leading -->
+<div class="flex items-center gap-stack-sm hover:opacity-80 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[28px]">agriculture</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-bold text-primary tracking-tight">
+                Raphael Aero-Agriculture
+            </h1>
+</div>
+<!-- Desktop Navigation Cluster (Hidden on Mobile) -->
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">home</span> Home
+            </a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span> Bookings
+            </a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">precision_manufacturing</span> Services
+            </a>
+<!-- Active Desktop Tab -->
+<a class="font-label-sm text-label-sm text-primary bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined fill text-[20px]">person</span> Profile
+            </a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-stack-md">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200 p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<!-- Mobile Menu Trigger (Optional, relying on Bottom Nav primarily) -->
+<button class="md:hidden text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200 p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-[1440px] w-full mx-auto px-margin-mobile md:px-margin-desktop pt-8 md:pt-12 pb-16 flex flex-col gap-stack-lg">
+<!-- Grid Layout for Dashboard Feel -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Profile Header (Full Width Bento Item) -->
+<section class="md:col-span-12 bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden relative group">
+<!-- Cover Image Area -->
+<div class="h-32 md:h-48 w-full bg-surface-variant relative overflow-hidden">
+<img alt="Cover Photo" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A breathtaking aerial view of a vast, meticulously organized agricultural field. The crops are aligned in perfect geometric rows, stretching towards the horizon under a clear, bright sky. A subtle overlay of digital telemetry data or NDVI scanning lines in bright lime green adds a high-tech aero-agriculture feel to the scene. The lighting is pristine and daylight-balanced, emphasizing the clean, industrial premium aesthetic of modern farming. The color palette is dominated by earthy greens and stark whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7SWtXUlyuqv96FxsdtE5t6cbkZ6EFNBndwleuUbjSGYFx6zc9Zxp5qWOxGtt8sD3qvQ5rso_wjWOtMfdd-mBacQJCvVxI06tO4wAdRV3D5kpPGV1iMsYDRa-ZJtniiVWkrOvrYK4FJWnQjfT4SpW4Dbr3mcq158qvXo4rwBPk1a9IFiXbDLsdDvZDgm5mDyhbqfebgxm8QK3030d_P5epUBMXgD4nXauA-Fx5-1-tS0gEavEVE9-YHUOCM2ESKkXUAP3U0ONDBQY6">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<!-- Profile Details Container -->
+<div class="px-gutter pb-gutter relative -mt-16 md:-mt-20 flex flex-col md:flex-row items-start md:items-end gap-stack-md md:gap-gutter">
+<!-- Avatar -->
+<div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-surface-container-lowest overflow-hidden shadow-sm bg-surface">
+<img alt="Farmer John" class="w-full h-full object-cover" data-alt="A professional headshot of a modern farmer in his late 40s. He is wearing a clean, dark green collared shirt with a subtle technical fabric texture. The background is a crisp, bright minimalist agricultural setting, perhaps hinting at a clean laboratory or modern barn with ample natural white light. The lighting is high-key and flattering, reflecting a Corporate Modern aesthetic. The overall mood is authoritative, experienced, and deeply connected to high-tech aero-agriculture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSr9rYgXebKb6amCrDLLxRnweLArYrYMUpmu5vnxxQWDmlGaJ-IrINTnpeuxNHYzhgtXVTD7H8hqQ1Be2wRGRVXO9YqS80NRAmZXQx3LeVeVYR2uY9tpcfCy7wG9eDaXR99l3f0ZAL4VyTx9LiZTd4r472auLhlZLmMMvn9KeCZnaj4-XqysCDO0YkyeK8SjztXVY4DY9xY7CMroOuQQ_x56LjB9Vnn6TxlxAd3Fd5LOyc4Q04XDsy0texBpc3pbpn_anDEqZtjgSw">
+</div>
+<!-- Text Info -->
+<div class="flex-grow pb-2">
+<h2 class="font-display-lg text-display-lg text-on-surface mb-1">Farmer John</h2>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+<p class="font-body-lg text-body-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+                                Enterprise Agricultural Partner
+                            </p>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+                                Optimal Status
+                            </span>
+</div>
+</div>
+<!-- Primary Action -->
+<div class="w-full md:w-auto pb-2">
+<button class="w-full md:w-auto px-6 py-3 bg-primary text-on-primary font-title-md text-title-md rounded-lg hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined">edit</span>
+                            Edit Profile
+                        </button>
+</div>
+</div>
+</section>
+<!-- Left Column: Fields & Fleet -->
+<div class="md:col-span-8 flex flex-col gap-gutter">
+<!-- My Fields Section -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-gutter flex flex-col gap-stack-md">
+<div class="flex justify-between items-center border-b border-surface-variant pb-stack-sm">
+<h3 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">map</span>
+                            My Fields
+                        </h3>
+<button class="text-secondary hover:text-on-secondary-container font-label-sm text-label-sm flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span> Add Field
+                        </button>
+</div>
+<div class="flex flex-col gap-unit">
+<!-- Field Item 1 -->
+<div class="group flex flex-col sm:flex-row justify-between items-start sm:items-center p-stack-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer border border-transparent hover:border-surface-variant">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded bg-surface-variant flex items-center justify-center text-primary mt-1 sm:mt-0">
+<span class="material-symbols-outlined">grass</span>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">North Sector Alpha</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">LAT: 34.0522° N, LNG: 118.2437° W</p>
+</div>
+</div>
+<div class="flex items-center gap-4 mt-3 sm:mt-0 w-full sm:w-auto justify-between sm:justify-end">
+<div class="text-right">
+<p class="font-data-display text-data-display text-on-surface leading-none">420</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">ACRES</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Field Item 2 -->
+<div class="group flex flex-col sm:flex-row justify-between items-start sm:items-center p-stack-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer border border-transparent hover:border-surface-variant">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded bg-surface-variant flex items-center justify-center text-primary mt-1 sm:mt-0">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">River Bend Parcel</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">LAT: 34.1139° N, LNG: 118.3065° W</p>
+</div>
+</div>
+<div class="flex items-center gap-4 mt-3 sm:mt-0 w-full sm:w-auto justify-between sm:justify-end">
+<div class="text-right">
+<p class="font-data-display text-data-display text-on-surface leading-none">150</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">ACRES</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Fleet Preferences Section -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-gutter flex flex-col gap-stack-md">
+<div class="flex justify-between items-center border-b border-surface-variant pb-stack-sm">
+<h3 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">flight_takeoff</span>
+                            Fleet Preferences
+                        </h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-variant px-2 py-1 rounded">2 Models Selected</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-md">
+<!-- Drone Card 1 -->
+<div class="border border-outline-variant rounded-lg p-stack-sm hover:border-secondary transition-colors cursor-pointer group bg-surface relative overflow-hidden">
+<div class="absolute top-2 right-2 text-secondary z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined fill">check_circle</span>
+</div>
+<div class="h-32 bg-surface-container-low rounded mb-3 flex items-center justify-center overflow-hidden">
+<img alt="Agras T40" class="h-full w-full object-cover mix-blend-multiply group-hover:scale-110 transition-transform duration-500" data-alt="A high-resolution, studio-quality product shot of a large, heavy-lift agricultural drone, specifically designed for crop spraying. The drone is predominantly matte black and industrial grey, with subtle lime green accents. It is positioned against a pure white, minimalist background to highlight its robust, precise engineering and carbon fiber components. The lighting is sharp and technical, creating crisp highlights that emphasize the Corporate Modern, premium technological nature of the equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6zxWYZmt9rps7-H_dbQ9NGy5-H0jfsnPDELV84Qtx9EpzgeG-MSq3yUOn_9n3eDPpvt9LRrqwhcOaJnZBnkICdcLxkHY0NGPpHl9oaYpInl7wLciWQlXUhzTx9JmirtrK55zeMnBxDcRI1FOUyv_bqCgVN7TC-JX1SbgiqBb6tjiXJDuz_1yQkCg1M65mY3sMhrvWqzqJ9_FiAwDc6ACSK85Tf2KGsBGha_pZGs3Q71cEI_pYvzMDgS0f7qKiRO-xxU1ZXJu6haT4">
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h4 class="font-title-md text-title-md text-on-surface">Agras T40</h4>
+<span class="text-[10px] uppercase font-bold tracking-widest bg-primary text-on-primary px-2 py-0.5 rounded">Heavy Lift</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Payload: 40L Spraying</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Swath: 11m</p>
+</div>
+</div>
+<!-- Drone Card 2 -->
+<div class="border border-outline-variant rounded-lg p-stack-sm hover:border-secondary transition-colors cursor-pointer group bg-surface relative overflow-hidden">
+<div class="absolute top-2 right-2 text-secondary z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined fill">check_circle</span>
+</div>
+<div class="h-32 bg-surface-container-low rounded mb-3 flex items-center justify-center overflow-hidden">
+<img alt="Mavic 3M" class="h-full w-full object-cover mix-blend-multiply group-hover:scale-110 transition-transform duration-500" data-alt="A sleek, compact multispectral agricultural survey drone captured in a high-key studio environment. The drone features an advanced camera payload with visible spectral sensors. The setting is ultra-minimalist with a stark white background, ensuring the focus remains entirely on the sophisticated technology. Professional, bright lighting accentuates the smooth curves and precise build quality of the device, perfectly aligning with a premium, high-tech aero-agriculture brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_lobcMZpcCCPdHdA4pCmeJ8SlnEIOEsqN8pihTXmAlPjNveE8ytEPuKyRk6pVgBi20SRjG9jPwsg9XUfAesquHX-35TSJ-M_PAdITKfuSx92xiZ0FUsnQbEHOSsSIW6LTaBuDzJvRCChwLhiCsEQ_80XDTg4CxqW_JqOd89SlegPtBY0lCxwRmLifDtHHv6gvC7NgnjNI87K1zTHLUPdvM7uVi1o7zsI5-eU9gAA6fsDxVlcwtjL2_s10ut0sXP8RJDTtu_I0tuc-">
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h4 class="font-title-md text-title-md text-on-surface">Mavic 3M</h4>
+<span class="text-[10px] uppercase font-bold tracking-widest border border-outline-variant text-on-surface px-2 py-0.5 rounded">Multispectral</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Sensors: RGB + NDVI</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Endurance: 43 mins</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Settings & Support -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<!-- Account Status Mini Card -->
+<section class="bg-primary text-on-primary rounded-xl p-gutter flex flex-col gap-stack-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary opacity-10 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none"></div>
+<h3 class="font-label-sm text-label-sm tracking-widest text-secondary-fixed-dim">DATA SUBSCRIPTION</h3>
+<div class="flex items-baseline gap-2">
+<span class="font-data-display text-[32px] leading-none font-bold">Active</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[20px] fill">check_circle</span>
+</div>
+<p class="font-body-md text-body-md opacity-80 text-sm mt-2">Next billing cycle on Oct 12, 2024.</p>
+</section>
+<!-- Settings List -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-stack-md flex flex-col">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant px-stack-sm mb-2 uppercase tracking-widest">Settings</h3>
+<button class="w-full flex items-center justify-between p-stack-sm hover:bg-surface-container-low rounded-lg transition-colors group text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">credit_card</span>
+<span class="font-body-lg text-body-lg text-on-surface">Payment Methods</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-stack-sm hover:bg-surface-container-low rounded-lg transition-colors group text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">lock</span>
+<span class="font-body-lg text-body-lg text-on-surface">Security &amp; Privacy</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-stack-sm hover:bg-surface-container-low rounded-lg transition-colors group text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">tune</span>
+<span class="font-body-lg text-body-lg text-on-surface">App Preferences</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">chevron_right</span>
+</button>
+</section>
+<!-- Support Card -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-stack-md flex flex-col">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant px-stack-sm mb-2 uppercase tracking-widest">Help</h3>
+<button class="w-full flex items-center justify-between p-stack-sm hover:bg-surface-container-low rounded-lg transition-colors group text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">support_agent</span>
+<span class="font-body-lg text-body-lg text-on-surface">Support</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-stack-sm hover:bg-surface-container-low rounded-lg transition-colors group text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">article</span>
+<span class="font-body-lg text-body-lg text-on-surface">Documentation</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">open_in_new</span>
+</button>
+</section>
+<!-- Logout Action -->
+<button class="mt-auto w-full py-4 border border-error text-error rounded-lg font-title-md text-title-md hover:bg-error-container hover:text-on-error-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">logout</span>
+                    Sign Out
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-2 bg-surface-container dark:bg-on-background shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<!-- Inactive Tab: Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-label-sm text-[10px] mt-1">Home</span>
+</a>
+<!-- Inactive Tab: Bookings -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined text-[24px]">calendar_today</span>
+<span class="font-label-sm text-[10px] mt-1">Bookings</span>
+</a>
+<!-- Inactive Tab: Services -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined text-[24px]">precision_manufacturing</span>
+<span class="font-label-sm text-[10px] mt-1">Services</span>
+</a>
+<!-- ACTIVE Tab: Profile (Based on semantic intent mapping to User Settings/Information) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-fixed text-on-secondary-container dark:text-on-secondary-fixed rounded-full px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined fill text-[24px]">person</span>
+<span class="font-label-sm text-[10px] mt-1 font-bold">Profile</span>
+</a>
+</nav>
+<!-- Subtle Scroll Effect Script -->
+<script>
+        // Add a subtle border to the TopAppBar when scrolling down for better separation
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-sm', 'border-b', 'border-outline-variant');
+            } else {
+                header.classList.remove('shadow-sm', 'border-b', 'border-outline-variant');
+            }
+        });
+    </script>
+</body></html>

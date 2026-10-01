@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#719586",
+                        "on-surface-variant": "#414845",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#002d21",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-container": "#062c21",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "outline": "#717974",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "outline-variant": "#c1c8c3",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed": "#121f00",
+                        "on-tertiary-container": "#689785",
+                        "surface-variant": "#d3e4fe",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#b2f746",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-container": "#496f00",
+                        "inverse-primary": "#a9cfbe",
+                        "surface-tint": "#426558",
+                        "surface-dim": "#cbdbf5",
+                        "on-background": "#0b1c30",
+                        "primary-fixed": "#c4ebda",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "secondary": "#446900",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "primary": "#00150e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "tertiary-fixed": "#bbedd8",
+                        "surface": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary": "#00160f",
+                        "secondary-fixed-dim": "#98da27",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "on-primary-fixed": "#002117",
+                        "inverse-surface": "#213145",
+                        "secondary-container": "#b2f746",
+                        "on-tertiary-fixed": "#002117"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "data-display": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.85);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c1c8c3;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex overflow-hidden">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r border-outline-variant dark:border-outline bg-surface-container-lowest dark:bg-primary py-stack-lg flex-shrink-0">
+<div class="px-6 mb-stack-lg">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed-dim tracking-tighter">AeroCrop</h1>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant opacity-70">Fleet Intelligence</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant dark:text-outline-variant font-medium hover:bg-surface-container dark:hover:bg-primary-container hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-title-md text-title-md tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant dark:text-outline-variant font-medium hover:bg-surface-container dark:hover:bg-primary-container hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-title-md text-title-md tracking-tight">Bookings</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-primary dark:text-primary-fixed-dim font-bold border-r-4 border-secondary bg-surface-container-low dark:bg-primary-container/30" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-title-md text-title-md tracking-tight">Farmers</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant dark:text-outline-variant font-medium hover:bg-surface-container dark:hover:bg-primary-container hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="flight">flight</span>
+<span class="font-title-md text-title-md tracking-tight">Pilots</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant dark:text-outline-variant font-medium hover:bg-surface-container dark:hover:bg-primary-container hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-title-md text-title-md tracking-tight">Payments</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-4">
+<button class="w-full bg-primary text-white py-3 px-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add</span>
+                Schedule Mission
+            </button>
+<div class="border-t border-outline-variant pt-4 flex flex-col gap-1">
+<a class="flex items-center gap-4 px-6 py-2 text-on-surface-variant font-medium hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-2 text-on-surface-variant font-medium hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="text-sm">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-screen overflow-hidden relative">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-40 flex justify-between items-center px-6 md:px-margin-desktop w-full h-16 border-b border-outline-variant backdrop-blur-md bg-surface-bright/90">
+<div class="flex items-center gap-8">
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary tracking-tighter">Fleet Overview</h2>
+<div class="hidden lg:flex items-center bg-surface-container rounded-full px-4 py-1.5 gap-2 border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64 text-on-surface-variant" placeholder="Search directory..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-2">
+<button class="hover:bg-surface-container-high rounded-full p-2 transition-all"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="hover:bg-surface-container-high rounded-full p-2 transition-all"><span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span></button>
+<button class="hover:bg-surface-container-high rounded-full p-2 transition-all"><span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span></button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant mx-2 hidden md:block"></div>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-bold hover:scale-95 transition-all text-sm">
+                    Deploy Drone
+                </button>
+<img alt="Administrator Profile" class="h-10 w-10 rounded-full border border-outline-variant ml-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6YH_YBpFMxvyhh2qqJd049o82LaMxA90d-isW56wfF-XWI7GiefdkiVLAe1HSxGBq031Ym9Nr9AxMI1KkLCr-hqEXee9gARIYmaI3gkAnkpl6biiiteuoImNsOzwYAy6fDDQRKwDuaMfk1fAzepSr5CKYGKM2qwqa3N4pLBhp0G_wYilYhXlmEMpTfWMud6mpC-4tTP5ayUoKl0GMbwKjsAXl4lk-QzyA4B46CFB9ciFShonbmbsRrhj5BqYHhFD-NmoDd1bm1sIz"/>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-6 md:p-margin-desktop bg-slate-50">
+<div class="max-w-[1312px] mx-auto space-y-stack-lg">
+<!-- Page Header & Stats -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary">Farmer Directory</h3>
+<p class="text-on-surface-variant max-w-xl">Centralized management for Raphael Aero-Agriculture's registered farming enterprises and operational territories.</p>
+</div>
+<div class="flex gap-stack-md">
+<div class="bg-white p-4 border border-outline-variant rounded-xl flex items-center gap-4">
+<div class="p-2 bg-secondary/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary">agriculture</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Active Farmers</p>
+<p class="font-data-display text-data-display">1,284</p>
+</div>
+</div>
+<div class="bg-white p-4 border border-outline-variant rounded-xl flex items-center gap-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Total Coverage</p>
+<p class="font-data-display text-data-display">42.5k <span class="text-sm font-normal">ha</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Filters Bar -->
+<div class="flex items-center justify-between bg-white p-4 rounded-xl border border-outline-variant">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-lg font-medium text-sm hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-lg font-medium text-sm hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">sort</span> Sort
+                        </button>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-on-surface-variant mr-2">Displaying 1–10 of 1,284</span>
+<button class="p-2 hover:bg-slate-50 rounded border border-outline-variant"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="p-2 hover:bg-slate-50 rounded border border-outline-variant"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+<!-- Table Content -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50/50 border-b border-outline-variant">
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase">Farmer Name</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase">Mobile</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase text-center">Total Bookings</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase text-right">Lifetime Spend</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase">Status</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-low transition-colors cursor-pointer" onclick="toggleDetails('row1')">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 bg-primary/10 rounded-full flex items-center justify-center font-bold text-primary">MS</div>
+<div>
+<p class="font-title-md text-title-md text-primary">Marcus Sterling</p>
+<p class="text-sm text-on-surface-variant">Sterling &amp; Sons Arable</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-on-surface-variant font-data-display text-sm">+1 415-555-0192</td>
+<td class="px-6 py-5 text-center">
+<span class="bg-slate-100 text-on-surface font-bold px-3 py-1 rounded-full text-sm">42</span>
+</td>
+<td class="px-6 py-5 text-right font-data-display text-sm">$12,450.00</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-secondary/10 text-secondary border border-secondary/20">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span> Optimal
+                                    </span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 rounded-full hover:bg-white border border-transparent hover:border-outline-variant transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">keyboard_arrow_down</span>
+</button>
+</td>
+</tr>
+<tr class="hidden bg-slate-50/80" id="row1-details">
+<td class="px-6 py-8" colspan="6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-4">
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase">Farm Specifications</h4>
+<div class="p-4 bg-white rounded-lg border border-outline-variant space-y-3">
+<div class="flex justify-between">
+<span class="text-sm text-on-surface-variant">Total Size:</span>
+<span class="text-sm font-bold">1,240 hectares</span>
+</div>
+<div class="flex justify-between">
+<span class="text-sm text-on-surface-variant">Crop Type:</span>
+<span class="text-sm font-bold">Winter Wheat, Soybeans</span>
+</div>
+<div class="flex justify-between">
+<span class="text-sm text-on-surface-variant">Location:</span>
+<span class="text-sm font-bold">Iowa District 4</span>
+</div>
+</div>
+</div>
+<div class="space-y-4 md:col-span-2">
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase">Recent History</h4>
+<div class="p-4 bg-white rounded-lg border border-outline-variant">
+<div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-100">
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary">drone</span>
+<div>
+<p class="text-sm font-bold">NDVI Mapping Mission</p>
+<p class="text-xs text-on-surface-variant">Completed Oct 14, 2023</p>
+</div>
+</div>
+<p class="text-sm font-data-display">$840.00</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary">sprinkler</span>
+<div>
+<p class="text-sm font-bold">Precision Spraying - Section B</p>
+<p class="text-xs text-on-surface-variant">Completed Oct 02, 2023</p>
+</div>
+</div>
+<p class="text-sm font-data-display">$2,100.00</p>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-container-low transition-colors cursor-pointer" onclick="toggleDetails('row2')">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 bg-secondary/10 rounded-full flex items-center justify-center font-bold text-secondary">EL</div>
+<div>
+<p class="font-title-md text-title-md text-primary">Elena Lopez</p>
+<p class="text-sm text-on-surface-variant">Verde Vista Vineyards</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-on-surface-variant font-data-display text-sm">+1 707-555-0431</td>
+<td class="px-6 py-5 text-center">
+<span class="bg-slate-100 text-on-surface font-bold px-3 py-1 rounded-full text-sm">18</span>
+</td>
+<td class="px-6 py-5 text-right font-data-display text-sm">$8,920.50</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-700 border border-amber-200">
+<span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span> Attention
+                                    </span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 rounded-full hover:bg-white border border-transparent hover:border-outline-variant transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">keyboard_arrow_down</span>
+</button>
+</td>
+</tr>
+<tr class="hidden bg-slate-50/80" id="row2-details">
+<td class="px-6 py-8" colspan="6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-4">
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase">Farm Specifications</h4>
+<div class="p-4 bg-white rounded-lg border border-outline-variant space-y-3">
+<div class="flex justify-between">
+<span class="text-sm text-on-surface-variant">Total Size:</span>
+<span class="text-sm font-bold">450 hectares</span>
+</div>
+<div class="flex justify-between">
+<span class="text-sm text-on-surface-variant">Crop Type:</span>
+<span class="text-sm font-bold">Grapes (Cabernet)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-sm text-on-surface-variant">Location:</span>
+<span class="text-sm font-bold">Sonoma Ridge</span>
+</div>
+</div>
+</div>
+<div class="space-y-4 md:col-span-2">
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase">Notes</h4>
+<div class="p-4 bg-white rounded-lg border border-outline-variant bg-amber-50/30">
+<p class="text-sm leading-relaxed">System flag: High moisture levels detected in South-East quadrant. Potential fungal risk. Recommending multispectral imaging follow-up.</p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-container-low transition-colors cursor-pointer" onclick="toggleDetails('row3')">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-700">JB</div>
+<div>
+<p class="font-title-md text-title-md text-primary">Julian Blackwell</p>
+<p class="text-sm text-on-surface-variant">Blackwell Heavy Grains</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-on-surface-variant font-data-display text-sm">+1 316-555-0882</td>
+<td class="px-6 py-5 text-center">
+<span class="bg-slate-100 text-on-surface font-bold px-3 py-1 rounded-full text-sm">65</span>
+</td>
+<td class="px-6 py-5 text-right font-data-display text-sm">$24,190.00</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-secondary/10 text-secondary border border-secondary/20">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span> Optimal
+                                    </span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 rounded-full hover:bg-white border border-transparent hover:border-outline-variant transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">keyboard_arrow_down</span>
+</button>
+</td>
+</tr>
+<tr class="hidden bg-slate-50/80" id="row3-details">
+<td class="px-6 py-8" colspan="6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="p-6 bg-white border border-outline-variant rounded-xl flex gap-6">
+<div class="w-1/2 aspect-video bg-slate-100 rounded-lg overflow-hidden border border-outline-variant">
+<img alt="Farm Map" class="w-full h-full object-cover opacity-80" data-alt="High-resolution aerial satellite view of a massive industrial farm with precision crop circles and irrigation paths. The landscape is a vibrant patchwork of different greens and ambers, showing healthy growth patterns. The lighting is crisp, mid-day sun, emphasizing the technical perfection and vast scale of the agricultural operation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbnR7NiFKFUbqMKn6aASvG45MzKexfQlXl7rOOFbFW6JrAhhH91YGezac2Qh7eBZgU-J19YRVahFzC_awa9eF7SO0_Ubkk3zLoeVToWpJNMDhj20SLc-OwL31M9K2KX6KIZrk5TQbMIACX4StrHAk_Lfzr5iRerqYVa1Sv-QNwNP-PHFmhA5tYX6n1rTktN5it3N81dczNHJzndnBZXGRIB43JE3SRqiKo2nl1rcl4XcZRs8iYgHCY0lx8S8-OlILl54byw2XgMmrz"/>
+</div>
+<div class="flex-1 space-y-4">
+<h4 class="font-bold text-primary">Geographic Overview</h4>
+<div class="text-sm space-y-1">
+<p><span class="text-on-surface-variant">Primary Site:</span> Kansas Hub A</p>
+<p><span class="text-on-surface-variant">Coordinates:</span> 39.01° N, 98.48° W</p>
+<p><span class="text-on-surface-variant">Zones:</span> 14 Individual Plots</p>
+</div>
+<button class="text-xs font-bold text-primary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">map</span> Open in Fleet Map
+                                                </button>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-panel p-6 border border-outline-variant rounded-2xl flex flex-col justify-between h-40 group hover:border-primary transition-all cursor-default">
+<span class="material-symbols-outlined text-primary mb-2">trending_up</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Q3 Growth</p>
+<p class="font-display-lg text-primary text-3xl">+14.2%</p>
+</div>
+</div>
+<div class="glass-panel p-6 border border-outline-variant rounded-2xl flex flex-col justify-between h-40 group hover:border-primary transition-all cursor-default">
+<span class="material-symbols-outlined text-secondary mb-2">star</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Loyalty Index</p>
+<p class="font-display-lg text-primary text-3xl">4.92 / 5.0</p>
+</div>
+</div>
+<div class="glass-panel p-6 border border-outline-variant rounded-2xl flex flex-col justify-between h-40 group hover:border-primary transition-all cursor-default">
+<span class="material-symbols-outlined text-error mb-2">warning</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Pending Actions</p>
+<p class="font-display-lg text-primary text-3xl">28</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        function toggleDetails(rowId) {
+            const detailRow = document.getElementById(rowId + '-details');
+            const isHidden = detailRow.classList.contains('hidden');
+            
+            // Close all detail rows first for a cleaner UI
+            document.querySelectorAll('[id$="-details"]').forEach(row => {
+                row.classList.add('hidden');
+            });
+
+            // Toggle selected row
+            if (isHidden) {
+                detailRow.classList.remove('hidden');
+                detailRow.classList.add('animate-in', 'fade-in', 'slide-in-from-top-2', 'duration-300');
+            }
+        }
+    </script>
+</body></html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Flight Control &amp; Telemetry</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "tertiary-fixed": "#bbedd8",
+                        "secondary-container": "#b2f746",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-surface": "#0b1c30",
+                        "primary-fixed": "#c4ebda",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "secondary": "#446900",
+                        "on-primary-fixed": "#002117",
+                        "secondary-fixed-dim": "#98da27",
+                        "outline": "#717974",
+                        "inverse-primary": "#a9cfbe",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "on-surface-variant": "#414845",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-surface": "#213145",
+                        "surface-tint": "#426558",
+                        "surface-container-highest": "#d3e4fe",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#b2f746",
+                        "on-tertiary-container": "#689785",
+                        "tertiary": "#00160f",
+                        "primary": "#00150e",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#eff4ff",
+                        "surface": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "on-secondary-container": "#496f00",
+                        "on-background": "#0b1c30",
+                        "surface-bright": "#f8f9ff",
+                        "primary-container": "#062c21",
+                        "on-tertiary-fixed": "#002117",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#002d21",
+                        "outline-variant": "#c1c8c3",
+                        "on-primary-container": "#719586",
+                        "on-secondary-fixed": "#121f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-display": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-display": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .map-overlay-glass {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(113, 121, 116, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background flex justify-between items-center px-margin-mobile py-4 w-full z-50 sticky top-0 flat no shadows">
+<button aria-label="agriculture" class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">agriculture</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim text-center flex-1 mx-4 truncate">Raphael Aero-Agriculture</h1>
+<button aria-label="notifications" class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow relative overflow-hidden flex flex-col md:flex-row h-[calc(100vh-140px)] md:h-[calc(100vh-80px)]">
+<!-- Live Map Area -->
+<div class="relative flex-grow h-full bg-surface-variant w-full md:w-2/3 lg:w-3/4">
+<!-- Simulated Satellite Map Background -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A highly detailed overhead satellite view of large agricultural fields in a modern corporate style. The landscape features precise geometric crop rows in varying shades of deep forest green, lime green, and earthy soil. The lighting is bright and clear, indicative of a professional aerial mapping feed used by enterprise agronomy software. Clean, high-tech aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbuvPaEF2fmh0potMHPshpooHAWb6Pnlu_yQ7xph9gpItlTCAYFff8TpKH6jWGOHDR2m4_E1DfbObrT9gRRCG1Ijo2UwTKKzDPEvNEh9AbfphGd9J5pQadvGkcZgqUZYHFDv3mqk1Zk2Aa55vDrwxAhK8D2TQvMyLFUnkPdlsYoZHtYY1l7HRUVnGVYQPgXmxfywS3S_UH4rP6JuIcS_9px_ImWmrflmlGoJlhFWOEx8_3XJ9v4p0hL9G4bU1kVZ8cmgmoDMJx-dpo');"></div>
+<!-- Flight Path Overlay (SVG) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="opacity-80" d="M 20,80 Q 40,60 50,40 T 80,20" fill="none" stroke="#b2f746" stroke-dasharray="2,1" stroke-width="0.5"></path>
+<!-- Drone Marker -->
+<circle cx="50" cy="40" fill="#00150e" r="1.5" stroke="#ffffff" stroke-width="0.5"></circle>
+<circle class="animate-ping" cx="50" cy="40" fill="none" r="4" stroke="#b2f746" stroke-width="0.2"></circle>
+</svg>
+<!-- Map Controls (Top Left) -->
+<div class="absolute top-stack-md left-stack-md flex flex-col gap-unit">
+<button aria-label="Zoom In" class="map-overlay-glass w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors shadow-sm">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button aria-label="Zoom Out" class="map-overlay-glass w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors shadow-sm">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button aria-label="Layers" class="map-overlay-glass w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors shadow-sm mt-stack-sm">
+<span class="material-symbols-outlined">layers</span>
+</button>
+</div>
+<!-- Weather Warning (Top Right) -->
+<div class="absolute top-stack-md right-stack-md">
+<div class="map-overlay-glass rounded-lg px-3 py-2 flex items-center gap-2 border-l-4 border-l-error">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Approaching Wind Gusts</span>
+</div>
+</div>
+<!-- Status Chips (Bottom Left) -->
+<div class="absolute bottom-stack-lg left-stack-md flex gap-2">
+<div class="bg-surface-container-lowest border border-outline-variant px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Signal: Strong</span>
+</div>
+</div>
+</div>
+<!-- Telemetry & Controls Panel (Right Side Desktop / Bottom Stack Mobile) -->
+<div class="w-full md:w-1/3 lg:w-1/4 bg-surface h-auto md:h-full z-10 border-t md:border-t-0 md:border-l border-outline-variant flex flex-col px-margin-mobile py-stack-md gap-stack-md overflow-y-auto">
+<div class="flex items-center justify-between mb-stack-sm">
+<h2 class="font-title-md text-title-md text-on-surface">Live Telemetry</h2>
+<div class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-0.5 rounded-DEFAULT flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> Active
+                </div>
+</div>
+<!-- Telemetry Bento Grid -->
+<div class="grid grid-cols-2 gap-stack-sm">
+<!-- Altitude Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 flex flex-col justify-between shadow-sm">
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[16px]">height</span>
+<span class="font-label-sm text-label-sm">Altitude</span>
+</div>
+<div class="font-data-display text-data-display text-on-surface">
+                        150<span class="font-label-sm text-label-sm text-on-surface-variant ml-1">ft</span>
+</div>
+</div>
+<!-- Speed Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 flex flex-col justify-between shadow-sm">
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[16px]">speed</span>
+<span class="font-label-sm text-label-sm">Speed</span>
+</div>
+<div class="font-data-display text-data-display text-on-surface">
+                        12<span class="font-label-sm text-label-sm text-on-surface-variant ml-1">mph</span>
+</div>
+</div>
+<!-- Spray Rate Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 flex flex-col justify-between shadow-sm col-span-2">
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+<span class="font-label-sm text-label-sm">Spray Rate</span>
+</div>
+<div class="flex items-end justify-between">
+<div class="font-data-display text-data-display text-on-surface">
+                            2.4<span class="font-label-sm text-label-sm text-on-surface-variant ml-1">L/min</span>
+</div>
+<!-- Micro Chart representation -->
+<div class="flex items-end gap-0.5 h-6">
+<div class="w-1.5 bg-primary-fixed-dim h-full"></div>
+<div class="w-1.5 bg-primary-fixed-dim h-4/5"></div>
+<div class="w-1.5 bg-primary-fixed-dim h-5/6"></div>
+<div class="w-1.5 bg-secondary h-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Battery Status -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 shadow-sm mt-stack-sm">
+<div class="flex justify-between items-center mb-2 text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">battery_5_bar</span>
+<span class="font-label-sm text-label-sm">Battery</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">82%</span>
+</div>
+<!-- Telemetry Bar -->
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed w-[82%]"></div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="mt-auto pt-stack-lg flex flex-col gap-stack-sm">
+<button class="w-full bg-surface-container-lowest border border-outline text-on-surface font-title-md text-title-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">pause</span>
+                    Pause Mission
+                </button>
+<button class="w-full bg-primary text-on-primary font-title-md text-title-md py-3 rounded-lg flex items-center justify-center gap-2 shadow-sm hover:opacity-90 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined">home</span>
+                    Return to Home
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-2 bg-surface-container dark:bg-on-background flat no shadows">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 duration-150 rounded-lg">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 duration-150 rounded-lg">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">Bookings</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-fixed text-on-secondary-container dark:text-on-secondary-fixed rounded-full px-4 py-1 active:scale-90 duration-150 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<span class="font-label-sm text-label-sm mt-1 font-semibold">Services</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 duration-150 rounded-lg">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

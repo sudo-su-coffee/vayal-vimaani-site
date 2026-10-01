@@ -1,0 +1,356 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#719586",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#00160f",
+                    "on-background": "#0b1c30",
+                    "primary-fixed": "#c4ebda",
+                    "outline": "#717974",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#496f00",
+                    "on-surface": "#0b1c30",
+                    "on-primary-fixed-variant": "#2a4d41",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#cbdbf5",
+                    "tertiary-fixed-dim": "#a0d1bd",
+                    "surface-container-highest": "#d3e4fe",
+                    "background": "#f8f9ff",
+                    "on-primary-fixed": "#002117",
+                    "inverse-surface": "#213145",
+                    "secondary": "#446900",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#b2f746",
+                    "on-surface-variant": "#414845",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#bbedd8",
+                    "surface-container-high": "#dce9ff",
+                    "surface-container": "#e5eeff",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#002d21",
+                    "primary-container": "#062c21",
+                    "inverse-primary": "#a9cfbe",
+                    "surface-bright": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#121f00",
+                    "on-secondary-fixed-variant": "#334f00",
+                    "surface-tint": "#426558",
+                    "primary": "#00150e",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-tertiary-container": "#689785",
+                    "secondary-fixed": "#b2f746",
+                    "on-tertiary-fixed": "#002117",
+                    "on-tertiary-fixed-variant": "#204f40",
+                    "secondary-fixed-dim": "#98da27",
+                    "surface-variant": "#d3e4fe",
+                    "primary-fixed-dim": "#a9cfbe",
+                    "surface": "#f8f9ff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c1c8c3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "unit": "4px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "title-md": ["Hanken Grotesk"],
+                    "label-sm": ["JetBrains Mono"],
+                    "data-display": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        .selection-active {
+            border-color: #446900 !important;
+            background-color: #f8f9ff;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="bg-surface sticky top-0 z-40 w-full px-margin-mobile md:px-margin-desktop py-stack-md flex justify-between items-center">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-display-lg text-title-md font-bold text-primary">Raphael Aero-Agriculture</h1>
+</div>
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container transition-colors p-2 rounded-full cursor-pointer" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg pb-32">
+<!-- Header Section -->
+<section class="mb-stack-lg">
+<div class="flex items-center gap-unit mb-unit">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Step 02 — Configuration</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">Select Your Drone</h2>
+<p class="text-on-surface-variant max-w-2xl mt-unit">Available specialized hardware for <span class="font-bold text-primary">Precision Spraying</span> fleet deployment. All drones are calibrated for autonomous enterprise operations.</p>
+</section>
+<!-- Drone List - Asymmetric / Industrial Premium Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Filter Sidebar (Technical/Industrial) -->
+<aside class="md:col-span-3 space-y-stack-lg">
+<div class="p-stack-md border border-outline-variant rounded-lg bg-surface-container-lowest">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant mb-stack-md uppercase">Filter Hardware</h3>
+<div class="space-y-stack-md">
+<div>
+<label class="block font-label-sm text-label-sm mb-unit">Capacity Range</label>
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary" type="range">
+</div>
+<div class="space-y-unit">
+<label class="flex items-center gap-stack-sm cursor-pointer group">
+<input checked="" class="rounded-sm border-outline text-secondary focus:ring-secondary" type="checkbox">
+<span class="text-body-md group-hover:text-primary transition-colors">Heavy Payload</span>
+</label>
+<label class="flex items-center gap-stack-sm cursor-pointer group">
+<input class="rounded-sm border-outline text-secondary focus:ring-secondary" type="checkbox">
+<span class="text-body-md group-hover:text-on-surface-variant transition-colors">Rapid Deploy</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Drone Cards Grid -->
+<div class="md:col-span-9 space-y-stack-md">
+<!-- Drone Card 1 (Active/Selected State Example) -->
+<div class="group relative flex flex-col md:flex-row gap-gutter p-stack-md border-2 border-secondary bg-surface-container-lowest rounded-xl transition-all cursor-pointer hover:shadow-lg selection-active" onclick="selectDrone(this)">
+<div class="absolute top-4 right-4 bg-secondary text-on-secondary px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        SELECTED
+                    </div>
+<div class="w-full md:w-64 h-48 md:h-auto overflow-hidden rounded-lg bg-surface-container">
+<img alt="Raphael-S1 Heavy Lifter" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq2hFhGhet3tqbA5Jf4mO8Sq30hDtTsW2V_jepTfosLgPcP78K_3mtQafLFwOFiqXk1y0J0UMBdosC8zNTzIbmK-XxKdtat9II14jJZrTgN7PrkCGstYM39ntz0sBCvhIDVrhz-ne0Z4d84qGaivQ-bANEfgC5Tl0fUrOR2oZ-jMfhXHx7e7Pvq3XWznxFXGkaqTdz9jeJd2W7ZQlqZCs-_rQVUYa3qZfUbk9JaPh8sALqPcKJLarQn1OtqM4fq3pHaKEcBTme1L_v">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-stack-sm mb-unit">
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-container px-2 py-unit rounded">INDUSTRIAL GRADE</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: RX-9921</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-stack-sm">Raphael-S1 Heavy Lifter</h3>
+<!-- Key Stats -->
+<div class="grid grid-cols-3 gap-stack-md py-stack-md border-y border-outline-variant mb-stack-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Payload</p>
+<p class="font-data-display text-data-display text-primary">30L</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Flight Time</p>
+<p class="font-data-display text-data-display text-primary">25m</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Efficiency</p>
+<p class="font-data-display text-data-display text-primary">15ac/h</p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Rental Price</span>
+<span class="font-title-md text-title-md text-primary">$25 <span class="text-body-md font-normal text-on-surface-variant">/ Acre</span></span>
+</div>
+<button class="bg-primary text-on-primary px-stack-lg py-stack-sm rounded hover:opacity-90 transition-opacity">Configure Payload</button>
+</div>
+</div>
+</div>
+<!-- Drone Card 2 -->
+<div class="group flex flex-col md:flex-row gap-gutter p-stack-md border border-outline-variant bg-surface-container-lowest rounded-xl transition-all cursor-pointer hover:border-secondary-container" onclick="selectDrone(this)">
+<div class="w-full md:w-64 h-48 md:h-auto overflow-hidden rounded-lg bg-surface-container relative">
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-on-primary bg-primary px-4 py-2 rounded-full font-label-sm text-label-sm">VIEW SPECS</span>
+</div>
+<img class="w-full h-full object-cover" data-alt="A high-end industrial drone specialized for aerial mapping, featuring a sleek carbon fiber frame and a high-resolution multispectral camera sensor. The drone is positioned on a professional landing pad at sunset, with warm golden light illuminating its technical components. The style is modern industrial, emphasizing reliability and premium aerospace engineering for agriculture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2wmsLWsFk4hzCr-r44L_nD0OcJv-sEW95aALwNxajSt-QLxw4HUMrCwuD0iTbbzx_4yjCEyHMkyuM2sB7Hk0vNK8qYD49uwMUHqgBoVgzjUlhP9AMG-TUeh74sV3WsJqnjpsyPwgRaJAW5HOSzuhfnXU-CNUpIycpvXf0IWkRVwWM6AcQ5cwZrB2z2ryd4qAjtNVEFDV44812YKCyw4w7Awg0eywZSWhkcfHzWI9BM30xJ4TGraXxypDgP9MIVBBDML5ohaTyfkyK">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-stack-sm mb-unit">
+<span class="font-label-sm text-label-sm text-outline bg-surface-container px-2 py-unit rounded">MID-RANGE</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: RX-4420</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-stack-sm">Aero-Agri Scout V4</h3>
+<div class="grid grid-cols-3 gap-stack-md py-stack-md border-y border-outline-variant mb-stack-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Payload</p>
+<p class="font-data-display text-data-display text-primary">12L</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Flight Time</p>
+<p class="font-data-display text-data-display text-primary">40m</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Efficiency</p>
+<p class="font-data-display text-data-display text-primary">8ac/h</p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Rental Price</span>
+<span class="font-title-md text-title-md text-primary">$18 <span class="text-body-md font-normal text-on-surface-variant">/ Acre</span></span>
+</div>
+<button class="border border-secondary text-secondary px-stack-lg py-stack-sm rounded hover:bg-secondary-container transition-colors">Select Drone</button>
+</div>
+</div>
+</div>
+<!-- Drone Card 3 -->
+<div class="group flex flex-col md:flex-row gap-gutter p-stack-md border border-outline-variant bg-surface-container-lowest rounded-xl transition-all cursor-pointer hover:border-secondary-container" onclick="selectDrone(this)">
+<div class="w-full md:w-64 h-48 md:h-auto overflow-hidden rounded-lg bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A specialized swarm-capable agriculture drone with compact folding rotors and a precision nozzle system. It is hovering perfectly still over a row of young corn plants in a crisp, high-contrast daylight setting. The lighting is sharp, casting technical shadows that highlight the drone's intricate sensor array and industrial-grade build quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2H6MYW4IJAc-WRaG9cXXIU-SPVeF-Eh2mFzMoSZQX_OAzv7kXQZKxRiBucTFlQ33wMvRgv0pNM0lUnfy2SYrTxcVsK1klFWSUbP05P2ABpIY8m3m9zJJSdCawAKbsKLNr4428KO9c9aZ4MQUM7J3enjnW3gHQ_Zdr0BcmHfLI_FT84g9DzT7mThVvbug6xL1V46xAVUlcNeoCk7JXBwQd0wgF3sBvorhi0xK5S0HiSLIkkC9zqdraBMvwm2FZG-V4IsuSili-LOvh">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-stack-sm mb-unit">
+<span class="font-label-sm text-label-sm text-on-error-container bg-error-container px-2 py-unit rounded">HIGH EFFICIENCY</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: RX-1102</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-stack-sm">SwiftSpray Compact</h3>
+<div class="grid grid-cols-3 gap-stack-md py-stack-md border-y border-outline-variant mb-stack-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Payload</p>
+<p class="font-data-display text-data-display text-primary">5L</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Flight Time</p>
+<p class="font-data-display text-data-display text-primary">18m</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Efficiency</p>
+<p class="font-data-display text-data-display text-primary">22ac/h</p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Rental Price</span>
+<span class="font-title-md text-title-md text-primary">$12 <span class="text-body-md font-normal text-on-surface-variant">/ Acre</span></span>
+</div>
+<button class="border border-secondary text-secondary px-stack-lg py-stack-sm rounded hover:bg-secondary-container transition-colors">Select Drone</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Actions & Navigation Sticky Shell -->
+<div class="fixed bottom-0 left-0 w-full z-50">
+<!-- Action Bar (Floating Glass Effect) -->
+<div class="mx-auto max-w-4xl px-margin-mobile mb-6">
+<div class="glass-panel border border-outline-variant p-stack-md rounded-full shadow-2xl flex items-center justify-between">
+<div class="hidden md:flex flex-col ml-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Estimated Total</span>
+<span class="font-title-md text-title-md text-primary">$3,750.00 <span class="text-label-sm font-normal text-on-surface-variant">(150 Acres)</span></span>
+</div>
+<button class="w-full md:w-auto bg-secondary text-on-secondary px-10 py-4 rounded-full font-title-md text-title-md flex items-center justify-center gap-stack-sm hover:scale-[1.02] active:scale-95 transition-all shadow-lg">
+                    Continue to Setup
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Global Navigation (BottomNavBar Component from JSON) -->
+<nav class="bg-surface dark:bg-surface-dim border-t border-outline-variant dark:border-outline px-margin-mobile py-stack-sm pb-8 flex justify-around items-center">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm font-body-md">Home</span>
+</a>
+<!-- Bookings (Active - As this is a selection flow for a service booking) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-fixed text-on-secondary-container dark:text-on-secondary-fixed rounded-full px-4 py-1 hover:bg-surface-container-low transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="agriculture" style="font-variation-settings: 'FILL' 1;">agriculture</span>
+<span class="font-label-sm text-label-sm font-body-md">Bookings</span>
+</a>
+<!-- Payments -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm font-body-md">Payments</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm font-body-md">Profile</span>
+</a>
+</nav>
+</div>
+<script>
+        function selectDrone(element) {
+            // Remove active classes from all cards
+            document.querySelectorAll('.md\\:col-span-9 > div').forEach(card => {
+                card.classList.remove('border-secondary', 'selection-active');
+                card.classList.add('border-outline-variant');
+                
+                // Toggle the "Selected" badge if it exists
+                const badge = card.querySelector('.absolute.bg-secondary');
+                if (badge) badge.remove();
+                
+                // Reset buttons
+                const btn = card.querySelector('button');
+                if (btn) {
+                    btn.className = 'border border-secondary text-secondary px-stack-lg py-stack-sm rounded hover:bg-secondary-container transition-colors';
+                    btn.textContent = 'Select Drone';
+                }
+            });
+
+            // Add active classes to clicked element
+            element.classList.add('border-secondary', 'selection-active');
+            element.classList.remove('border-outline-variant');
+
+            // Add the "Selected" badge
+            const badge = document.createElement('div');
+            badge.className = 'absolute top-4 right-4 bg-secondary text-on-secondary px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1';
+            badge.innerHTML = `<span class="material-symbols-outlined text-[14px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span> SELECTED`;
+            element.appendChild(badge);
+
+            // Update button
+            const btn = element.querySelector('button');
+            if (btn) {
+                btn.className = 'bg-primary text-on-primary px-stack-lg py-stack-sm rounded hover:opacity-90 transition-opacity';
+                btn.textContent = 'Configure Payload';
+            }
+        }
+    </script>
+</body></html>

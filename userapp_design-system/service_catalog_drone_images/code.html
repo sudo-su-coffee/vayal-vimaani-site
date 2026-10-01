@@ -1,0 +1,293 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Raphael Aero-Agriculture - Service Catalog</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#719586",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#00160f",
+                    "on-background": "#0b1c30",
+                    "primary-fixed": "#c4ebda",
+                    "outline": "#717974",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#496f00",
+                    "on-surface": "#0b1c30",
+                    "on-primary-fixed-variant": "#2a4d41",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#cbdbf5",
+                    "tertiary-fixed-dim": "#a0d1bd",
+                    "surface-container-highest": "#d3e4fe",
+                    "background": "#f8f9ff",
+                    "on-primary-fixed": "#002117",
+                    "inverse-surface": "#213145",
+                    "secondary": "#446900",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#b2f746",
+                    "on-surface-variant": "#414845",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#bbedd8",
+                    "surface-container-high": "#dce9ff",
+                    "surface-container": "#e5eeff",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#002d21",
+                    "primary-container": "#062c21",
+                    "inverse-primary": "#a9cfbe",
+                    "surface-bright": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#121f00",
+                    "on-secondary-fixed-variant": "#334f00",
+                    "surface-tint": "#426558",
+                    "primary": "#00150e",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-tertiary-container": "#689785",
+                    "secondary-fixed": "#b2f746",
+                    "on-tertiary-fixed": "#002117",
+                    "on-tertiary-fixed-variant": "#204f40",
+                    "secondary-fixed-dim": "#98da27",
+                    "surface-variant": "#d3e4fe",
+                    "primary-fixed-dim": "#a9cfbe",
+                    "surface": "#f8f9ff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c1c8c3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "unit": "4px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "title-md": ["Hanken Grotesk"],
+                    "label-sm": ["JetBrains Mono"],
+                    "data-display": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9ff;
+            color: #0b1c30;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        }
+        .premium-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .hero-pattern {
+            background-image: radial-gradient(#719586 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim flex justify-between items-center w-full px-margin-mobile py-stack-md sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<button aria-label="Menu" class="material-symbols-outlined text-primary dark:text-primary-fixed hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors p-2 rounded-full active:opacity-80 transition-all duration-200">
+                menu
+            </button>
+<h1 class="font-display-lg text-title-md font-bold text-primary dark:text-primary-fixed">Raphael Aero-Agriculture</h1>
+</div>
+<div class="flex items-center">
+<button aria-label="Notifications" class="material-symbols-outlined text-primary dark:text-primary-fixed hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors p-2 rounded-full active:opacity-80 transition-all duration-200">
+                notifications
+            </button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg relative">
+<!-- Background Decoration -->
+<div class="absolute inset-0 hero-pattern pointer-events-none"></div>
+<!-- Section Header -->
+<section class="mb-stack-lg text-center md:text-left">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2 block">Booking Flow</span>
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Choose Service</h2>
+<div class="w-16 h-1 bg-secondary mx-auto md:mx-0"></div>
+</section>
+<!-- Service Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg relative z-10">
+<!-- Card 1: Precision Spraying -->
+<article class="premium-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col">
+<div class="relative h-64 md:h-80 overflow-hidden bg-surface-container">
+<img alt="Precision Spraying Drone" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq2hFhGhet3tqbA5Jf4mO8Sq30hDtTsW2V_jepTfosLgPcP78K_3mtQafLFwOFiqXk1y0J0UMBdosC8zNTzIbmK-XxKdtat9II14jJZrTgN7PrkCGstYM39ntz0sBCvhIDVrhz-ne0Z4d84qGaivQ-bANEfgC5Tl0fUrOR2oZ-jMfhXHx7e7Pvq3XWznxFXGkaqTdz9jeJd2W7ZQlqZCs-_rQVUYa3qZfUbk9JaPh8sALqPcKJLarQn1OtqM4fq3pHaKEcBTme1L_v">
+<div class="absolute top-4 left-4">
+<span class="bg-secondary text-on-secondary px-3 py-1 font-label-sm text-label-sm rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">precision_manufacturing</span>
+                            PRECISION
+                        </span>
+</div>
+</div>
+<div class="p-stack-lg flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-display-lg text-title-md text-primary">Precision Spraying</h3>
+<span class="font-label-sm text-label-sm text-outline">SRV-001</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-stack-lg leading-relaxed">
+                        Efficient pesticide and fertilizer application with centimeter-level accuracy. Reduce chemical waste and ensure total coverage of your fields using our automated aero-delivery systems.
+                    </p>
+<div class="mt-auto pt-stack-md border-t border-outline-variant flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Starting at</span>
+<span class="font-data-display text-data-display text-primary">$45.00/acre</span>
+</div>
+<button class="bg-primary hover:opacity-90 active:scale-95 transition-all text-on-primary font-body-md px-stack-lg py-3 rounded-lg flex items-center gap-2" onclick="location.href='#select-1'">
+                            Select
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Crop Mapping & Health -->
+<article class="premium-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col">
+<div class="relative h-64 md:h-80 overflow-hidden bg-surface-container">
+<img alt="Crop Mapping Drone" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDavx_9EFOcyx-lrH-xsc1cG-FzMgiT3xKxfbXts-escn-ad20NsdQmMRhcThA_RiQbMgZeHXhLlHRbQMqxC7ypT4o_u0GAk6KKom1rGZT7RHEKaLyUiakayX5Ku26SPv4iDs1py6aaHjn9ztz9NKKRXTqDEKBMl5IzLu_J0tkdcmDoYBvmedqyoNkS3vupRTLQJ3a9qVDJKAU0oOvlyMMyn9zfOI7G_dZCrVsE0om6zJmav4bbWjkS_DDS8TrqhUsgemWHvVZKGtvO">
+<div class="absolute top-4 left-4">
+<span class="bg-secondary text-on-secondary px-3 py-1 font-label-sm text-label-sm rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">query_stats</span>
+                            ANALYSIS
+                        </span>
+</div>
+</div>
+<div class="p-stack-lg flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-display-lg text-title-md text-primary">Crop Mapping &amp; Health</h3>
+<span class="font-label-sm text-label-sm text-outline">SRV-002</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-stack-lg leading-relaxed">
+                        High-resolution multispectral imaging for early pest detection and yield optimization. Generate detailed NDVI maps and soil moisture telemetry in real-time.
+                    </p>
+<div class="mt-auto pt-stack-md border-t border-outline-variant flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Starting at</span>
+<span class="font-data-display text-data-display text-primary">$28.00/acre</span>
+</div>
+<button class="bg-primary hover:opacity-90 active:scale-95 transition-all text-on-primary font-body-md px-stack-lg py-3 rounded-lg flex items-center gap-2" onclick="location.href='#select-2'">
+                            Select
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Secondary Info Cluster -->
+<section class="mt-stack-lg grid grid-cols-1 md:grid-cols-3 gap-gutter pb-24 md:pb-8">
+<div class="flex items-start gap-4 p-stack-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<div>
+<h4 class="font-title-md text-sm font-bold text-primary">Fully Insured</h4>
+<p class="font-label-sm text-xs text-on-surface-variant">Global enterprise liability coverage for all flight operations.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-stack-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary">potted_plant</span>
+<div>
+<h4 class="font-title-md text-sm font-bold text-primary">Eco-Certified</h4>
+<p class="font-label-sm text-xs text-on-surface-variant">Optimized application reduces run-off by up to 35%.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-stack-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary">speed</span>
+<div>
+<h4 class="font-title-md text-sm font-bold text-primary">Rapid Deployment</h4>
+<p class="font-label-sm text-xs text-on-surface-variant">Fleet ready within 24 hours of booking confirmation.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-stack-sm pb-8 bg-surface dark:bg-surface-dim border-t border-outline-variant dark:border-outline">
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-fixed text-on-secondary-container dark:text-on-secondary-fixed rounded-full px-4 py-1 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm font-body-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">agriculture</span>
+<span class="font-label-sm text-label-sm font-body-md">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm text-label-sm font-body-md">Payments</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-4 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm font-body-md">Profile</span>
+</a>
+</nav>
+<!-- Script for micro-interactions -->
+<script>
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', function() {
+                this.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', function() {
+                this.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', function() {
+                this.classList.remove('scale-95');
+            });
+        });
+
+        // Add a subtle scroll animation for the header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                header.style.backgroundColor = 'rgba(248, 249, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.classList.remove('shadow-md');
+                header.style.backgroundColor = '';
+                header.style.backdropFilter = '';
+            }
+        });
+    </script>
+</body></html>

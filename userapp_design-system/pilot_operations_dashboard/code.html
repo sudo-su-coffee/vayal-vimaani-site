@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pilot Operations Dashboard | Raphael Aero-Agriculture</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Subtle grid background pattern for 'tech' feel on cards */
+        .bg-tech-grid {
+            background-image: linear-gradient(to right, #e5eeff 1px, transparent 1px), linear-gradient(to bottom, #e5eeff 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "tertiary-fixed": "#bbedd8",
+                        "secondary-container": "#b2f746",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-surface": "#0b1c30",
+                        "primary-fixed": "#c4ebda",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "secondary": "#446900",
+                        "on-primary-fixed": "#002117",
+                        "secondary-fixed-dim": "#98da27",
+                        "outline": "#717974",
+                        "inverse-primary": "#a9cfbe",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "on-surface-variant": "#414845",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-surface": "#213145",
+                        "surface-tint": "#426558",
+                        "surface-container-highest": "#d3e4fe",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#b2f746",
+                        "on-tertiary-container": "#689785",
+                        "tertiary": "#00160f",
+                        "primary": "#00150e",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#eff4ff",
+                        "surface": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "on-secondary-container": "#496f00",
+                        "on-background": "#0b1c30",
+                        "surface-bright": "#f8f9ff",
+                        "primary-container": "#062c21",
+                        "on-tertiary-fixed": "#002117",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#002d21",
+                        "outline-variant": "#c1c8c3",
+                        "on-primary-container": "#719586",
+                        "on-secondary-fixed": "#121f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-display": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-display": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col pb-20 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background docked full-width top-0 flat no shadows flex justify-between items-center px-margin-mobile py-4 w-full z-50 sticky">
+<div class="flex items-center gap-stack-md">
+<button class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200 flex items-center justify-center p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="agriculture" data-weight="fill" style="font-variation-settings: 'FILL' 1;">agriculture</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim tracking-tight">Raphael Aero-Agriculture</h1>
+</div>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200 flex items-center justify-center p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-stack-md md:py-stack-lg flex flex-col gap-gutter">
+<div class="flex justify-between items-end mb-stack-sm">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">Operations Dashboard</h2>
+<div class="hidden md:flex gap-2">
+<button class="px-4 py-2 rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm border border-outline-variant hover:bg-surface-container-high transition-colors">
+                    SYNC DATA
+                </button>
+</div>
+</div>
+<!-- Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Active Mission (Hero Card) -->
+<div class="col-span-1 md:col-span-8 bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden flex flex-col relative shadow-[0_4px_24px_rgba(11,28,48,0.02)]">
+<div class="px-6 py-4 border-b border-surface-variant flex justify-between items-center bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="flight_takeoff">flight_takeoff</span>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Active Mission</h3>
+</div>
+<div class="bg-[#d2f898] text-[#2c4400] px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<div class="w-2 h-2 rounded-full bg-[#528000] animate-pulse"></div>
+                        IN PROGRESS
+                    </div>
+</div>
+<div class="flex flex-col md:flex-row flex-grow">
+<!-- Telemetry Data -->
+<div class="p-6 md:w-1/2 flex flex-col gap-stack-lg justify-between border-b md:border-b-0 md:border-r border-surface-variant relative z-10 bg-surface-container-lowest">
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">TARGET SECTOR</p>
+<p class="font-title-md text-title-md text-primary">Alpha-7 Cornfield</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">NDVI Scanning &amp; Topography Mapping</p>
+</div>
+<div class="grid grid-cols-2 gap-stack-md">
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">ALTITUDE</p>
+<p class="font-data-display text-data-display text-primary">120<span class="text-body-md text-outline ml-1">m</span></p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">SPEED</p>
+<p class="font-data-display text-data-display text-primary">15<span class="text-body-md text-outline ml-1">m/s</span></p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-outline">MISSION PROGRESS</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">64%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[64%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Map Snippet Placeholder -->
+<div class="md:w-1/2 min-h-[250px] bg-surface-dim relative flex items-center justify-center p-4">
+<img alt="Satellite map view" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply" data-alt="An aerial, top-down satellite view of vast, organized agricultural fields. The fields are rendered in a high-contrast, false-color style typical of NDVI agricultural imaging, featuring deep verdant greens and subtle golden-brown earth tones. The image has a crisp, high-tech, light-mode dashboard aesthetic, looking like a live feed from a sophisticated monitoring drone. Subtle digital gridlines and minimalistic UI reticles overlay the imagery." data-location="Agricultural Sector Alpha" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWO-UW9cqY6HUufrUSvQy_BF_WAoGy899B4dkWGPPhRcTuowxyvt6Ba3QfYUotTPCX6Lm3YWkMktBH3_CwB_fDhWbRWaXoeglV6JgVNLBUi4Hso8HwRCj8_vY7FiAmL1QG8GsGup-AmU0KO6pvT-jFetG-lBY0wsQIWRymgr0pJB3skymFlQc8RHgPffrWJwO0pRJH_UzroBmoiWdRKwdVnfFlPanLNhng_YY6weAht3VqnOZa0BrBdOG8tBfpa_vTpOFpEMBqYUV2"/>
+<!-- Drone Marker -->
+<div class="absolute w-12 h-12 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-outline-variant flex items-center justify-center shadow-lg animate-bounce" style="top: 40%; left: 50%; transform: translate(-50%, -50%);">
+<span class="material-symbols-outlined text-primary" data-icon="navigation" data-weight="fill" style="transform: rotate(45deg); font-variation-settings: 'FILL' 1;">navigation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Weather Widget -->
+<div class="col-span-1 md:col-span-4 bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-[0_4px_24px_rgba(11,28,48,0.02)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="routine">routine</span>
+                        Conditions
+                    </h3>
+<span class="font-label-sm text-label-sm text-outline">Clear</span>
+</div>
+<div class="flex-grow flex flex-col justify-center gap-stack-lg">
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">WIND</p>
+<div class="flex items-baseline gap-2">
+<p class="font-data-display text-data-display text-primary text-[40px]">12</p>
+<p class="font-body-md text-body-md text-on-surface-variant">km/h NW</p>
+</div>
+<div class="w-full flex gap-1 mt-2">
+<div class="h-1 flex-1 bg-secondary rounded-full"></div>
+<div class="h-1 flex-1 bg-secondary rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-container rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-container rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-container rounded-full"></div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-surface-variant">
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">PRECIPITATION</p>
+<p class="font-title-md text-title-md text-primary">0%</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-outline mb-1">VISIBILITY</p>
+<p class="font-title-md text-title-md text-primary">10km</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Fleet Status -->
+<div class="col-span-1 md:col-span-6 bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-[0_4px_24px_rgba(11,28,48,0.02)]">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant" data-icon="inventory_2">inventory_2</span>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Fleet Readiness</h3>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<!-- Ready -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col items-center justify-center text-center border border-transparent hover:border-outline-variant transition-colors">
+<span class="material-symbols-outlined text-secondary mb-2" data-icon="check_circle">check_circle</span>
+<p class="font-data-display text-data-display text-primary">14</p>
+<p class="font-label-sm text-label-sm text-outline mt-1">READY</p>
+</div>
+<!-- In Air -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col items-center justify-center text-center border border-transparent hover:border-outline-variant transition-colors">
+<span class="material-symbols-outlined text-[#006064] mb-2" data-icon="flight">flight</span>
+<p class="font-data-display text-data-display text-primary">3</p>
+<p class="font-label-sm text-label-sm text-outline mt-1">ACTIVE</p>
+</div>
+<!-- Maintenance -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col items-center justify-center text-center border border-transparent hover:border-outline-variant transition-colors">
+<span class="material-symbols-outlined text-[#f57f17] mb-2" data-icon="build">build</span>
+<p class="font-data-display text-data-display text-primary">2</p>
+<p class="font-label-sm text-label-sm text-outline mt-1">MAINTENANCE</p>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-variant">
+<p class="font-label-sm text-label-sm text-outline mb-2">NETWORK SIGNAL (BASE STATION)</p>
+<div class="w-full flex items-center gap-2">
+<div class="flex-grow h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[92%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary">92%</span>
+</div>
+</div>
+</div>
+<!-- New Requests -->
+<div class="col-span-1 md:col-span-6 bg-surface-container-lowest rounded-xl border border-outline-variant flex flex-col shadow-[0_4px_24px_rgba(11,28,48,0.02)] overflow-hidden">
+<div class="px-6 py-4 border-b border-surface-variant bg-surface-container-low flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant" data-icon="move_to_inbox">move_to_inbox</span>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Pending Requests</h3>
+</div>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded text-xs font-bold">2 NEW</span>
+</div>
+<div class="flex-grow flex flex-col">
+<!-- Request Item 1 -->
+<div class="p-4 border-b border-surface-variant flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:bg-surface-container-low transition-colors">
+<div>
+<p class="font-title-md text-title-md text-primary text-[16px]">JD Farms - Sector 4</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Multispectral Crop Analysis</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="event">event</span>
+<span class="font-label-sm text-label-sm text-outline">Tomorrow, 08:00 AM</span>
+</div>
+</div>
+<div class="flex gap-2 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-4 py-2 rounded-xl border border-outline-variant text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors">DECLINE</button>
+<button class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-primary text-on-primary font-label-sm text-label-sm hover:opacity-90 transition-opacity shadow-sm">APPROVE</button>
+</div>
+</div>
+<!-- Request Item 2 -->
+<div class="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:bg-surface-container-low transition-colors">
+<div>
+<p class="font-title-md text-title-md text-primary text-[16px]">Oasis Orchards</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Irrigation Leak Detection</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="event">event</span>
+<span class="font-label-sm text-label-sm text-outline">Oct 26, 14:00 PM</span>
+</div>
+</div>
+<div class="flex gap-2 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-4 py-2 rounded-xl border border-outline-variant text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors">DECLINE</button>
+<button class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-primary text-on-primary font-label-sm text-label-sm hover:opacity-90 transition-opacity shadow-sm">APPROVE</button>
+</div>
+</div>
+</div>
+<div class="px-6 py-3 border-t border-surface-variant bg-surface-container-lowest text-center">
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">VIEW ALL BOOKINGS</a>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container dark:bg-on-background docked full-width bottom-0 flat no shadows fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-2 border-t border-surface-variant">
+<!-- Active Tab: Home -->
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-fixed text-on-secondary-container dark:text-on-secondary-fixed rounded-full px-4 py-1 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</button>
+<!-- Inactive Tabs -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 transition-transform duration-150 rounded-xl">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">Bookings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 transition-transform duration-150 rounded-xl">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-label-sm text-label-sm mt-1">Services</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 transition-transform duration-150 rounded-xl">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Complete Your Profile | Raphael Aero-Agriculture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eaf1ff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#689785",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-fixed": "#002117",
+                        "tertiary-container": "#002d21",
+                        "secondary": "#446900",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "outline": "#717974",
+                        "on-secondary-fixed": "#121f00",
+                        "on-primary-fixed": "#002117",
+                        "background": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#00160f",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-container": "#b2f746",
+                        "on-surface-variant": "#414845",
+                        "on-background": "#0b1c30",
+                        "outline-variant": "#c1c8c3",
+                        "on-surface": "#0b1c30",
+                        "primary": "#00150e",
+                        "surface": "#f8f9ff",
+                        "on-primary-container": "#719586",
+                        "tertiary-fixed": "#bbedd8",
+                        "surface-dim": "#cbdbf5",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed": "#b2f746",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#a9cfbe",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container": "#e5eeff",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "surface-container-high": "#dce9ff",
+                        "primary-fixed": "#c4ebda",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#98da27",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "primary-container": "#062c21",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#496f00",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "surface-tint": "#426558"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "data-display": ["JetBrains Mono"],
+                        "title-md": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary-container">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 z-50 w-full h-16 bg-surface border-b border-outline-variant flex justify-between items-center px-4 md:px-16 transition-all duration-300">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary tracking-tight">Raphael Aero-Agriculture</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img alt="Profile" data-alt="A clean, professional headshot avatar for a user profile in a high-end agricultural technology platform. The avatar is presented as a minimalist vector illustration with a neutral background, conveying a sense of corporate modern reliability and visionary leadership. The color palette utilizes soft greys and subtle greens consistent with the brand's premium industrial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2dLHYY4JjszDPNwKeXgaMxAJOq6ub22AoSRSyWyYCh4obNMv5dylFQVLYeWu_dk8LjhKLxL3b2V4jJWFGs2JMA19noLLBTyFbDWH1UF96Gdy-yzzfpNIObGvPQI9DlnPZuBYgaLQcXeYpOkZKEeSlQb2ezTTiScChd41mMe-LmDXc5LhtpHlBteEhM6jL9KQuBPJLrbqk1PvJJpNm1uRoyt-PYgzMLgNIC8cKajuc4lpq-EIECfgT2N4GVwc_iKYyg2uCqTBxLBiA">
+</div>
+</header>
+<main class="min-h-screen pt-24 pb-12 flex flex-col items-center justify-center px-4 md:px-margin-desktop">
+<div class="max-w-[1440px] w-full grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Visual & Brand Messaging -->
+<div class="lg:col-span-5 flex flex-col gap-stack-lg order-2 lg:order-1">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A vast, high-resolution aerial view of a precision-farmed wheat field at sunset. A high-tech agricultural drone glides silently over the crops, its sensors glowing with a subtle amber light. The landscape is a rich tapestry of deep forest greens and golden ambers, reflecting a premium industrial aesthetic. The lighting is dramatic, with long shadows emphasizing the geometric precision of the planting rows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_d6NsdiDcT0lAKvb65isnEeVuTP4bDdQ3iWvPQ0tWU5zgNHh3pyL1hEaIu6FzcJ40g9SsnJJ-VfIcJ5XRyIsMtlcsUopY_CyfeKUBa7c57-WqZsU2WMwBB-wvBocIrREebCod-22EK9SMm7UXT5UR_Z5HbbSvt37O9YFKblTVlqrHp0jkPcfh2MT5IihiaP7lrU2Jcv1elQ4RNuLYV5IcgGnYwS_o4BljnW2f0lwMH0slMTyRLMIy46zGO4yrRvRMwWMtQNi1lrpy">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<span class="font-label-sm text-label-sm text-secondary-container mb-2 block uppercase tracking-widest">Enterprise Precision</span>
+<p class="font-title-md text-title-md text-on-primary">Bridging the gap between traditional grit and aerospace telemetry.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-stack-md">
+<div class="p-6 bg-surface-container-low border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-3" data-icon="satellite_alt">satellite_alt</span>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">NDVI Data</h4>
+<p class="font-data-display text-data-display text-primary">Live</p>
+</div>
+<div class="p-6 bg-surface-container-low border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-3" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Fleet Status</h4>
+<p class="font-data-display text-data-display text-primary">Ready</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Profile Form -->
+<div class="lg:col-span-7 lg:pl-margin-desktop order-1 lg:order-2">
+<div class="mb-stack-lg">
+<h2 class="font-display-lg text-display-lg text-primary mb-2">Complete Your Profile</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Tell us a bit about yourself to get started with your Raphael Aero-Agriculture dashboard.</p>
+</div>
+<form class="space-y-stack-lg bg-surface-container-lowest p-8 md:p-12 rounded-xl border border-outline-variant shadow-sm">
+<!-- Name Field -->
+<div class="group">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-wider" for="full_name">Full Name</label>
+<div class="relative">
+<input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary focus:ring-0 transition-all py-3 font-title-md text-title-md text-primary placeholder:text-outline-variant" id="full_name" name="full_name" placeholder="Enter your full name" type="text" value="Raphael Sterling">
+<span class="material-symbols-outlined absolute right-0 top-3 text-outline-variant group-focus-within:text-secondary transition-colors" data-icon="person">person</span>
+</div>
+</div>
+<!-- Mobile Field -->
+<div class="group">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-wider" for="mobile_number">Mobile Number</label>
+<div class="relative flex items-center">
+<span class="font-title-md text-title-md text-on-surface-variant mr-3 border-r border-outline-variant pr-3">+1</span>
+<input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary focus:ring-0 transition-all py-3 font-title-md text-title-md text-primary placeholder:text-outline-variant" id="mobile_number" name="mobile_number" placeholder="000-000-0000" type="tel" value="555-012-3456">
+<span class="material-symbols-outlined absolute right-0 top-3 text-outline-variant group-focus-within:text-secondary transition-colors" data-icon="smartphone">smartphone</span>
+</div>
+</div>
+<!-- Farm Name Field (Optional) -->
+<div class="group">
+<div class="flex justify-between items-center mb-2">
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="farm_name">Farm Name</label>
+<span class="text-[10px] font-label-sm text-outline uppercase">Optional</span>
+</div>
+<div class="relative">
+<input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-secondary focus:ring-0 transition-all py-3 font-title-md text-title-md text-primary placeholder:text-outline-variant" id="farm_name" name="farm_name" placeholder="e.g. Green Valley Estates" type="text">
+<span class="material-symbols-outlined absolute right-0 top-3 text-outline-variant group-focus-within:text-secondary transition-colors" data-icon="agriculture">agriculture</span>
+</div>
+</div>
+<div class="pt-stack-lg flex flex-col md:flex-row gap-stack-md items-center">
+<button class="w-full md:w-auto px-10 py-4 bg-primary text-on-primary font-title-md text-title-md rounded-lg hover:bg-tertiary transition-all duration-300 active:scale-95 shadow-md flex items-center justify-center gap-3" type="submit">
+<span>Save Profile</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-label-sm font-label-sm text-on-surface-variant">
+                            By clicking save, you agree to our 
+                            <a class="text-secondary underline underline-offset-4 hover:text-primary transition-colors" href="#">Terms of Service</a>.
+                        </p>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Decoration Element (Subtle grid) -->
+<div class="fixed inset-0 pointer-events-none -z-10 opacity-[0.03]" style="background-image: radial-gradient(circle, #446900 1px, transparent 1px); background-size: 40px 40px;"></div>
+<script>
+        // Simple micro-interaction for the button
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = `
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>Processing...</span>
+            `;
+            setTimeout(() => {
+                btn.innerHTML = `
+                    <span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+                    <span>Profile Saved</span>
+                `;
+                btn.classList.replace('bg-primary', 'bg-secondary');
+            }, 1500);
+        });
+
+        // Floating label simulation or input focus logic could go here if more complexity was needed
+    </script>
+</body></html>

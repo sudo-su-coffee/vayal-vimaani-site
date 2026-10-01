@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Raphael Aero-Agriculture | Pilot Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#204f40",
+                      "primary-fixed": "#c4ebda",
+                      "surface-container-highest": "#d3e4fe",
+                      "secondary-fixed": "#b2f746",
+                      "tertiary": "#00160f",
+                      "on-tertiary-fixed": "#002117",
+                      "surface-container-low": "#eff4ff",
+                      "on-secondary-fixed-variant": "#334f00",
+                      "on-surface-variant": "#414845",
+                      "on-primary-container": "#719586",
+                      "on-secondary-container": "#496f00",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-tertiary-container": "#689785",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed": "#002117",
+                      "on-primary": "#ffffff",
+                      "surface-container-high": "#dce9ff",
+                      "surface": "#f8f9ff",
+                      "background": "#f8f9ff",
+                      "outline-variant": "#c1c8c3",
+                      "on-error-container": "#93000a",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#0b1c30",
+                      "tertiary-fixed-dim": "#a0d1bd",
+                      "primary-fixed-dim": "#a9cfbe",
+                      "primary-container": "#062c21",
+                      "tertiary-container": "#002d21",
+                      "surface-bright": "#f8f9ff",
+                      "on-primary-fixed-variant": "#2a4d41",
+                      "on-surface": "#0b1c30",
+                      "secondary": "#446900",
+                      "on-secondary-fixed": "#121f00",
+                      "secondary-container": "#b2f746",
+                      "surface-tint": "#426558",
+                      "inverse-primary": "#a9cfbe",
+                      "surface-dim": "#cbdbf5",
+                      "primary": "#00150e",
+                      "error-container": "#ffdad6",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#98da27",
+                      "surface-variant": "#d3e4fe",
+                      "inverse-surface": "#213145",
+                      "surface-container": "#e5eeff",
+                      "on-error": "#ffffff",
+                      "outline": "#717974",
+                      "tertiary-fixed": "#bbedd8",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "stack-md": "16px",
+                      "stack-lg": "32px",
+                      "margin-mobile": "16px",
+                      "stack-sm": "8px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Hanken Grotesk"],
+                      "headline-lg-mobile": ["Hanken Grotesk"],
+                      "data-display": ["JetBrains Mono"],
+                      "label-sm": ["JetBrains Mono"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "title-md": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .field-focus-effect:focus-within {
+            box-shadow: 0 0 0 2px #446900;
+        }
+        .blur-backdrop {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Background Atmospheric Elements -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 filter grayscale-[20%]" data-alt="A wide-angle aerial shot of a vibrant green agricultural field under a clear blue sky, showing precise crop rows. A high-tech agricultural drone is hovering in the distance, captured with a cinematic shallow depth of field. The lighting is bright and industrial-premium, with soft shadows and a clean, corporate-modern feel. The overall mood is authoritative and visionary, emphasizing cutting-edge aero-technology in a rural setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjClcemuv3dy29Q6dT7nho3gYUrs7vJe3dqpQk7m8pb6s13hNKRpOfuH9WGA8mPpM4OYkmnkPqf2UytAyAmDmBWLWYFjPFku9emhIe2G_jCpFahkcqZ31oW1BW59JuP_wxfIcCNVrf28oUsWsIgKZv9wX9aN52f1NCJGnUztxjBLen4Q74f9rFRgt2VdOTYYkffW-tRkvRsTizhkYKITTaUipJ-7amGFxO8Qgg6vX1E_A8oOTcmQhTVY-85Buy3JtX6VA6UGSV0Qjf"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50"></div>
+</div>
+<!-- Login Container -->
+<main class="relative z-10 w-full max-w-[440px] px-margin-mobile md:px-0">
+<!-- Brand Header (TopAppBar Contextual Logic) -->
+<header class="flex flex-col items-center mb-stack-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
+<div class="w-16 h-16 mb-stack-md flex items-center justify-center bg-primary rounded-xl">
+<span class="material-symbols-outlined text-on-primary text-[40px]" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight text-center">
+                Raphael Aero-Agriculture
+            </h1>
+<p class="font-body-md text-on-surface-variant mt-unit text-center">Precise Crop Intelligence &amp; Drone Logistics</p>
+</header>
+<!-- Login Card -->
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-lg rounded-xl shadow-sm animate-in fade-in slide-in-from-bottom-8 duration-1000">
+<div class="mb-stack-lg">
+<h2 class="font-headline-lg text-on-surface">Welcome Back Pilot</h2>
+<p class="font-body-md text-on-surface-variant">Secure access to your drone fleet and field data.</p>
+</div>
+<!-- SSO Option -->
+<button class="w-full h-[56px] flex items-center justify-center gap-stack-md border border-outline-variant rounded-lg font-title-md text-on-surface hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.98]">
+<img alt="Google Logo" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQNIUWwVcVUl26zuyojwEFCLKrorKNy_9XdNFFvR-9wvfTvQsw0qs4QEzKjbo2JMxDSspz5qjPXUA25DJ8LDReXbWThRBOpAWAu_fy-QsliHp7MNFk5qOwVuldwssMmN703GirXAWAp4CKOj1z0vrV9ItSy490PJrZ0Ix-4TsReYZR8FsF1s-QKU7PZeUkERsaBvXW-zsBYzzV_XXdFeX7eNsqRvHSZnMvy3ZRSi16ZiRdB-gH2IaZB9XoFZOxix-Se1Yf2ZSPaaRn"/>
+<span>Sign in with Google</span>
+</button>
+<!-- Divider -->
+<div class="flex items-center my-stack-lg gap-stack-md">
+<div class="h-px bg-outline-variant flex-1"></div>
+<span class="font-label-sm text-outline uppercase">OR</span>
+<div class="h-px bg-outline-variant flex-1"></div>
+</div>
+<!-- Mobile Login Form -->
+<form action="#" class="space-y-stack-md">
+<div class="space-y-unit">
+<label class="font-label-sm text-on-surface-variant ml-unit" for="mobile">MOBILE NUMBER</label>
+<div class="relative group">
+<div class="absolute left-4 top-1/2 -translate-y-1/2 flex items-center gap-2 border-r border-outline-variant pr-3">
+<span class="material-symbols-outlined text-outline" data-icon="smartphone">smartphone</span>
+<span class="font-body-md text-on-surface-variant">+1</span>
+</div>
+<input class="w-full h-[64px] pl-[92px] pr-4 bg-surface border border-outline-variant rounded-lg font-data-display text-on-surface focus:ring-0 focus:border-secondary transition-all" id="mobile" placeholder="(555) 000-0000" type="tel"/>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full h-[64px] bg-secondary text-on-secondary rounded-lg font-headline-lg-mobile md:font-headline-lg flex items-center justify-center gap-stack-sm hover:opacity-90 transition-opacity active:scale-[0.99] group" type="submit">
+<span>Send Verification Code</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<div class="mt-stack-lg text-center">
+<p class="font-body-md text-on-surface-variant">
+                    Need assistance? <a class="text-secondary font-semibold hover:underline" href="#">Contact Ground Control</a>
+</p>
+</div>
+</div>
+<!-- System Status Bar (Industrial Detail) -->
+<div class="mt-stack-lg flex items-center justify-center gap-stack-lg">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed shadow-[0_0_8px_#b2f746]"></div>
+<span class="font-label-sm text-outline">FLEET STATUS: OPTIMAL</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed shadow-[0_0_8px_#b2f746]"></div>
+<span class="font-label-sm text-outline">RTK CONNECTED</span>
+</div>
+</div>
+</main>
+<!-- Footer Links -->
+<footer class="absolute bottom-stack-md w-full px-margin-mobile flex flex-col md:flex-row justify-between items-center text-outline gap-stack-sm">
+<p class="font-label-sm">© 2024 RAPHAEL AERO-AGRICULTURE INC.</p>
+<div class="flex gap-stack-md">
+<a class="font-label-sm hover:text-on-surface transition-colors" href="#">PRIVACY POLICY</a>
+<a class="font-label-sm hover:text-on-surface transition-colors" href="#">FLIGHT TERMS</a>
+<a class="font-label-sm hover:text-on-surface transition-colors" href="#">SUPPORT</a>
+</div>
+</footer>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('mobile');
+            
+            // Format phone number input simple logic
+            input.addEventListener('input', (e) => {
+                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+                e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+            });
+
+            // Button active state pulse
+            const submitBtn = document.querySelector('button[type="submit"]');
+            submitBtn.addEventListener('click', (e) => {
+                if(input.value.length < 10) {
+                    e.preventDefault();
+                    input.classList.add('border-error');
+                    setTimeout(() => input.classList.remove('border-error'), 1000);
+                }
+            });
+        });
+    </script>
+</body></html>

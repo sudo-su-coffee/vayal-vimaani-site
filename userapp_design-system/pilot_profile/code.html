@@ -1,0 +1,315 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Hanken+Grotesk:wght@600;700;800&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#eff4ff",
+                    "surface-container-high": "#dce9ff",
+                    "primary-container": "#062c21",
+                    "surface-tint": "#426558",
+                    "outline-variant": "#c1c8c3",
+                    "surface-dim": "#cbdbf5",
+                    "on-surface-variant": "#414845",
+                    "tertiary-fixed": "#bbedd8",
+                    "surface-container": "#e5eeff",
+                    "secondary-fixed": "#b2f746",
+                    "outline": "#717974",
+                    "inverse-primary": "#a9cfbe",
+                    "secondary-container": "#b2f746",
+                    "surface": "#f8f9ff",
+                    "on-secondary-fixed": "#121f00",
+                    "primary": "#00150e",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#00160f",
+                    "surface-variant": "#d3e4fe",
+                    "on-primary-fixed": "#002117",
+                    "inverse-on-surface": "#eaf1ff",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#a9cfbe",
+                    "secondary-fixed-dim": "#98da27",
+                    "on-tertiary-fixed-variant": "#204f40",
+                    "on-background": "#0b1c30",
+                    "on-primary-container": "#719586",
+                    "on-surface": "#0b1c30",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#2a4d41",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#002d21",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#496f00",
+                    "surface-bright": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#213145",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed-dim": "#a0d1bd",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#002117",
+                    "primary-fixed": "#c4ebda",
+                    "on-secondary-fixed-variant": "#334f00",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#689785",
+                    "secondary": "#446900"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "stack-lg": "32px",
+                    "unit": "4px",
+                    "stack-sm": "8px",
+                    "gutter": "24px",
+                    "stack-md": "16px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "title-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "data-display": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { -webkit-font-smoothing: antialiased; }
+        .glass-panel { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.8); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface sticky top-0 w-full z-50 flex justify-between items-center px-margin-mobile py-4 transition-opacity">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="agriculture">agriculture</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Raphael Aero-Agriculture</h1>
+</div>
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop mt-stack-lg">
+<!-- Profile Hero Section -->
+<section class="mb-stack-lg animate-in fade-in duration-700">
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-md rounded-xl flex flex-col md:flex-row items-center gap-stack-md">
+<div class="relative">
+<img alt="Pilot Avatar" class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-2 border-secondary" data-alt="A professional headshot of a senior aerospace pilot in a modern olive-green flight suit. The lighting is crisp and studio-quality, emphasizing a look of focused expertise. The background is a blurred high-tech hangar with agricultural drones. The overall aesthetic is industrial premium, blending deep forest greens and clean white light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7T2GKFcqV6oaOLfa_cIpA8AgEFjVDtMdCQSJINtiep1jVD1ctyba-9mMpKhEAjfUBTP4CJ5BpAfojHc-sq-voqW5e80f6DJFJ6-PyMeLMV8Z2p3YsPnWcbHyANgLfych0lSYztPtFv6ttcnchg5Py1Mg1WERP7ltub_67CbL6o6Pllecyp2CJgQbsEnqpGOUHBnqzulX82yun_mDp3e9fHSQGWchmq8SN5ZlQrYVljLHwglpINKDL_I8uNa10nKZ2CrFBsKMTIROp">
+<div class="absolute bottom-1 right-1 bg-secondary text-on-secondary px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                        GOLD
+                    </div>
+</div>
+<div class="text-center md:text-left flex-1">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-1">Capt. Elias Thorne</h2>
+<div class="flex flex-wrap justify-center md:justify-start gap-4 items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-3 py-1 rounded-full border border-outline-variant">
+                            ID: RA-7742-XP
+                        </span>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-data-display text-body-md font-bold">4.98</span>
+</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-gutter py-stack-sm rounded-lg font-title-md hover:opacity-90 active:scale-95 transition-all">
+                    Edit Profile
+                </button>
+</div>
+</section>
+<!-- Bento Grid Sections -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Personal Information -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md">
+<div class="flex items-center justify-between mb-stack-md border-b border-outline-variant pb-2">
+<h3 class="font-title-md text-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+                        Personal Information
+                    </h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-md">
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1">Email Address</p>
+<p class="font-body-md text-on-surface">elias.thorne@aero-agri.com</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1">Phone Number</p>
+<p class="font-body-md text-on-surface">+1 (555) 892-4421</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1">Assigned Region</p>
+<p class="font-body-md text-on-surface">Midwest Sector Delta</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1">Flight Hours</p>
+<p class="font-data-display text-on-surface">1,482.5 hrs</p>
+</div>
+</div>
+</div>
+<!-- Payout Settings -->
+<div class="md:col-span-4 bg-surface-container-high border border-outline-variant rounded-xl p-stack-md">
+<h3 class="font-title-md text-title-md text-primary mb-stack-md flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+                    Payout Settings
+                </h3>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-stack-sm rounded border border-outline-variant">
+<p class="font-label-sm text-label-sm text-outline">Primary Bank</p>
+<p class="font-body-md font-bold text-on-surface">AgriTrust Federal</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">**** 9901</p>
+</div>
+<button class="w-full border border-secondary text-secondary py-2 rounded-lg font-title-md hover:bg-secondary-container transition-colors">
+                        Manage Accounts
+                    </button>
+</div>
+</div>
+<!-- Fleet Management -->
+<div class="md:col-span-6 bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md">
+<div class="flex items-center justify-between mb-stack-md">
+<h3 class="font-title-md text-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+                        Assigned Fleet
+                    </h3>
+<span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded">3 Active</span>
+</div>
+<div class="space-y-stack-sm">
+<div class="flex items-center justify-between p-3 bg-background border border-outline-variant rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="airplanemode_active">airplanemode_active</span>
+<div>
+<p class="font-body-md font-bold">Vanguard-4 Sprayer</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">SN: VNG-992-B</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-secondary">Operational</p>
+<div class="w-16 h-1.5 bg-outline-variant rounded-full mt-1 overflow-hidden">
+<div class="bg-secondary h-full w-[85%]"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-background border border-outline-variant rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="sensor_occupied">sensor_occupied</span>
+<div>
+<p class="font-body-md font-bold">NDVI Scout Mark II</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">SN: SCT-112-X</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-secondary">Operational</p>
+<div class="w-16 h-1.5 bg-outline-variant rounded-full mt-1 overflow-hidden">
+<div class="bg-secondary h-full w-[92%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Security & Settings -->
+<div class="md:col-span-6 bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md">
+<h3 class="font-title-md text-title-md text-primary mb-stack-md flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+                    Security &amp; Settings
+                </h3>
+<div class="space-y-1">
+<button class="w-full flex items-center justify-between p-3 hover:bg-surface-container transition-colors rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="lock">lock</span>
+<span class="font-body-md">Change Access Credentials</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 hover:bg-surface-container transition-colors rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="fingerprint">fingerprint</span>
+<span class="font-body-md">Biometric Authentication</span>
+</div>
+<div class="w-10 h-5 bg-secondary rounded-full flex items-center px-1">
+<div class="w-3.5 h-3.5 bg-white rounded-full ml-auto"></div>
+</div>
+</button>
+<button class="w-full flex items-center justify-between p-3 hover:bg-error-container hover:text-on-error-container transition-colors rounded-lg mt-stack-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body-md font-bold">Sign Out System</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container flex justify-around items-center px-margin-mobile py-2 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm">Payments</span>
+</a>
+<!-- Profile Active State -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Desktop Navigation Side Rail (Optional but recommended for premium feel) -->
+<nav class="hidden md:flex fixed left-0 top-[72px] h-[calc(100vh-72px)] w-20 flex-col items-center py-stack-lg gap-stack-lg border-r border-outline-variant bg-surface">
+<button class="p-3 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</button>
+<button class="p-3 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</button>
+<button class="p-3 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</button>
+<button class="p-3 bg-secondary-container text-on-secondary-container rounded-xl shadow-lg">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for hover effects on data cards
+        document.querySelectorAll('.bg-surface-container-lowest').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+                card.style.transition = 'transform 0.3s ease';
+                card.classList.add('shadow-md');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0px)';
+                card.classList.remove('shadow-md');
+            });
+        });
+    </script>
+</body></html>

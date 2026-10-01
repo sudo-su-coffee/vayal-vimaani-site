@@ -1,0 +1,298 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Raphael Aero-Agriculture | Direct Booking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#e5eeff",
+                        "secondary-container": "#b2f746",
+                        "on-primary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "on-tertiary-fixed": "#002117",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "on-tertiary-container": "#689785",
+                        "surface-variant": "#d3e4fe",
+                        "inverse-surface": "#213145",
+                        "error": "#ba1a1a",
+                        "surface": "#f8f9ff",
+                        "secondary-fixed": "#b2f746",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed-dim": "#98da27",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#121f00",
+                        "primary-container": "#062c21",
+                        "on-primary-container": "#719586",
+                        "primary": "#00150e",
+                        "on-secondary-container": "#496f00",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "outline": "#717974",
+                        "on-primary-fixed": "#002117",
+                        "tertiary-fixed": "#bbedd8",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface-variant": "#414845",
+                        "tertiary-container": "#002d21",
+                        "on-background": "#0b1c30",
+                        "primary-fixed": "#c4ebda",
+                        "inverse-primary": "#a9cfbe",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-tint": "#426558",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#00160f",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#446900",
+                        "outline-variant": "#c1c8c3",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "primary-fixed-dim": "#a9cfbe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "data-display": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-bright border-b border-outline-variant flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 h-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary">Raphael Aero-Agriculture</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full cursor-pointer">notifications</span>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-stack-lg">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">On-Field Operations</span>
+<h2 class="font-display-lg text-display-lg mt-2">Direct Mission Booking</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mt-unit">Create and authorize a new drone mission immediately on behalf of a client. Ensure all telemetry data is synced upon completion.</p>
+</div>
+<!-- Form Layout: Bento Style Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Form Card -->
+<div class="lg:col-span-8 bg-surface-container-lowest border border-outline-variant p-stack-lg shadow-sm">
+<form class="space-y-stack-lg" id="booking-form">
+<!-- Farmer Search -->
+<div class="space-y-unit">
+<label class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">search</span> FARMER IDENTIFICATION
+                        </label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-secondary transition-all py-4 px-2 outline-none font-body-lg placeholder:text-outline" placeholder="Search by Farmer Name or ID (e.g., RAF-882)..." type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Service Type -->
+<div class="space-y-unit">
+<label class="font-label-sm text-label-sm text-on-surface-variant">SERVICE TYPE</label>
+<select class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-secondary py-4 px-2 outline-none font-body-md appearance-none">
+<option value="spraying">Aerial Precision Spraying</option>
+<option value="ndvi">NDVI Thermal Scanning</option>
+<option value="seeding">Drone-Assisted Seeding</option>
+<option value="monitoring">Livestock Monitoring</option>
+</select>
+</div>
+<!-- Crop Type -->
+<div class="space-y-unit">
+<label class="font-label-sm text-label-sm text-on-surface-variant">CROP VARIETY</label>
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-secondary py-4 px-2 outline-none font-body-md" placeholder="e.g., Winter Wheat, Maize" type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Area -->
+<div class="space-y-unit">
+<label class="font-label-sm text-label-sm text-on-surface-variant">FIELD AREA (ACRES)</label>
+<div class="flex items-center gap-2">
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-secondary py-4 px-2 outline-none font-data-display text-data-display" placeholder="0.00" step="0.1" type="number">
+<span class="font-label-sm text-outline">AC</span>
+</div>
+</div>
+<!-- Payment Toggle -->
+<div class="flex flex-col justify-end pb-4">
+<div class="flex items-center justify-between p-4 bg-secondary-container/20 rounded-lg border border-secondary/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">payments</span>
+<div>
+<p class="font-title-md text-title-md leading-none">Record Payment</p>
+<p class="font-label-sm text-label-sm text-on-secondary-container">Mark as paid immediately</p>
+</div>
+</div>
+<button class="w-12 h-6 bg-secondary rounded-full relative transition-colors duration-200" onclick="this.classList.toggle('bg-secondary'); this.classList.toggle('bg-outline-variant');" type="button">
+<span class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-all translate-x-6"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- CTA -->
+<div class="pt-stack-md flex flex-col md:flex-row gap-stack-md">
+<button class="flex-grow bg-primary text-on-primary font-title-md py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-all active:scale-[0.98]" type="submit">
+<span class="material-symbols-outlined">rocket_launch</span>
+                            Initialize Mission Entry
+                        </button>
+<button class="px-8 border border-secondary text-secondary font-title-md py-4 rounded-lg hover:bg-secondary-container/10 transition-all" type="button">
+                            Save Draft
+                        </button>
+</div>
+</form>
+</div>
+<!-- Side Info/Summary Panel -->
+<div class="lg:col-span-4 space-y-stack-lg">
+<!-- Location Card -->
+<div class="bg-surface-container border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="h-48 relative">
+<img alt="Farm Field View" class="w-full h-full object-cover" data-alt="A high-altitude aerial drone perspective showing perfectly geometric green farm fields separated by straight dirt paths under a bright afternoon sun. The scene highlights the precision of industrial agriculture with vibrant deep greens and earthy browns, following a clean, corporate modern aesthetic with high contrast and sharp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0jpwCjH95qdzHyTIDOddDYiDWIoG9_7emMROGalJPMRDPzQuzbjx1o_e1nx63kpxb3_QfSIsE8n-z-BPPXnYNKz720Q-YZz4DbLPVCxSwp4sjpLgbOOzUUbmvK8xYCtLd1T3DanOK1JqxU_q3ysi1ZSW8-WZxGu30udPbnhSbZcUB_J7ZH7nlt0MF9qq8a0bwPlTs6acITJotk6XYTSb2Cy9Imy7BEFVzS4zmHtEwxPw7RiHlWb0iFD7v99iJTTJefxYSEQTJGIQ0">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex items-end p-4">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-secondary-container">location_on</span>
+<span class="font-title-md text-title-md">GPS Lock: Active</span>
+</div>
+</div>
+</div>
+<div class="p-stack-md space-y-stack-sm">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-on-surface-variant">CURRENT LOCATION</span>
+<span class="font-label-sm text-secondary font-bold">40.7128° N, 74.0060° W</span>
+</div>
+<div class="p-3 bg-white/50 rounded-lg">
+<p class="text-body-md text-on-surface">Detected Sector: <span class="font-bold">Green Valley - Block 7</span></p>
+</div>
+</div>
+</div>
+<!-- Mission Quick Stats -->
+<div class="bg-primary-container text-on-primary-container p-stack-md rounded-xl space-y-stack-md">
+<h3 class="font-title-md text-title-md flex items-center gap-2 border-b border-on-primary-container/20 pb-2">
+<span class="material-symbols-outlined">analytics</span> Mission Estimate
+                    </h3>
+<div class="space-y-stack-sm">
+<div class="flex justify-between">
+<span class="font-body-md opacity-80">Estimated Flight Time</span>
+<span class="font-data-display text-sm">34 min</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-md opacity-80">Payload Required</span>
+<span class="font-data-display text-sm">18.5 L</span>
+</div>
+<div class="flex justify-between pt-2 border-t border-on-primary-container/20">
+<span class="font-title-md">Total Billing</span>
+<span class="font-data-display text-secondary-container">$482.00</span>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-white/10 p-3 rounded-lg">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<p class="font-label-sm text-label-sm">Drone 'Raph-X1' Battery: 94%</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container shadow-[0_-1px_10px_rgba(0,0,0,0.05)] rounded-t-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest transition-all rounded-full" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest transition-all rounded-full" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm text-label-sm">Payments</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-highest transition-all rounded-full" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the toggle
+        const toggleBtn = document.querySelector('button[type="button"].relative');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                const dot = toggleBtn.querySelector('span');
+                dot.classList.toggle('translate-x-6');
+                dot.classList.toggle('translate-x-0');
+            });
+        }
+
+        // Form Submission Interception
+        document.getElementById('booking-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `<span class="material-symbols-outlined animate-spin">refresh</span> Processing...`;
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = `<span class="material-symbols-outlined">check_circle</span> Mission Logged`;
+                btn.classList.replace('bg-primary', 'bg-secondary');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.replace('bg-secondary', 'bg-primary');
+                    btn.disabled = false;
+                    alert('Mission entry created successfully and synced to cloud.');
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body></html>

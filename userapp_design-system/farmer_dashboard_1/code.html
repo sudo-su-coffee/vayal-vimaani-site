@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Farmer Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Hanken+Grotesk:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#a9cfbe",
+                        "on-surface-variant": "#414845",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#bbedd8",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "outline": "#717974",
+                        "on-surface": "#0b1c30",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "tertiary-container": "#002d21",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed": "#121f00",
+                        "surface-dim": "#cbdbf5",
+                        "secondary-fixed-dim": "#98da27",
+                        "secondary": "#446900",
+                        "primary-fixed": "#c4ebda",
+                        "surface-tint": "#426558",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "on-tertiary-container": "#689785",
+                        "secondary-container": "#b2f746",
+                        "on-secondary-container": "#496f00",
+                        "on-primary-container": "#719586",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "inverse-primary": "#a9cfbe",
+                        "surface-container-high": "#dce9ff",
+                        "surface": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "primary": "#00150e",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#b2f746",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-fixed": "#002117",
+                        "surface-container": "#e5eeff",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary": "#00160f",
+                        "primary-container": "#062c21",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "outline-variant": "#c1c8c3",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#002117",
+                        "on-background": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "data-display": ["JetBrains Mono"],
+                        "title-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "data-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            background-color: #f8f9ff;
+            color: #0b1c30;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #eff4ff; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c1c8c3; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #717974; 
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface bg-background min-h-screen pb-24 md:pb-0 pt-[72px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-40 bg-surface border-b border-outline-variant flex justify-between items-center px-margin-mobile py-unit md:px-margin-desktop h-[72px]">
+<div class="flex items-center gap-stack-md"><span class="material-symbols-outlined text-primary text-title-md icon-fill" data-icon="flight_takeoff">flight_takeoff</span><span class="text-title-md font-title-md font-bold text-on-surface">Raphael Aero-Agriculture</span></div>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="text-primary font-bold text-label-sm font-label-sm flex items-center gap-2 p-2" href="#">
+<span class="material-symbols-outlined icon-fill" data-icon="home">home</span>
+                Home
+            </a>
+<a class="text-on-surface-variant text-label-sm font-label-sm flex items-center gap-2 p-2 hover:text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                Bookings
+            </a>
+<a class="text-on-surface-variant text-label-sm font-label-sm flex items-center gap-2 p-2 hover:text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+                Services
+            </a>
+<a class="text-on-surface-variant text-label-sm font-label-sm flex items-center gap-2 p-2 hover:text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+                Profile
+            </a>
+</nav>
+<button class="text-on-surface-variant p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-md flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<div class="flex flex-col gap-stack-sm">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Hello, Farmer John</h1>
+<div class="flex justify-between items-center">
+<p class="font-body-md text-on-surface-variant">Your daily operational overview.</p>
+<!-- Minimal Weather Widget -->
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] icon-fill" data-icon="sunny">sunny</span>
+<span class="font-data-display text-body-lg font-bold">72°F</span>
+</div>
+</div>
+</div>
+<!-- Quick Actions - Simplified -->
+<div class="flex flex-col gap-stack-sm">
+<button class="w-full bg-primary-container border border-primary-container rounded-xl p-stack-md flex items-center justify-between group transition-all active:scale-[0.98]"><div class="flex items-center gap-stack-md"><div class="w-10 h-10 rounded-full bg-primary-fixed-dim/20 flex items-center justify-center text-primary-fixed-dim"><span class="material-symbols-outlined icon-fill" data-icon="agriculture">agriculture</span></div><div class="text-left"><h3 class="font-title-md text-on-primary font-bold">Schedule Spray</h3><p class="text-label-sm text-on-primary-container">Plan next aerial application</p></div></div><span class="material-symbols-outlined text-on-primary opacity-30 group-hover:opacity-100 transition-opacity" data-icon="chevron_right">chevron_right</span></button>
+<button class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md flex items-center justify-between group transition-all active:scale-[0.98]"><div class="flex items-center gap-stack-md"><div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined icon-fill" data-icon="add">add</span></div><div class="text-left"><h3 class="font-title-md text-on-surface font-bold">On-Spot Booking</h3><p class="text-label-sm text-on-surface-variant">Request immediate drone support</p></div></div><span class="material-symbols-outlined text-on-surface-variant opacity-30 group-hover:opacity-100 transition-opacity" data-icon="chevron_right">chevron_right</span></button>
+</div>
+<!-- Live Data & Status -->
+<div class="flex flex-col gap-stack-md">
+<!-- Compact Field Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="h-32 w-full relative">
+<img alt="Field overview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcr3V2wt-Nc45xW9yrJ0T9gM2y_5lt_yEYWeKbSZwE_eWa4yCEuR3GbYcldyBoAtLaOog-A2QXYXtqqCyqlPsHZ2dlEAc7aMeDS_cNEp20fkh_32_t2J7COi1SwIigGnb5uFARRv1E-3SslP9w2quCalx_OQa9-HlTS3RiQzRJ3PedGpHN2_1LxOi2BiNmdx8GY1ITFTssnAyrE1qlHSlIsqu2lONQ4oAA-6XP2qqdJJ3wuSs0w-4IbODbJNuejhYZBgMD4lhSGq1T">
+<div class="absolute top-2 right-2 px-2 py-0.5 bg-surface/90 backdrop-blur-sm rounded text-[10px] font-bold text-secondary uppercase tracking-widest border border-outline-variant">Live</div>
+</div>
+<div class="p-stack-md flex justify-between items-center">
+<div>
+<h3 class="font-label-sm font-bold text-on-surface uppercase tracking-wider">Sector 4 Alpha</h3>
+<p class="text-label-sm text-on-surface-variant">NDVI Health: <span class="text-secondary font-bold">0.78</span></p>
+</div>
+<div class="text-right">
+<p class="text-label-sm text-on-surface-variant uppercase">Moisture</p>
+<p class="font-data-display text-title-md text-on-surface">42%</p>
+</div>
+</div>
+</div>
+<!-- High-Density Active Units Bar -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md flex items-center justify-between">
+<div class="flex items-center gap-stack-md">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-secondary border-2 border-surface flex items-center justify-center text-on-secondary text-[10px] font-bold">R1</div>
+<div class="w-8 h-8 rounded-full bg-secondary border-2 border-surface flex items-center justify-center text-on-secondary text-[10px] font-bold">R2</div>
+<div class="w-8 h-8 rounded-full bg-secondary border-2 border-surface flex items-center justify-center text-on-secondary text-[10px] font-bold">R3</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border-2 border-surface flex items-center justify-center text-on-surface-variant text-[10px] font-bold">--</div>
+</div>
+<div>
+<p class="font-label-sm font-bold text-on-surface">3/4 Drones Airborne</p>
+<p class="text-label-sm text-on-surface-variant">Avg Battery: 85%</p>
+</div>
+</div>
+<div class="w-24 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<!-- Recent Activity - Spaced Out & Clean -->
+<section class="flex flex-col gap-stack-md">
+<div class="flex justify-between items-end">
+<h2 class="font-title-md text-on-surface font-bold">Recent Activity</h2>
+<button class="text-label-sm text-primary font-bold uppercase tracking-wider">View All</button>
+</div>
+<div class="divide-y divide-outline-variant/30">
+<div class="py-stack-md flex items-center justify-between">
+<div class="flex gap-stack-md items-center">
+<span class="material-symbols-outlined text-secondary text-title-md icon-fill" data-icon="check_circle">check_circle</span>
+<div>
+<p class="font-body-md text-on-surface font-medium">Spraying Mission - Sector 2</p>
+<p class="text-label-sm text-on-surface-variant">Oct 24 • Completed</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="py-stack-md flex items-center justify-between">
+<div class="flex gap-stack-md items-center">
+<span class="material-symbols-outlined text-outline text-title-md" data-icon="schedule">schedule</span>
+<div>
+<p class="font-body-md text-on-surface font-medium">NDVI Mapping - North Field</p>
+<p class="text-label-sm text-on-surface-variant">Oct 26 • Pending</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="py-stack-md flex items-center justify-between">
+<div class="flex gap-stack-md items-center">
+<span class="material-symbols-outlined text-secondary text-title-md icon-fill" data-icon="check_circle">check_circle</span>
+<div>
+<p class="font-body-md text-on-surface font-medium">Soil Moisture Analysis</p>
+<p class="text-label-sm text-on-surface-variant">Oct 22 • Completed</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 bg-surface-container-lowest border-t border-outline-variant z-50"><a class="flex flex-col items-center gap-1 text-secondary" href="#"><span class="material-symbols-outlined icon-fill" data-icon="home">home</span><span class="text-[10px] font-bold uppercase tracking-tighter">Home</span></a><a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span><span class="text-[10px] font-bold uppercase tracking-tighter">Bookings</span></a><a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined" data-icon="payments">payments</span><span class="text-[10px] font-bold uppercase tracking-tighter">Payments</span></a><a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined" data-icon="person">person</span><span class="text-[10px] font-bold uppercase tracking-tighter">Profile</span></a></nav>
+
+
+
+
+</body></html>

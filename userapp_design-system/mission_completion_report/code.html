@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mission Completion Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c1c8c3",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "on-primary-container": "#719586",
+                        "on-primary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "secondary-fixed-dim": "#98da27",
+                        "error": "#ba1a1a",
+                        "tertiary": "#00160f",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed": "#121f00",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-primary": "#a9cfbe",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#c4ebda",
+                        "on-surface-variant": "#414845",
+                        "surface-tint": "#426558",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed": "#002117",
+                        "primary-container": "#062c21",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "on-background": "#0b1c30",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#689785",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#496f00",
+                        "on-error": "#ffffff",
+                        "secondary": "#446900",
+                        "primary": "#00150e",
+                        "on-primary-fixed": "#002117",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#e5eeff",
+                        "outline": "#717974",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "tertiary-fixed": "#bbedd8",
+                        "secondary-fixed": "#b2f746",
+                        "secondary-container": "#b2f746",
+                        "tertiary-container": "#002d21",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "surface-container-low": "#eff4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "32px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-display": ["JetBrains Mono"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-display": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased flex flex-col justify-center items-center p-margin-mobile md:p-margin-desktop">
+<main class="w-full max-w-[600px] flex flex-col gap-stack-lg">
+<header class="flex flex-col items-center text-center opacity-0 animate-fade-in-up">
+<div class="w-24 h-24 rounded-full bg-secondary-container flex items-center justify-center mb-stack-md shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+<span class="material-symbols-outlined text-secondary text-[48px]">check_circle</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-unit">Mission Successful</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Flight telemetry and application data securely logged.</p>
+</header>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-stack-md opacity-0 animate-fade-in-up delay-100">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md shadow-[0_4px_20px_rgb(0,0,0,0.02)] transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-center gap-2 mb-stack-sm text-outline">
+<span class="material-symbols-outlined text-[18px]">landscape</span>
+<h2 class="font-label-sm text-label-sm">Total Area Sprayed</h2>
+</div>
+<p class="font-data-display text-data-display text-primary">120 Acres</p>
+<div class="mt-2 flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span class="font-label-sm text-label-sm">100% Coverage</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md shadow-[0_4px_20px_rgb(0,0,0,0.02)] transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-center gap-2 mb-stack-sm text-outline">
+<span class="material-symbols-outlined text-[18px]">water_drop</span>
+<h2 class="font-label-sm text-label-sm">Pesticide Used</h2>
+</div>
+<p class="font-data-display text-data-display text-primary">300L</p>
+<div class="mt-2 font-label-sm text-label-sm text-on-surface-variant">
+                    of Fungicide
+                </div>
+</div>
+</section>
+<section class="relative w-full h-[240px] rounded-xl overflow-hidden border border-outline-variant shadow-[0_8px_30px_rgb(0,0,0,0.04)] opacity-0 animate-fade-in-up delay-200 group">
+<img alt="NDVI Map" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-resolution aerial satellite view of a vast agricultural field overlaid with a translucent NDVI (Normalized Difference Vegetation Index) heat map layer. The map displays a sophisticated gradient from deep amber indicating attention areas to vibrant lime green indicating optimal crop health. The aesthetic is clean, industrial premium, and fits perfectly within a modern light-mode dashboard interface. The lighting implies a clear, analytical daytime scan." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmjcaXIFoh0CCZ3l7Q12n1YLMHnbSs0IxeZ1P47fEY4u62ynGLPgkksFvL5Mab3nHrlzSAY0Xa5U-19ojyb1NkJeExMRsqMfuN_hmJqcyVIAQCpFch4IjBj5UZOothxh0Mu604de83kTlSXiLQzcc06H6QnV4-YHkONa7HVI6lOAnlz89nScBVTtYNn5H42iYL70ODtPHwiliGNShQJYOnYsz2c4_tOWCm5-brYbUJUeT-oJNzJS_YVvh2ceanHS2tXXQr2aN0-hdD"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex items-end p-stack-md">
+<div class="glass-panel px-4 py-2 rounded-lg border border-surface-container-lowest/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">map</span>
+<h3 class="font-title-md text-title-md text-primary">Post-Flight NDVI Map Preview</h3>
+</div>
+</div>
+<div class="absolute top-4 right-4 glass-panel px-3 py-1 rounded-full border border-surface-container-lowest/20 flex items-center gap-1 shadow-sm">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+<span class="font-label-sm text-label-sm text-primary">Data Synced</span>
+</div>
+</section>
+<section class="flex flex-col gap-stack-sm mt-stack-md opacity-0 animate-fade-in-up delay-300">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-title-md text-title-md flex items-center justify-center gap-2 transition-all hover:bg-primary-container active:scale-[0.98] shadow-md">
+<span class="material-symbols-outlined">dashboard</span>
+                Return to Dashboard
+            </button>
+<button class="w-full bg-surface-container-lowest border-2 border-outline-variant text-on-surface py-4 rounded-xl font-title-md text-title-md flex items-center justify-center gap-2 transition-all hover:bg-surface-container-low hover:border-outline active:scale-[0.98]">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+                Download Full Report (PDF)
+            </button>
+</section>
+</main>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    let ripple = document.createElement('span');
+                    ripple.classList.add('absolute', 'bg-white/30', 'rounded-full', 'transform', 'scale-0', 'animate-[ping_0.5s_cubic-bezier(0,0,0.2,1)_1]');
+                    
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    ripple.style.width = ripple.style.height = '100px';
+                    ripple.style.marginLeft = ripple.style.marginTop = '-50px';
+                    
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body></html>

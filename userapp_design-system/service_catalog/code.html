@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Catalog - Raphael Aero-Agriculture</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c1c8c3",
+                        "on-secondary-fixed-variant": "#334f00",
+                        "on-primary-container": "#719586",
+                        "on-primary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "secondary-fixed-dim": "#98da27",
+                        "error": "#ba1a1a",
+                        "tertiary": "#00160f",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed": "#121f00",
+                        "tertiary-fixed-dim": "#a0d1bd",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-primary": "#a9cfbe",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#c4ebda",
+                        "on-surface-variant": "#414845",
+                        "surface-tint": "#426558",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed": "#002117",
+                        "primary-container": "#062c21",
+                        "primary-fixed-dim": "#a9cfbe",
+                        "on-background": "#0b1c30",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#689785",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#496f00",
+                        "on-error": "#ffffff",
+                        "secondary": "#446900",
+                        "primary": "#00150e",
+                        "on-primary-fixed": "#002117",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#e5eeff",
+                        "outline": "#717974",
+                        "on-tertiary-fixed-variant": "#204f40",
+                        "tertiary-fixed": "#bbedd8",
+                        "secondary-fixed": "#b2f746",
+                        "secondary-container": "#b2f746",
+                        "tertiary-container": "#002d21",
+                        "on-primary-fixed-variant": "#2a4d41",
+                        "surface-container-low": "#eff4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "32px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-display": ["JetBrains Mono"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-display": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 drop-shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl icon-fill">agriculture</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary tracking-tight">Raphael Aero-Agriculture</span>
+</div>
+<!-- Desktop Navigation Cluster (Hidden on Mobile) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Bookings</a>
+<a class="font-label-sm text-label-sm text-primary border-b-2 border-secondary pb-1" href="#">Services</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Profile</a>
+</nav>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-24 pb-24 md:pb-12 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-stack-lg md:mb-margin-desktop">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-stack-sm tracking-tight">Service Catalog</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Precision drone solutions engineered for enterprise yield optimization. Select a service to view technical specifications and availability.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-stack-md md:gap-gutter auto-rows-[minmax(300px,_auto)]">
+<!-- Featured Service: Multispectral Imaging (NDVI) -->
+<article class="col-span-1 md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col md:flex-row relative group">
+<div class="w-full md:w-1/2 min-h-[200px] md:min-h-full relative overflow-hidden bg-surface-dim">
+<img alt="Drone flying over green fields" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A highly detailed, cinematic aerial view of an advanced agricultural drone hovering above a perfectly aligned grid of vibrant green crops. The scene is bathed in bright, crisp morning sunlight, creating a high-tech yet natural aesthetic. The overall color palette emphasizes deep forest greens and bright lime accents against a clean, light-mode background, conveying industrial precision and enterprise-grade reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwlXQz_L0JpqGstlcbejU0f8DCRwuuCxVDpfuGru2E9LmTOOmrFAqkaVJYYSl1fKLz32h1RfYYZpgtGBD665CGp_3_0mcWhGe0OHvjV0IOe6W9pQ_g4UCVFMo7MZd-eajMMzIg_UxcUNp9ZFRaO0VsWcP0kAG9iKznMxG6ZHBEi3bXnvNkK2bDlEm9Ta9ouTWAVBjTSS3p50gSQwgyaYIKGtrzDoQOB6KkD0N9G0FcE2CY0LkWTacNfTOwiJCEgOsAL94GS8HWrMrw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent md:bg-gradient-to-r"></div>
+<div class="absolute bottom-4 left-4 md:bottom-auto md:top-4 md:left-4 bg-surface-container/90 backdrop-blur-md px-3 py-1 rounded-full border border-outline-variant/30 flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed"></div>
+<span class="font-label-sm text-label-sm text-primary uppercase">Fleet Active</span>
+</div>
+</div>
+<div class="p-6 md:p-8 flex flex-col justify-center w-full md:w-1/2">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-stack-md border border-outline-variant/50">
+<span class="material-symbols-outlined text-primary text-2xl icon-fill">satellite_alt</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary mb-stack-sm">Multispectral Imaging (NDVI)</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg flex-grow">Detect crop stress, optimize irrigation scheduling, and monitor overall plant health with high-resolution NDVI telemetry. Our advanced sensors provide actionable data layers to preempt yield loss.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-6 py-3 rounded uppercase hover:opacity-90 transition-opacity flex items-center gap-2">
+<span>Book Scan</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Service: Pesticide Application -->
+<article class="col-span-1 md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 md:p-8 flex flex-col hover:border-outline transition-colors">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-stack-md border border-outline-variant/50">
+<span class="material-symbols-outlined text-primary text-2xl">pest_control</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary mb-stack-sm">Pesticide Application</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg flex-grow">Precision targeted chemical application minimizing waste and environmental impact. Automated flight paths ensure consistent, sub-centimeter accuracy coverage.</p>
+<button class="w-full border-2 border-secondary text-secondary font-label-sm text-label-sm px-4 py-3 rounded uppercase hover:bg-secondary hover:text-on-secondary transition-colors text-center">
+                    Learn More
+                </button>
+</article>
+<!-- Service: Fertilizer Spreading -->
+<article class="col-span-1 md:col-span-6 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 md:p-8 flex flex-col hover:border-outline transition-colors">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-stack-md border border-outline-variant/50">
+<span class="material-symbols-outlined text-primary text-2xl">eco</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary mb-stack-sm">Fertilizer Spreading</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg flex-grow">Automated granular and liquid fertilizer distribution tailored specifically to soil nutrient deficiency maps generated from previous surveys.</p>
+<div class="flex items-center justify-between border-t border-outline-variant pt-4 mt-auto">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Variable Rate Tech</span>
+<button class="text-primary font-label-sm text-label-sm uppercase hover:text-secondary flex items-center gap-1 transition-colors">
+                        Details <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Service: Soil Moisture Analysis -->
+<article class="col-span-1 md:col-span-6 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 md:p-8 flex flex-col hover:border-outline transition-colors">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-stack-md border border-outline-variant/50">
+<span class="material-symbols-outlined text-primary text-2xl">water_drop</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary mb-stack-sm">Soil Moisture Analysis</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg flex-grow">Deep-penetrating thermal imaging to map subsurface moisture levels across vast sectors, integrating directly with your irrigation control systems.</p>
+<div class="flex items-center justify-between border-t border-outline-variant pt-4 mt-auto">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Thermal Mapping</span>
+<button class="text-primary font-label-sm text-label-sm uppercase hover:text-secondary flex items-center gap-1 transition-colors">
+                        Details <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container flex justify-around items-center px-margin-mobile py-2 pb-safe border-t border-outline-variant/20">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors rounded-lg w-16" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors rounded-lg w-16" href="#">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<!-- Active State -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1 icon-fill">precision_manufacturing</span>
+<span class="font-label-sm text-label-sm">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors rounded-lg w-16" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

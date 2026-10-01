@@ -1,0 +1,366 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Live Mission Tracking - Raphael Drones</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;family=Hanken+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#a9cfbe",
+                    "on-surface-variant": "#414845",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#bbedd8",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-primary-fixed-variant": "#2a4d41",
+                    "outline": "#717974",
+                    "on-surface": "#0b1c30",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#334f00",
+                    "tertiary-container": "#002d21",
+                    "background": "#f8f9ff",
+                    "on-secondary-fixed": "#121f00",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-fixed-dim": "#98da27",
+                    "secondary": "#446900",
+                    "primary-fixed": "#c4ebda",
+                    "surface-tint": "#426558",
+                    "on-tertiary-fixed-variant": "#204f40",
+                    "on-tertiary-container": "#689785",
+                    "secondary-container": "#b2f746",
+                    "on-secondary-container": "#496f00",
+                    "on-primary-container": "#719586",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#a0d1bd",
+                    "inverse-primary": "#a9cfbe",
+                    "surface-container-high": "#dce9ff",
+                    "surface": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "primary": "#00150e",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#b2f746",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-fixed": "#002117",
+                    "surface-container": "#e5eeff",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#eff4ff",
+                    "tertiary": "#00160f",
+                    "primary-container": "#062c21",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#213145",
+                    "outline-variant": "#c1c8c3",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#002117",
+                    "on-background": "#0b1c30"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "stack-md": "16px",
+                    "stack-lg": "32px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "data-display": [
+                            "JetBrains Mono"
+                    ],
+                    "title-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "label-sm": [
+                            "JetBrains Mono"
+                    ],
+                    "display-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "data-display": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "title-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>.glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(193, 200, 195, 0.5);
+    /* outline-variant */
+    }
+.pulse-dot {
+    animation: pulse 2s infinite
+    }
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(152, 218, 39, 0.7);
+        /* secondary-fixed-dim */
+        } 70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(152, 218, 39, 0);
+        } 100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(152, 218, 39, 0);
+        }
+    }
+/* Map background simulation for this specific screen */
+.map-bg {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBXmMxGMhwM_fxENeCLR8Tx-Iu4RLpCsVy002QzIiY1wd6kO0cwacgBy9Al00o54e7oR6_DxYIbjVhSLCexewmWDUJ9vyDQYj5jKfbj0iTHsmwMk6kt10nJHTvmXxBGhm-G5phm3CKwYs-xOZz2TqgDKe5z8o_JK5CbEbXNYKJMxAcEI7MDOu1Z6YydTSsOSnOo1SKy9ohLdPanZHLpiWRT0jd3h1d6JAIHRE_J8w8Rz490xFXMwMHsJ_HOlp7hHuM7ACzVW0ZBozwP);
+    background-size: cover;
+    background-position: center
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md h-full flex flex-col overflow-hidden">
+<!-- TopAppBar Navigation (Desktop) - Suppressed for transactional/focused intent, replaced with a specialized header -->
+<header class="bg-surface border-b border-outline-variant flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit z-20 relative shadow-sm h-16 shrink-0">
+<div class="flex items-center gap-stack-md">
+<button aria-label="Back" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors text-on-surface">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div>
+<h1 class="text-title-md font-title-md font-bold text-on-surface leading-tight">Sector 4 Scan</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Live Mission Tracking</p>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<div class="hidden md:flex items-center gap-2 bg-surface-container-lowest px-3 py-1 rounded-full border border-outline-variant">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed-dim pulse-dot"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Live Link Active</span>
+</div>
+<button class="bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-colors px-4 py-2 rounded-lg text-label-sm font-label-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+<span class="hidden md:inline">Cancel Mission</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 relative w-full h-full flex flex-col md:flex-row overflow-hidden">
+<!-- Map Canvas Area -->
+<div class="absolute inset-0 z-0 map-bg" data-alt="High altitude satellite view of vast agricultural farmland showing distinct geometric crop fields in varying shades of green and brown. A clear, sunny day providing crisp visibility of the terrain. The image has a slightly desaturated, industrial premium look suitable for a high-tech corporate dashboard background.">
+<!-- Simulated Drone Path -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1000 800">
+<!-- Flight Path -->
+<path d="M 200,600 L 200,200 L 400,200 L 400,600 L 600,600 L 600,200 L 800,200 L 800,450" fill="none" stroke="rgba(152, 218, 39, 0.4)" stroke-dasharray="10, 10" stroke-width="4"></path>
+<!-- Completed Path -->
+<path d="M 200,600 L 200,200 L 400,200 L 400,600 L 600,600 L 600,400" fill="none" stroke="#98da27" stroke-width="4"></path>
+<!-- Waypoints -->
+<circle cx="200" cy="600" fill="#ffffff" r="6" stroke="#426558" stroke-width="2"></circle>
+<circle cx="200" cy="200" fill="#ffffff" r="6" stroke="#426558" stroke-width="2"></circle>
+<circle cx="400" cy="200" fill="#ffffff" r="6" stroke="#426558" stroke-width="2"></circle>
+<circle cx="400" cy="600" fill="#ffffff" r="6" stroke="#426558" stroke-width="2"></circle>
+<circle cx="600" cy="600" fill="#ffffff" r="6" stroke="#426558" stroke-width="2"></circle>
+<circle cx="800" cy="200" fill="#ffffff" opacity="0.5" r="6" stroke="#426558" stroke-width="2"></circle>
+</svg>
+<!-- Active Drone Icon -->
+<div class="absolute top-[50%] left-[60%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10">
+<div class="bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg mb-2 relative">
+<span class="material-symbols-outlined" data-weight="fill">flight</span>
+<div class="absolute -inset-2 border-2 border-secondary-fixed-dim rounded-full opacity-50 pulse-dot"></div>
+</div>
+<div class="glass-panel px-3 py-1 rounded-md text-label-sm font-label-sm text-primary font-bold shadow-sm">
+                    Agri-Drone 04
+                </div>
+</div>
+<!-- Map Controls (Floating) -->
+<div class="absolute right-margin-mobile md:right-margin-desktop bottom-margin-mobile md:bottom-margin-desktop flex flex-col gap-2 z-20">
+<button class="w-12 h-12 glass-panel rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest transition-all shadow-sm">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+<button class="w-12 h-12 glass-panel rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest transition-all shadow-sm">
+<span class="material-symbols-outlined">layers</span>
+</button>
+<div class="glass-panel rounded-full flex flex-col overflow-hidden shadow-sm mt-2">
+<button class="w-12 h-12 flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest transition-all border-b border-outline-variant/30">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest transition-all">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Foreground Telemetry & Overlay Panels -->
+<div class="relative z-20 w-full h-full flex flex-col p-margin-mobile md:p-margin-desktop pointer-events-none">
+<!-- Top Progress Bar Container -->
+<div class="w-full max-w-3xl mx-auto glass-panel rounded-xl p-stack-md pointer-events-auto shadow-sm mb-auto">
+<div class="flex justify-between items-end mb-2">
+<div>
+<h2 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Mission Progress</h2>
+<div class="text-title-md font-title-md text-on-surface">68% Complete</div>
+</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant text-right">
+<div>Est. Time Remaining</div>
+<div class="text-body-md font-body-md text-on-surface font-semibold">14m 30s</div>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary transition-all duration-1000 ease-in-out relative" style="width: 68%;">
+<div class="absolute inset-0 bg-white/20 w-full overflow-hidden">
+<div class="h-full w-full -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+</div>
+</div>
+</div>
+</div>
+<style>
+                @keyframes shimmer {
+                    100% { transform: translateX(100%); }
+                }
+            </style>
+<!-- Bottom Live Stats Dashboard (Bento layout on desktop) -->
+<div class="mt-auto w-full max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-stack-md pointer-events-auto">
+<!-- Stat Card: Altitude -->
+<div class="glass-panel rounded-xl p-stack-md flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-outline">height</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">Altitude</span>
+</div>
+<div class="text-data-display font-data-display text-on-surface">
+                        150<span class="text-body-md font-body-md text-on-surface-variant ml-1">ft</span>
+</div>
+<div class="mt-2 text-label-sm font-label-sm text-primary-fixed-dim flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> Target: 155ft
+                    </div>
+</div>
+<!-- Stat Card: Speed -->
+<div class="glass-panel rounded-xl p-stack-md flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-outline">speed</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">Speed</span>
+</div>
+<div class="text-data-display font-data-display text-on-surface">
+                        12<span class="text-body-md font-body-md text-on-surface-variant ml-1">mph</span>
+</div>
+<div class="mt-2 text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+                        Optimal cruising speed
+                    </div>
+</div>
+<!-- Stat Card: Battery -->
+<div class="glass-panel rounded-xl p-stack-md flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline">battery_charging_full</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">Battery</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+</div>
+<div class="text-data-display font-data-display text-on-surface">
+                        72<span class="text-body-md font-body-md text-on-surface-variant ml-1">%</span>
+</div>
+<!-- Mini telemetry bar -->
+<div class="mt-3 w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed-dim h-full" style="width: 72%;"></div>
+</div>
+</div>
+<!-- Stat Card: Signal -->
+<div class="glass-panel rounded-xl p-stack-md flex flex-col justify-between hidden md:flex">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline">wifi</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">Signal</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary">Strong</span>
+</div>
+<div class="text-data-display font-data-display text-on-surface">
+                        98<span class="text-body-md font-body-md text-on-surface-variant ml-1">dBm</span>
+</div>
+<!-- Mini telemetry bar -->
+<div class="mt-3 w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 95%;"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation suppressed for focused transactional task (Live Mission) -->
+</body></html>
